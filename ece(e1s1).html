@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background-container">
+        <div class="triangle aqua"></div>
+        <div class="triangle white"></div>
+    </div>
+
+    <div class="container">
+        <center>
+            <h1>E-01 SEM-01</h1>
+            <h2>CGPA Calculator</h2>
+        </center>
+
+        <fieldset>
+            <legend>RGUKT RK Valley</legend>
+            <form id="cgpaForm">
+               
+                    <div class="form-item">
+                        <label for="EP">EP Grade</label>
+                        <select id="EP">
+                            <option value="0">EX</option>
+                            <option value="4">A</option>
+                            <option value="8">B</option>
+                            <option value="12">C</option>
+                            <option value="16">D</option>
+                            <option value="20">E</option>
+                        </select>
+                    </div>
+                    <div class="form-item">
+                        <label for="EP LAB">EP LAB Grade</label>
+                        <select id="EP LAB">
+                            <option value="0">EX</option>
+                            <option value="1.5">A</option>
+                            <option value="3">B</option>
+                            <option value="4.5">C</option>
+                            <option value="6">D</option>
+                            <option value="7.5">E</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-item">
+                        <label for="ET">ET Grade</label>
+                        <select id="ET">
+                            <option value="0">EX</option>
+                            <option value="4">A</option>
+                            <option value="8">B</option>
+                            <option value="12">C</option>
+                            <option value="16">D</option>
+                            <option value="20">E</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-item">
+                        <label for="ET LAB">ET LAB Grade</label>
+                        <select id="ET LAB">
+                            <option value="0">EX</option>
+                            <option value="1.5">A</option>
+                            <option value="3">B</option>
+                            <option value="4.5">C</option>
+                            <option value="6">D</option>
+                            <option value="7.5">E</option>
+                        </select>
+                    </div>
+                    <div class="form-item">
+                        <label for="PDS">PDS Grade</label>
+                        <select id="PDS">
+                            <option value="0">EX</option>
+                            <option value="3">A</option>
+                            <option value="6">B</option>
+                            <option value="9">C</option>
+                            <option value="12">D</option>
+                            <option value="15">E</option>
+                        </select>
+                    </div>
+                
+
+                
+                    <div class="form-item">
+                        <label for="PDSLAB">PDS LAB Grade</label>
+                        <select id="PDSLAB">
+                            <option value="0">EX</option>
+                            <option value="1.5">A</option>
+                            <option value="3">B</option>
+                            <option value="4.5">C</option>
+                            <option value="6">D</option>
+                            <option value="7.5">E</option>
+                        </select>
+                    </div>
+                   
+                    <div class="form-item">
+                        <label for="DEMC">DEMC Grade</label>
+                        <select id="DEMC">
+                            <option value="0">EX</option>
+                            <option value="4">A</option>
+                            <option value="8">B</option>
+                            <option value="12">C</option>
+                            <option value="16">D</option>
+                            <option value="20">E</option>
+                        </select>
+                    </div>
+                    <div class="form-item">
+                        <label for="EGCD">EGCD Grade</label>
+                        <select id="EGCD">
+                            <option value="0">EX</option>
+                            <option value="2.5">A</option>
+                            <option value="5">B</option>
+                            <option value="7.5">C</option>
+                            <option value="10">D</option>
+                            <option value="12.5">E</option>
+                        </select>
+                    </div>
+                    <div class="form-item">
+                        <label for="ILTA">ILTA Grade</label>
+                        <select id="ILTA">
+                            <option value="0">EX</option>
+                            <option value="1">A</option>
+                            <option value="2">B</option>
+                            <option value="3">C</option>
+                            <option value="4">D</option>
+                            <option value="5">E</option>
+                        </select>
+                  
+                </div>
+
+                <button type="button" onclick="calculateCGPA()">Calculate CGPA</button>
+            </form>
+
+            <div class="result" id="result"></div>
+        </fieldset>
+ 
+
+    </div>
+
+    <script>
+        function calculateCGPA() {
+            let sum = 0;
+            const subjects = ['EP', 'ET', 'PDSLAB', 'EP LAB', 'EGCD', 'PDS', 'ILTA', 'ET LAB', 'DEMC'];
+
+            subjects.forEach(subject => {
+                sum += parseFloat(document.getElementById(subject).value);
+            });
+
+            const cgpa = (230 - sum) / 23;
+            document.getElementById('result').innerHTML = 
+                'Your CGPA is: <span class="cgpa-score">' + cgpa.toFixed(3) + '</span><span class="cgpa-total">/10</span>';
+        }
+    </script>
+
+</body>
+</html>

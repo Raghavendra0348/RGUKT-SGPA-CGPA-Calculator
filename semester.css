@@ -1,0 +1,142 @@
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* Body background with animated gradient */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(270deg, #df5fff, #e6fe7b, #86a8e7, #91eae4);
+            background-size: 800% 800%;
+            animation: gradientAnimation 10s ease infinite;
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Keyframes for cosmic gradient */
+@keyframes cosmicColors {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Style for the container */
+.container {
+    background: linear-gradient(270deg, #df5fff, #e6fe7b, #86a8e7, #91eae4);
+    background-size: 800% 800%;
+    animation: gradientAnimation 10s ease infinite;
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    margin: 20px auto; /* Adjusted margin for better spacing */
+}
+
+/* Box styling */
+.box {
+    background: linear-gradient(270deg, #df5fff, #e6fe7b, #86a8e7, #91eae4);
+    background-size: 800% 800%;
+    animation: gradientAnimation 10s ease infinite;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Smoother shadow */
+    color: #fff; /* Text color for better contrast */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Button styling */
+.btn {
+    background: linear-gradient(45deg, #a18cd1, #fbc2eb, #f6d365, #ff9966);
+    background-size: 200% 200%;
+    animation: cosmicColors 12s ease infinite;
+    padding: 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    color: black; /* Changed to white for contrast */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.4s ease; /* Smoother transition */
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+    background-color: #ff4757;
+    box-shadow: 0 5px 20px rgba(255, 71, 87, 0.5); /* Add glow on hover */
+}
+
+/* Active effect for buttons */
+.btn:active {
+    background-color: #e63946;
+    box-shadow: none; /* Remove shadow on click for a press effect */
+}
+
+/* Header box styling */
+.header-box {
+    background: linear-gradient(45deg, #ff6f61, #ff9966, #f6d365, #fbc2eb);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+    background-size: 400% 400%;
+    animation: gradientAnimation 6s ease infinite;
+    letter-spacing: 1px; /* Added better readability */
+    text-transform: uppercase; /* For a cleaner header style */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .box {
+        padding: 15px;
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 12px;
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    .header-box {
+        font-size: 18px;
+        padding: 15px;
+    }
+}
