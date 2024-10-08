@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rgukt-sgpa-cgpa-calculator.vercel.app/sitemap.xml
