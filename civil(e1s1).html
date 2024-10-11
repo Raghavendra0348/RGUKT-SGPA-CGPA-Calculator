@@ -69,17 +69,17 @@
                             <option value="7.5">E</option>
                         </select>
                     </div>
-                    <div class="form-item">
-                    <label for="EC LAB">EC LAB  </label>
-                    <select id="EC LAB">
-                        <option value="0">EX</option>
-                        <option value="1.5">A</option>
-                        <option value="3">B</option>
-                        <option value="4.5">C</option>
-                        <option value="6">D</option>
-                        <option value="7.5">E</option>
-                    </select>
-                </div>
+                  <div class="form-item">
+                        <label for="CAD">CAD  </label>
+                        <select id="CAD">
+                            <option value="0">EX</option>
+                            <option value="3">A</option>
+                            <option value="6">B</option>
+                            <option value="9">C</option>
+                            <option value="12">D</option>
+                            <option value="15">E</option>
+                        </select>
+                    </div>
                    
                 
                 
@@ -121,7 +121,7 @@
     <script>
         function calculateCGPA() {
             let sum = 0;
-            const subjects = ['PDS', 'PDSLAB',  'EGCD', 'EC','ENG','EC LAB',  'DEMC'];
+            const subjects = ['PDS', 'PDSLAB',  'EGCD', 'EC','ENG','PDS',  'DEMC'];
 
             subjects.forEach(subject => {
                 sum += parseFloat(document.getElementById(subject).value);
