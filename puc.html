@@ -4,26 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGPA And SGPA Calculator</title>
+    <!-- Link to External CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for Beautiful Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <!-- Inline CSS for Specific Enhancements (Add to styles.css instead) -->
+    <style>
+        /* Semester Selection Styling */
+        .semester-selection {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .semester-selection button {
+            padding: 10px 25px;
+            font-size: 1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 20px;
+            transition: background-color 0.3s, transform 0.2s;
+            color: white;
+            background-color: #17a2b8;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .semester-selection button:hover {
+            background-color: #117a8b;
+        }
+
+        /* Highlight active semester button */
+        .semester-selection button.active-semester {
+            background-color: #28a745; /* Active color */
+        }
+
+        /* Hidden Class */
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-item, .form-item1 {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-title {
+                font-size: 2em;
+            }
+
+            .top-buttons button {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+
+            .semester-selection button {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+
+            .calculate-btn {
+                padding: 10px 25px;
+                font-size: 1em;
+            }
+
+            .form-item select, .form-item1 input {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+     
     <div class="container">
         <h1 class="header-title">PUC I&II</h1>
-
+         
         <div class="top-buttons">
-            <button id="sgpa-btn" onclick="showSGPA()">SGPA</button>
+            <button id="sgpa-btn" onclick="showSGPA()" class="active">SGPA</button>
             <button id="cgpa-btn" onclick="showCGPA()">CGPA</button>
         </div>
-        
+                 
         <!-- SGPA Calculator -->
-        <div id="sgpa-content" class="sgpa-section" style="display: none;">
+        <div id="sgpa-content" class="sgpa-section">
             <fieldset>
                 <legend>SGPA Calculator</legend>
                 <form id="sgpaForm">
+                    <!-- SGPA Form Fields -->
                     <div class="form-row">
                         <div class="form-item">
-                            <label for="PHYSICS">PHYSICS </label>
+                            <label for="PHYSICS">PHYSICS</label>
                             <select id="PHYSICS">
                                 <option value="0">EX</option>
                                 <option value="4">A</option>
@@ -33,10 +106,8 @@
                                 <option value="20">E</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="form-row">
                         <div class="form-item">
-                            <label for="CHEMISTRY">CHEMISTRY </label>
+                            <label for="CHEMISTRY">CHEMISTRY</label>
                             <select id="CHEMISTRY">
                                 <option value="0">EX</option>
                                 <option value="4">A</option>
@@ -49,7 +120,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-item">
-                            <label for="MATHS">MATHS </label>
+                            <label for="MATHS">MATHS</label>
                             <select id="MATHS">
                                 <option value="0">EX</option>
                                 <option value="5">A</option>
@@ -59,10 +130,8 @@
                                 <option value="25">E</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="form-row">
                         <div class="form-item">
-                            <label for="IT">IT </label>
+                            <label for="IT">IT</label>
                             <select id="IT">
                                 <option value="0">EX</option>
                                 <option value="1">A</option>
@@ -75,7 +144,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-item">
-                            <label for="ENG">ENG </label>
+                            <label for="ENG">ENG</label>
                             <select id="ENG">
                                 <option value="0">EX</option>
                                 <option value="3">A</option>
@@ -85,10 +154,8 @@
                                 <option value="15">E</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="form-row">
                         <div class="form-item">
-                            <label for="TELUGU">TELUGU </label>
+                            <label for="TELUGU">TELUGU</label>
                             <select id="TELUGU">
                                 <option value="0">EX</option>
                                 <option value="3">A</option>
@@ -111,8 +178,6 @@
                                 <option value="5">E</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="form-row">
                         <div class="form-item">
                             <label for="CHEMISTRY-LAB">CHEMISTRY LAB</label>
                             <select id="CHEMISTRY-LAB">
@@ -138,140 +203,220 @@
                             </select>
                         </div>
                     </div>
-
-                    <button type="button" id="calculate-sgpa-btn" onclick="calculateSGPA()">Calculate SGPA</button>
-
+                    
+                    <button type="button" id="calculate-sgpa-btn" class="calculate-btn" onclick="calculateSGPA()">Calculate SGPA</button>
+                    
                     <div class="result" id="sgpa-result"></div>
                     <div class="congratulations" id="sgpa-congratulations"></div>
                 </form>
             </fieldset>
         </div>
-        
+                 
         <!-- CGPA Calculator -->
-        <div id="cgpa-content" class="cgpa-section" style="display: none;">
+        <div id="cgpa-content" class="cgpa-section hidden">
             <fieldset>
                 <legend>CGPA Calculator</legend>
-                <form id="cgpaForm">
-                    <div class="form-row">
-                        <div class="form-item1">
-                            <label class="label" for="Sem1">P-01 S-01:</label>
-                            <input type="number" id="Sem1" placeholder="Enter E-01 S-01 Points" min="0" max="10" step="0.01">
-                        </div>
-
-                        <!-- Semester 2 -->
-                        <div class="form-item1">
-                            <label class="label" for="Sem2">P-01 S-02:</label>
-                            <input type="number" id="Sem2" placeholder="Enter E-01 S-02 Points" min="0" max="10" step="0.01">
-                        </div>
-
-                        <!-- Semester 3 -->
-                        <div class="form-item1">
-                            <label class="label" for="Sem3">P-02 S-01:</label>
-                            <input type="number" id="Sem3" placeholder="Enter E-02 S-01 Points" min="0" max="10" step="0.01">
-                        </div>
-
-                        <!-- Semester 4 -->
-                        <div class="form-item1">
-                            <label class="label" for="Sem4">P-02 S-02:</label>
-                            <input type="number" id="Sem4" placeholder="Enter E-02 S-02 Points" min="0" max="10" step="0.01">
-                        </div>
-                       
-                        
+                
+                <!-- Semester Selection -->
+                <div class="semester-selection">
+                    <button id="sem-btn-2" onclick="selectSemester(2, this)">P-01 S-02</button>
+                    <button id="sem-btn-3" onclick="selectSemester(3, this)">P-02 S-01</button>
+                    <button id="sem-btn-4" onclick="selectSemester(4, this)">P-02 S-02</button>
+                </div>
+                
+                <!-- CGPA Form -->
+                <form id="cgpaForm" class="hidden">
+                    <div class="form-row" id="semester-fields">
+                        <!-- Semester input fields will be inserted here dynamically -->
                     </div>
-                    <button type="button" id="calculate-cgpa-btn" onclick="calculateCGPA()">Calculate CGPA</button>
+                    <button type="button" id="calculate-cgpa-btn" class="calculate-btn" onclick="calculateCGPA()">Calculate CGPA</button>
                     <div class="result" id="cgpa-result"></div>
                     <div class="congratulations" id="cgpa-congratulations"></div>
                 </form>
             </fieldset>
         </div>
     </div>
-    
+     
     <script>
-    function showSGPA() {
-        document.getElementById('sgpa-content').style.display = 'block';
-        document.getElementById('cgpa-content').style.display = 'none';
-        document.getElementById('sgpa-result').innerHTML = '';
-        document.getElementById('sgpa-congratulations').innerHTML = '';
-    }
-    
-    function showCGPA() {
-        document.getElementById('sgpa-content').style.display = 'none';
-        document.getElementById('cgpa-content').style.display = 'block';
-        document.getElementById('cgpa-result').innerHTML = '';
-        document.getElementById('cgpa-congratulations').innerHTML = '';
-    }
-    
-    function calculateSGPA() {
-        let resultText = '';
-        let congratsMessage = '';
-        let divisionClass = '';
-
-        let sum = 0;
-        const subjects = ['PHYSICS', 'CHEMISTRY', 'MATHS', 'IT', 'ENG', 'TELUGU', 'PHYSICS-LAB', 'CHEMISTRY-LAB', 'IT-LAB'];
-        subjects.forEach(subject => {
-            const value = parseFloat(document.getElementById(subject).value);
-            sum += isNaN(value) ? 0 : value;
-        });
-
-        const sgpa = (240 - sum) / 24;
-        resultText += 'Your SGPA is: <span class="cgpa-score">' + sgpa.toFixed(3) + '</span><span class="cgpa-total">/10</span><br>';
-
-        if (sgpa >= 8.00) {
-            congratsMessage = "Congratulations! You are Passed with Distinction.";
-            divisionClass = "distinction";
-        } else if (sgpa >= 7.00) {
-            congratsMessage = "Congratulations! You are Passed with First Class Division.";
-            divisionClass = "first-class";
-        } else if (sgpa >= 6.00) {
-            congratsMessage = "Congratulations! You are Passed with Second Class Division.";
-            divisionClass = "second-class";
-        } else {
-            congratsMessage = "Sorry! You have Failed.";
-            divisionClass = "failed";
+        // Function to show SGPA Calculator
+        function showSGPA() {
+            document.getElementById('sgpa-content').classList.remove('hidden');
+            document.getElementById('cgpa-content').classList.add('hidden');
+            document.getElementById('sgpa-result').innerHTML = '';
+            document.getElementById('sgpa-congratulations').innerHTML = '';
+            // Update button styles
+            document.getElementById('sgpa-btn').classList.add('active');
+            document.getElementById('cgpa-btn').classList.remove('active');
+            // Reset semester selection active state
+            resetSemesterButtons();
         }
-
-        document.getElementById('sgpa-result').innerHTML = resultText;
-        document.getElementById('sgpa-congratulations').innerHTML = `<span class="${divisionClass}">${congratsMessage}</span>`;
-    }
-
-    function calculateCGPA() {
-        let resultText = '';
-        let congratsMessage = '';
-        let divisionClass = '';
-
-        let totalPoints = 0;
-        let totalSemesters = 0;
-
-        for (let i = 1; i <= 4; i++) {
-            const points = parseFloat(document.getElementById(`Sem${i}`).value);
-            totalPoints += isNaN(points) ? 0 : points;
-            totalSemesters++;
+         
+        // Function to show CGPA Calculator
+        function showCGPA() {
+            document.getElementById('sgpa-content').classList.add('hidden');
+            document.getElementById('cgpa-content').classList.remove('hidden');
+            document.getElementById('cgpa-result').innerHTML = '';
+            document.getElementById('cgpa-congratulations').innerHTML = '';
+            document.getElementById('cgpaForm').reset();
+            document.getElementById('cgpaForm').classList.add('hidden');
+            // Update button styles
+            document.getElementById('cgpa-btn').classList.add('active');
+            document.getElementById('sgpa-btn').classList.remove('active');
+            // Reset semester selection active state
+            resetSemesterButtons();
         }
-
-        const cgpa = totalPoints / totalSemesters;
-        resultText += 'Your CGPA is: <span class="cgpa-score">' + cgpa.toFixed(3) + '</span><span class="cgpa-total">/10</span><br>';
-
-        if (cgpa >= 8.00) {
-            congratsMessage = "Congratulations! You are Passed with Distinction.";
-            divisionClass = "distinction";
-        } else if (cgpa >= 7.00) {
-            congratsMessage = "Congratulations! You are Passed with First Class Division.";
-            divisionClass = "first-class";
-        } else if (cgpa >= 6.00) {
-            congratsMessage = "Congratulations! You are Passed with Second Class Division.";
-            divisionClass = "second-class";
-        } else {
-            congratsMessage = "Sorry! You have Failed.";
-            divisionClass = "failed";
+         
+        // Function to reset active state of semester buttons
+        function resetSemesterButtons() {
+            const semesterButtons = document.querySelectorAll('.semester-selection button');
+            semesterButtons.forEach(button => {
+                button.classList.remove('active-semester');
+            });
         }
+         
+        // Function to select the number of semesters and display corresponding input fields
+        function selectSemester(numberOfSemesters, clickedButton) {
+            // Reset active class for all semester buttons
+            const buttons = document.querySelectorAll('.semester-selection button');
+            buttons.forEach(button => button.classList.remove('active-semester'));
+            
+            // Set the clicked button as active
+            clickedButton.classList.add('active-semester');
 
-        document.getElementById('cgpa-result').innerHTML = resultText;
-        document.getElementById('cgpa-congratulations').innerHTML = `<span class="${divisionClass}">${congratsMessage}</span>`;
-    }
+            const semesterFieldsContainer = document.getElementById('semester-fields');
+            semesterFieldsContainer.innerHTML = ''; // Clear previous fields if any
 
-    // Initialize by showing SGPA calculator
-    window.onload = showSGPA;
+            const semesterLabels = ['P-01 S-01', 'P-01 S-02', 'P-02 S-01', 'P-02 S-02'];
+
+            for (let i = 1; i <= numberOfSemesters; i++) {
+                const div = document.createElement('div');
+                div.className = 'form-item1';
+                
+                const label = document.createElement('label');
+                label.className = 'label';
+                label.setAttribute('for', `Sem${i}`);
+                label.innerText = `${semesterLabels[i-1]}:`;
+                
+                const input = document.createElement('input');
+                input.type = 'number';
+                input.id = `Sem${i}`;
+                input.placeholder = `Enter ${semesterLabels[i-1]} Points`;
+                input.min = 0;
+                input.max = 10;
+                input.step = 0.01;
+                
+                div.appendChild(label);
+                div.appendChild(input);
+                semesterFieldsContainer.appendChild(div);
+            }
+
+            // Show the form (keep buttons visible)
+            document.getElementById('cgpaForm').classList.remove('hidden');
+        }
+         
+        // Function to calculate SGPA
+        function calculateSGPA() {
+            let resultText = '';
+            let congratsMessage = '';
+            let divisionClass = '';
+             
+            let sum = 0;
+            const subjects = ['PHYSICS', 'CHEMISTRY', 'MATHS', 'IT', 'ENG', 'TELUGU', 'PHYSICS-LAB', 'CHEMISTRY-LAB', 'IT-LAB'];
+            for (let subject of subjects) {
+                const value = parseFloat(document.getElementById(subject).value);
+                if (isNaN(value)) {
+                    alert(`Please select a grade for ${subject}.`);
+                    return;
+                }
+                // Assuming maximum value based on the dropdown options (e.g., E = 20 or 25)
+                let maxValue = 25; // Set to highest possible value among subjects
+                if (subject === 'MATHS') maxValue = 25;
+                else if (['PHYSICS', 'CHEMISTRY', 'ENG', 'TELUGU'].includes(subject)) maxValue = 20;
+                else if (['IT', 'PHYSICS-LAB', 'CHEMISTRY-LAB', 'IT-LAB'].includes(subject)) maxValue = 5;
+
+                if (value < 0 || value > maxValue) {
+                    alert(`Invalid points for ${subject}. Please enter a value between 0 and ${maxValue}.`);
+                    return;
+                }
+                sum += value;
+            }
+             
+            const sgpa = (240 - sum) / 24;
+            resultText += `Your SGPA is: <span class="cgpa-score">${sgpa.toFixed(3)}</span><span class="cgpa-total">/10</span>`;
+             
+            if (sgpa >= 8.00) {
+                congratsMessage = "Congratulations! You have Passed with Distinction.";
+                divisionClass = "distinction";
+            } else if (sgpa >= 7.00) {
+                congratsMessage = "Congratulations! You have Passed with First Class Division.";
+                divisionClass = "first-class";
+            } else if (sgpa >= 6.00) {
+                congratsMessage = "Congratulations! You have Passed with Second Class Division.";
+                divisionClass = "second-class";
+            } else {
+                congratsMessage = "Sorry! You have Failed.";
+                divisionClass = "failed";
+            }
+             
+            document.getElementById('sgpa-result').innerHTML = resultText;
+            document.getElementById('sgpa-congratulations').innerHTML = `<span class="${divisionClass}">${congratsMessage}</span>`;
+        }
+         
+        // Function to calculate CGPA
+        function calculateCGPA() {
+            let resultText = '';
+            let congratsMessage = '';
+            let divisionClass = '';
+             
+            let totalPoints = 0;
+            let totalSemesters = 0;
+             
+            // Get all visible semester input fields
+            const semesterFields = document.querySelectorAll('#semester-fields input');
+            for (let input of semesterFields) {
+                const points = parseFloat(input.value);
+                if (isNaN(points)) {
+                    // If any field is empty, alert the user
+                    alert("Please enter points for all selected semesters.");
+                    return;
+                }
+                if (points < 0 || points > 10) {
+                    alert(`Invalid points entered in ${input.id}. Please enter a value between 0 and 10.`);
+                    return;
+                }
+                totalPoints += points;
+                totalSemesters++;
+            }
+             
+            if (totalSemesters === 0) {
+                alert("Please select at least one semester.");
+                return;
+            }
+             
+            const cgpa = totalPoints / totalSemesters;
+            resultText += `Your CGPA is: <span class="cgpa-score">${cgpa.toFixed(3)}</span><span class="cgpa-total">/10</span>`;
+             
+            if (cgpa >= 8.00) {
+                congratsMessage = "Congratulations! You have Passed with Distinction.";
+                divisionClass = "distinction";
+            } else if (cgpa >= 7.00) {
+                congratsMessage = "Congratulations! You have Passed with First Class Division.";
+                divisionClass = "first-class";
+            } else if (cgpa >= 6.00) {
+                congratsMessage = "Congratulations! You have Passed with Second Class Division.";
+                divisionClass = "second-class";
+            } else {
+                congratsMessage = "Sorry! You have Failed.";
+                divisionClass = "failed";
+            }
+             
+            document.getElementById('cgpa-result').innerHTML = resultText;
+            document.getElementById('cgpa-congratulations').innerHTML = `<span class="${divisionClass}">${congratsMessage}</span>`;
+        }
+         
+        // Initialize by showing SGPA calculator on page load
+        window.onload = showSGPA;
     </script>
-    
+     
 </body>
 </html>
