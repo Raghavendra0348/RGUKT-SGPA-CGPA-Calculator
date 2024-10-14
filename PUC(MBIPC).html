@@ -311,6 +311,12 @@
             document.getElementById('sgpa-btn').classList.remove('active');
             // Reset semester selection active state
             resetSemesterButtons();
+
+            // **NEW CODE STARTS HERE**
+            // Automatically select "P-02 S-02" semester by default
+            const defaultSemesterButton = document.getElementById('sem-btn-4');
+            selectSemester(4, defaultSemesterButton);
+            // **NEW CODE ENDS HERE**
         }
          
         // Function to reset active state of semester buttons
