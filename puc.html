@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Google Fonts for Beautiful Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-    <!-- Inline CSS for Specific Enhancements (Add to styles.css instead) -->
+    <!-- Inline CSS for Specific Enhancements (Consider moving to styles.css) -->
     <style>
         /* Semester Selection Styling */
         .semester-selection {
@@ -75,6 +75,37 @@
                 padding: 8px;
                 font-size: 0.9em;
             }
+        }
+
+        /* Additional Styles for Results */
+        .cgpa-score {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .cgpa-total {
+            font-weight: normal;
+            color: #666;
+        }
+
+        .distinction {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .first-class {
+            color: #17a2b8;
+            font-weight: bold;
+        }
+
+        .second-class {
+            color: #ffc107;
+            font-weight: bold;
+        }
+
+        .failed {
+            color: #dc3545;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -264,6 +295,12 @@
             document.getElementById('sgpa-btn').classList.remove('active');
             // Reset semester selection active state
             resetSemesterButtons();
+
+            // **NEW CODE STARTS HERE**
+            // Automatically select "P-02 S-02" semester by default
+            const defaultSemesterButton = document.getElementById('sem-btn-4');
+            selectSemester(4, defaultSemesterButton);
+            // **NEW CODE ENDS HERE**
         }
          
         // Function to reset active state of semester buttons
@@ -323,13 +360,14 @@
             let sum = 0;
             const subjects = ['PHYSICS', 'CHEMISTRY', 'MATHS', 'IT', 'ENG', 'TELUGU', 'PHYSICS-LAB', 'CHEMISTRY-LAB', 'IT-LAB'];
             for (let subject of subjects) {
-                const value = parseFloat(document.getElementById(subject).value);
+                const selectElement = document.getElementById(subject);
+                const value = parseFloat(selectElement.value);
                 if (isNaN(value)) {
                     alert(`Please select a grade for ${subject}.`);
                     return;
                 }
-                // Assuming maximum value based on the dropdown options (e.g., E = 20 or 25)
-                let maxValue = 25; // Set to highest possible value among subjects
+                // Determine maximum value based on the subject
+                let maxValue = 25; // Default maximum
                 if (subject === 'MATHS') maxValue = 25;
                 else if (['PHYSICS', 'CHEMISTRY', 'ENG', 'TELUGU'].includes(subject)) maxValue = 20;
                 else if (['IT', 'PHYSICS-LAB', 'CHEMISTRY-LAB', 'IT-LAB'].includes(subject)) maxValue = 5;
