@@ -127,6 +127,17 @@
                     <!-- SGPA Form Fields -->
                     <div class="form-row">
                         <div class="form-item">
+                            <label for="MATHS">MATHS</label>
+                            <select id="MATHS">
+                                <option value="0">EX</option>
+                                <option value="5">A</option>
+                                <option value="10">B</option>
+                                <option value="15">C</option>
+                                <option value="20">D</option>
+                                <option value="25">E</option>
+                            </select>
+                        </div>
+                        <div class="form-item">
                             <label for="PHYSICS">PHYSICS</label>
                             <select id="PHYSICS">
                                 <option value="0">EX</option>
@@ -148,32 +159,20 @@
                                 <option value="20">E</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-item">
-                            <label for="MATHS">MATHS</label>
-                            <select id="MATHS">
-                                <option value="0">EX</option>
-                                <option value="5">A</option>
-                                <option value="10">B</option>
-                                <option value="15">C</option>
-                                <option value="20">D</option>
-                                <option value="25">E</option>
-                            </select>
-                        </div>
+                  
+                        
                         <div class="form-item">
                             <label for="IT">IT</label>
                             <select id="IT">
                                 <option value="0">EX</option>
-                                <option value="1">A</option>
-                                <option value="2">B</option>
-                                <option value="3">C</option>
-                                <option value="4">D</option>
-                                <option value="5">E</option>
+                                <option value="2">A</option>
+                                <option value="4">B</option>
+                                <option value="6">C</option>
+                                <option value="8">D</option>
+                                <option value="10">E</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="form-row">
+                   
                         <div class="form-item">
                             <label for="ENG">ENG</label>
                             <select id="ENG">
@@ -196,8 +195,7 @@
                                 <option value="15">E</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="form-row">
+                   
                         <div class="form-item">
                             <label for="PHYSICS-LAB">PHYSICS LAB</label>
                             <select id="PHYSICS-LAB">
@@ -353,35 +351,19 @@
          
         // Function to calculate SGPA
         function calculateSGPA() {
-            let resultText = '';
+            let sum = 0;
+            const subjects = ['PHYSICS','CHEMISTRY','MATHS','IT', 'ENG','TELUGU',  'PHYSICS-LAB' , 'CHEMISTRY-LAB', 'IT-LAB'];
+
+            subjects.forEach(subject => {
+                sum += parseFloat(document.getElementById(subject).value);
+            });
+
+            const sgpa = (240 - sum) / 24;
+            let resultText = 'Your SGPA is: <span class="cgpa-score">' + sgpa.toFixed(3) + '</span><span class="cgpa-total">/10</span>';
+            
             let congratsMessage = '';
             let divisionClass = '';
-             
-            let sum = 0;
-            const subjects = ['PHYSICS', 'CHEMISTRY', 'MATHS', 'IT', 'ENG', 'TELUGU', 'PHYSICS-LAB', 'CHEMISTRY-LAB', 'IT-LAB'];
-            for (let subject of subjects) {
-                const selectElement = document.getElementById(subject);
-                const value = parseFloat(selectElement.value);
-                if (isNaN(value)) {
-                    alert(`Please select a grade for ${subject}.`);
-                    return;
-                }
-                // Determine maximum value based on the subject
-                let maxValue = 25; // Default maximum
-                if (subject === 'MATHS') maxValue = 25;
-                else if (['PHYSICS', 'CHEMISTRY', 'ENG', 'TELUGU'].includes(subject)) maxValue = 20;
-                else if (['IT', 'PHYSICS-LAB', 'CHEMISTRY-LAB', 'IT-LAB'].includes(subject)) maxValue = 5;
-
-                if (value < 0 || value > maxValue) {
-                    alert(`Invalid points for ${subject}. Please enter a value between 0 and ${maxValue}.`);
-                    return;
-                }
-                sum += value;
-            }
-             
-            const sgpa = (240 - sum) / 24;
-            resultText += `Your SGPA is: <span class="cgpa-score">${sgpa.toFixed(3)}</span><span class="cgpa-total">/10</span>`;
-             
+            
             if (sgpa >= 8.00) {
                 congratsMessage = "Congratulations! You have Passed with Distinction.";
                 divisionClass = "distinction";
