@@ -127,6 +127,17 @@
                     <!-- SGPA Form Fields -->
                     <div class="form-row">
                         <div class="form-item">
+                            <label for="MATHS">MATHS</label>
+                            <select id="MATHS">
+                                <option value="0">EX</option>
+                                <option value="5">A</option>
+                                <option value="10">B</option>
+                                <option value="15">C</option>
+                                <option value="20">D</option>
+                                <option value="25">E</option>
+                            </select>
+                        </div>
+                        <div class="form-item">
                             <label for="PHYSICS">PHYSICS</label>
                             <select id="PHYSICS" name="PHYSICS">
                                 <option value="0">EX</option>
@@ -170,11 +181,11 @@
                             <label for="IT">IT</label>
                             <select id="IT" name="IT">
                                 <option value="0">EX</option>
-                                <option value="1">A</option>
-                                <option value="2">B</option>
-                                <option value="3">C</option>
-                                <option value="4">D</option>
-                                <option value="5">E</option>
+                                <option value="2">A</option>
+                                <option value="4">B</option>
+                                <option value="6">C</option>
+                                <option value="8">D</option>
+                                <option value="10">E</option>
                             </select>
                         </div>
                         <div class="form-item">
@@ -370,44 +381,19 @@
          
         // Function to calculate SGPA
         function calculateSGPA() {
-            let resultText = '';
+           let sum = 0;
+            const subjects =  ['PHYSICS', 'CHEMISTRY', 'BIOLOGY', 'IT', 'ENG', 'TELUGU', 'PHYSICS-LAB', 'CHEMISTRY-LAB', 'BIOLOGY-LAB', 'IT-LAB','MATHS'];
+
+            subjects.forEach(subject => {
+                sum += parseFloat(document.getElementById(subject).value);
+            });
+
+            const sgpa = (280 - sum) / 28;
+            let resultText = 'Your SGPA is: <span class="cgpa-score">' + sgpa.toFixed(3) + '</span><span class="cgpa-total">/10</span>';
+            
             let congratsMessage = '';
             let divisionClass = '';
-             
-            let sum = 0;
-            const subjects = ['PHYSICS', 'CHEMISTRY', 'BIOLOGY', 'IT', 'ENG', 'TELUGU', 'PHYSICS-LAB', 'CHEMISTRY-LAB', 'BIOLOGY-LAB', 'IT-LAB'];
-            for (let subject of subjects) {
-                const value = parseFloat(document.getElementById(subject).value);
-                if (isNaN(value)) {
-                    alert(`Please select a grade for ${subject.replace('-', ' ')}.`);
-                    return;
-                }
-                // Determine maximum value based on the subject
-                let maxValue;
-                if (subject === 'BIOLOGY') {
-                    maxValue = 15;
-                } else if (['PHYSICS', 'CHEMISTRY', 'ENG', 'TELUGU'].includes(subject)) {
-                    maxValue = 20;
-                } else if (['IT', 'PHYSICS-LAB', 'CHEMISTRY-LAB', 'BIOLOGY-LAB', 'IT-LAB'].includes(subject)) {
-                    maxValue = 5;
-                } else {
-                    maxValue = 25; // Default max value
-                }
-
-                if (value < 0 || value > maxValue) {
-                    alert(`Invalid points for ${subject.replace('-', ' ')}. Please enter a value between 0 and ${maxValue}.`);
-                    return;
-                }
-                sum += value;
-            }
-             
-            // Update the total maximum points based on removed MATHS
-            // Assuming total maximum points remain 240 - MATHS was contributing up to 25
-            // So new total maximum points = 240 - 25 = 215
-            const totalMaxPoints = 280;
-            const sgpa = (totalMaxPoints - sum) / 28;
-            resultText += `Your SGPA is: <span class="cgpa-score">${sgpa.toFixed(3)}</span><span class="cgpa-total">/10</span>`;
-             
+            
             if (sgpa >= 8.00) {
                 congratsMessage = "Congratulations! You have Passed with Distinction.";
                 divisionClass = "distinction";
