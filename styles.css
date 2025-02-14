@@ -7,7 +7,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 130vh;
-    background: linear-gradient(270deg, #df5fff, #e6fe7b, #86a8e7, #91eae4);
+    background: linear-gradient(135deg, #a1ffce 0%, #faffd1 100%);
+    /* background: linear-gradient(270deg, #df5fff, #e6fe7b, #86a8e7, #91eae4); */
     background-size: 800% 800%;
     animation: gradientAnimation 10s ease infinite;
 }
@@ -26,7 +27,8 @@ body {
 
 /* Main container styling */
 .container {
-    background: linear-gradient(45deg, #ff6f91, #ff9671, #ffc75f, #f9f871, #00d4ff, #845ec2);
+    background: linear-gradient(135deg, #a1ffce 0%, #faffd1 100%);
+    /* background: linear-gradient(45deg, #ff6f91, #ff9671, #ffc75f, #f9f871, #00d4ff, #845ec2); */
     background-size: 600% 600%;
     animation: gradientAnimation 10s ease infinite;
     background-color: #ffffff;
@@ -50,7 +52,8 @@ h1, h2 {
 }
 
 fieldset {
-    background: linear-gradient(45deg, #ff6f91, #ff9671, #ffc75f, #f9f871, #00d4ff, #845ec2);
+    background: linear-gradient(135deg, #a1ffce 0%, #faffd1 100%);
+    /* background: linear-gradient(45deg, #ff6f91, #ff9671, #ffc75f, #f9f871, #00d4ff, #845ec2); */
     background-size: 600% 600%;
     animation: gradientAnimation 10s ease infinite;
     border: 2px solid #007bff;
@@ -62,7 +65,8 @@ fieldset {
 
 
 legend {
-    background: linear-gradient(45deg, #ff6f91, #ff9671, #ffc75f, #f9f871, #00d4ff, #845ec2);
+    background: linear-gradient(135deg, #a1ffce 0%, #faffd1 100%);
+    /* background: linear-gradient(45deg, #ff6f91, #ff9671, #ffc75f, #f9f871, #00d4ff, #845ec2); */
     background-size: 600% 600%;
     animation: gradientAnimation 10s ease infinite;
     font-size: 1.2em;
