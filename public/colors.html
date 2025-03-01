@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign-In Page with Different Font Families</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0A1828; /* Dark Classic Blue */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .container {
+            background-color: #178582; /* Turquoise */
+            padding: 20px;
+            border-radius: 15px; /* Curved edges */
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* White color shadow */
+            text-align: center;
+            width: 300px;
+            color: #BFA181; /* Gold */
+            animation: gradient 3s ease infinite;
+            background: linear-gradient(135deg, #178582, #BFA181);
+            background-size: 400% 400%;
+            margin: 10px 0;
+        }
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .message {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .image-upload {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .image-upload img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="font-family: 'Poppins', sans-serif;">
+        <div class="message">Sign in and never lose your grades</div>
+    </div>
+    <div class="container" style="font-family: 'Roboto', sans-serif;">
+        <div class="message">Sign in and never lose your grades</div>
+    </div>
+    <div class="container" style="font-family: 'Lato', sans-serif;">
+        <div class="message">Sign in and never lose your grades</div>
+    </div>
+    <div class="container" style="font-family: 'Montserrat', sans-serif;">
+        <div class="message">Sign in and never lose your grades</div>
+    </div>
+    <div class="container" style="font-family: 'Open Sans', sans-serif;">
+        <div class="message">Sign in and never lose your grades</div>
+    </div>
+    <div class="container" style="font-family: 'Merriweather', serif;">
+        <div class="message">Sign in and never lose your grades</div>
+    </div>
+    <div class="container" style="font-family: 'Oswald', sans-serif;">
+        <div class="message">Sign in and never lose your grades</div>
+    </div>
+    <div class="container" style="font-family: 'Raleway', sans-serif;">
+        <div class="message">Sign in and never lose your grades</div>
+    </div>
+    <div class="container" style="font-family: 'Ubuntu', sans-serif;">
+        <div class="message">Sign in and never lose your grades</div>
+    </div>
+    <div class="container" style="font-family: 'Nunito', sans-serif;">
+        <div class="message">Sign in and never lose your grades</div>
+    </div>
+</body>
+</html>

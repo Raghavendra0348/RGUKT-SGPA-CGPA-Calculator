@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T486B8C5X0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T486B8C5X0');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Selector</title>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+             @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+    overflow: auto; /* Enable scrolling */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(270deg, #df5fff, #e6fe7b, #86a8e7, #91eae4);
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-size: 800% 800%;
+    /* animation: gradientAnimation 10s ease infinite; */
+}
+
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            text-align: center;
+            margin-bottom: 120px; /* Space for the fixed footer */
+            width: 100%;
+            max-width: 600px; /* Ensures content does not stretch too much on larger screens */
+        }
+
+        .branches {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            color: #0A1828;
+
+            margin-bottom: 30px;
+        }
+
+        .branch-box {
+            background-color: #0A1828;
+            border-radius: 10px;
+            padding: 20px;
+            width: 130px;
+            /* color: #d8f5fa; */
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .branch-box:hover {
+            background-color: #d8f5fa;
+            transform: scale(1.05);
+            border-color: #0A1828;
+
+            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8);
+        }
+
+        .branch-box h2 {
+            margin: 0;
+            font-size: 18px;
+                  color: #d8f5fa;
+                  
+            
+        }
+
+        .branch-box:hover h2 {
+            margin: 0;
+            font-size: 18px;
+                  color: #0A1828;
+                  
+            
+        }
+
+        h1 {
+            color: blueviolet;
+            margin-bottom: 40px;
+            font-size: 24px; /* Adjust for better mobile visibility */
+            display: flex; /* Enable flex display for the animation */
+            flex-wrap: wrap; /* Allow wrapping for longer titles */
+            justify-content: center; /* Center the letters */
+            font-family: cursive; /* Change font to cursive */
+            letter-spacing: -1px; /* Reduce letter spacing */
+        }
+
+        .letter {
+            opacity: 0; /* Start hidden */
+            transform: translateY(20px); /* Start below */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for smooth effect */
+            margin: 0 .5px; /* Add margin for spacing between letters */
+        }
+
+        /* Footer Section */
+       
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .branch-box {
+                width: 130px; /* Smaller width for smaller screens */
+                padding: 15px;
+
+            }
+
+            .branches {
+                color: #0A1828;
+
+                gap: 15px; /* Reduced gap for smaller screens */
+            }
+
+            h1 {
+                font-size: 20px; /* Smaller font size for header */
+            }
+
+            .social-icon {
+                font-size: 20px; /* Smaller icons on mobile */
+            }
+        }
+        h2{font-family: 'Playfair Display', serif;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="department-title"></h1>
+
+        <!-- Department Branches -->
+        <div class="branches">
+            <div class="branch-box" onclick="redirectTo('puc.html')">
+                <h2>PUC (MPC)</h2>
+            </div>
+            <div class="branch-box" onclick="redirectTo('PUC(MBIPC).html')">
+                <h2>PUC (MBIPC)</h2>
+            </div>
+        </div>
+
+        <div class="branches">
+            <div class="branch-box" onclick="redirectTo('cse_semester.html')">
+                <h2>CSE</h2>
+            </div>
+        </div>
+
+        <div class="branches">
+            <div class="branch-box" onclick="redirectTo('ece_semester.html')">
+                <h2>ECE</h2>
+            </div>
+            <div class="branch-box" onclick="redirectTo('civil_semester.html')">
+                <h2>CIVIL</h2>
+            </div>
+        </div>
+
+        <div class="branches">
+            <div class="branch-box" onclick="redirectTo('mech_semester.html')">
+                <h2>MECH</h2>
+            </div>
+            <div class="branch-box" onclick="redirectTo('mme_semester.html')">
+                <h2>MME</h2>
+            </div>
+        </div>
+
+        <div class="branches">
+            <div class="branch-box" onclick="redirectTo('chemical_semester.html')">
+                <h2>CHEMICAL</h2>
+            </div>
+            <div class="branch-box" onclick="redirectTo('eee_semester.html')">
+                <h2>EEE</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    
+
+    <script>
+        function redirectTo(url) {
+            document.body.style.opacity = 0; // Fade out before changing page
+            setTimeout(function() {
+                window.location.href = url;
+            }, 500); // Redirect after the fade effect (500ms)
+        }
+
+        function animateTitle() {
+            const title = "Select   Department";
+            const titleContainer = document.getElementById('department-title');
+            title.split('').forEach((letter, index) => {
+                const span = document.createElement('span');
+                span.textContent = letter;
+                span.classList.add('letter');
+                titleContainer.appendChild(span);
+                setTimeout(() => {
+                    span.style.opacity = 1;
+                    span.style.transform = 'translateY(0)'; // Move to original position
+                }, index * 150); // Adjust delay for each letter
+            });
+        }
+
+        // Call the function to animate the title
+        animateTitle();
+    </script>
+
+</body>
+</html>
