@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dashboard</h1>
+        <p>Welcome, <span id="user-name"></span>!</p>
+        
+        <!-- Save Results Section -->
+        <h2>Save Results</h2>
+        <input type="text" id="semester-name" placeholder="Enter Semester Name">
+        <textarea id="results" placeholder="Enter Results"></textarea>
+        <button id="save-results">Save Results</button>
+
+        <!-- Display Results Section -->
+        <h2>Your Saved Results</h2>
+        <div id="saved-results"></div>
+
+        <!-- Logout -->
+        <button id="logout-btn">Logout</button>
+    </div>
+
+    <script src="common.js"></script>
+    <script>
+        // Display user name
+        const user = JSON.parse(sessionStorage.getItem('user'));
+        if (!user) {
+            window.location.href = 'index.html';
+        }
+        document.getElementById('user-name').textContent = user.name;
+
+        // Save results to local storage
+        document.getElementById('save-results').onclick = () => {
+            const semester = document.getElementById('semester-name').value;
+            const results = document.getElementById('results').value;
+
+            if (!semester || !results) {
+                alert('Please fill all fields.');
+                return;
+            }
+
+            const userData = JSON.parse(localStorage.getItem(user.email)) || {};
+            userData[semester] = results;
+            localStorage.setItem(user.email, JSON.stringify(userData));
+
+            alert('Results saved successfully!');
+            location.reload();
+        };
+
+        // Load saved results
+        const savedResults = JSON.parse(localStorage.getItem(user.email)) || {};
+        const resultsContainer = document.getElementById('saved-results');
+        for (const [semester, result] of Object.entries(savedResults)) {
+            const p = document.createElement('p');
+            p.textContent = `${semester}: ${result}`;
+            resultsContainer.appendChild(p);
+        }
+
+        // Logout
+        document.getElementById('logout-btn').onclick = () => {
+            sessionStorage.clear();
+            window.location.href = 'index.html';
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+[debug] [2025-02-28T10:37:49.440Z] ----------------------------------------------------------------------
+[debug] [2025-02-28T10:37:49.443Z] Command:       /usr/bin/node /usr/local/bin/firebase init hosting
+[debug] [2025-02-28T10:37:49.444Z] CLI Version:   13.32.0
+[debug] [2025-02-28T10:37:49.444Z] Platform:      linux
+[debug] [2025-02-28T10:37:49.445Z] Node Version:  v18.19.1
+[debug] [2025-02-28T10:37:49.445Z] Time:          Fri Feb 28 2025 16:07:49 GMT+0530 (India Standard Time)
+[debug] [2025-02-28T10:37:49.445Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-02-28T10:37:49.450Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-02-28T10:37:49.876Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-02-28T10:37:49.877Z] > authorizing via signed-in user (arellaraghavendra@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/a-raghavendra/Desktop/PROJK/RGUKT_CGPA_Calculator
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-02-28T10:37:49.883Z] Using project from CLI flag: rgukt-sgpa-cgpa-calculator
+[debug] [2025-02-28T10:37:49.885Z] Checked if tokens are valid: false, expires at: 1740341318770
+[debug] [2025-02-28T10:37:49.886Z] Checked if tokens are valid: false, expires at: 1740341318770
+[debug] [2025-02-28T10:37:49.886Z] > refreshing access token with scopes: []
+[debug] [2025-02-28T10:37:49.889Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-02-28T10:37:49.889Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-02-28T10:37:50.700Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-02-28T10:37:50.700Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-02-28T10:37:50.719Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rgukt-sgpa-cgpa-calculator [none]
+[debug] [2025-02-28T10:37:50.870Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-02-28T10:37:50.871Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-02-28T10:37:52.720Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rgukt-sgpa-cgpa-calculator 200
+[debug] [2025-02-28T10:37:52.721Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rgukt-sgpa-cgpa-calculator {"projectId":"rgukt-sgpa-cgpa-calculator","projectNumber":"71013965900","displayName":"RGUKT-SGPA-CGPA-Calculator","name":"projects/rgukt-sgpa-cgpa-calculator","resources":{"hostingSite":"rgukt-sgpa-cgpa-calculator"},"state":"ACTIVE","etag":"1_68da2557-956a-4dd8-aabf-9b9fc2716df6"}
+[info] i  Using project rgukt-sgpa-cgpa-calculator (RGUKT-SGPA-CGPA-Calculator) 
+[info] 
+=== Hosting Setup
+[debug] [2025-02-28T10:37:52.736Z] Checked if tokens are valid: true, expires at: 1740742669701
+[debug] [2025-02-28T10:37:52.736Z] Checked if tokens are valid: true, expires at: 1740742669701
+[debug] [2025-02-28T10:37:52.736Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rgukt-sgpa-cgpa-calculator [none]
+[debug] [2025-02-28T10:37:53.743Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rgukt-sgpa-cgpa-calculator 200
+[debug] [2025-02-28T10:37:53.744Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rgukt-sgpa-cgpa-calculator {"projectId":"rgukt-sgpa-cgpa-calculator","projectNumber":"71013965900","displayName":"RGUKT-SGPA-CGPA-Calculator","name":"projects/rgukt-sgpa-cgpa-calculator","resources":{"hostingSite":"rgukt-sgpa-cgpa-calculator"},"state":"ACTIVE","etag":"1_68da2557-956a-4dd8-aabf-9b9fc2716df6"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2025-02-28T10:38:33.153Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2025-02-28T10:38:33.904Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2025-02-28T10:38:33.904Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"11.4.0","browserURL":"https://www.gstatic.com/firebasejs/11.4.0/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/11.4.0/firebase.tgz"},"live":{"version":"11.4","browserURL":"https://www.gstatic.com/firebasejs/live/11.4/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/11.4/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/11.4.0/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/11.4.0/firebase-auth/cordova.js","auth/web-extension":"https://www.gstatic.com/firebasejs/11.4.0/firebase-auth/web-extension.js","functions":"https://www.gstatic.com/firebasejs/11.4.0/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/11.4.0/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/11.4.0/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/11.4.0/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/11.4.0/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/11.4.0/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/11.4.0/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js","vertexai":"https://www.gstatic.com/firebasejs/11.4.0/firebase-vertexai.js","data-connect":"https://www.gstatic.com/firebasejs/11.4.0/firebase-data-connect.js","firestore.memory":"https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.memory.js"}}
+[info] i  Skipping write of public/index.html 
+[info] 
+[info] i  Detected a .git folder at /home/a-raghavendra 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=60416688&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2025-02-28T10:39:39.267Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2025-02-28T10:39:39.267Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2025-02-28T10:39:39.957Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2025-02-28T10:39:39.957Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2025-02-28T10:39:39.971Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2025-02-28T10:39:41.071Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2025-02-28T10:39:41.072Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"Raghavendra0348","id":146744057,"node_id":"U_kgDOCL8i-Q","avatar_url":"https://avatars.githubusercontent.com/u/146744057?v=4","gravatar_id":"","url":"https://api.github.com/users/Raghavendra0348","html_url":"https://github.com/Raghavendra0348","followers_url":"https://api.github.com/users/Raghavendra0348/followers","following_url":"https://api.github.com/users/Raghavendra0348/following{/other_user}","gists_url":"https://api.github.com/users/Raghavendra0348/gists{/gist_id}","starred_url":"https://api.github.com/users/Raghavendra0348/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Raghavendra0348/subscriptions","organizations_url":"https://api.github.com/users/Raghavendra0348/orgs","repos_url":"https://api.github.com/users/Raghavendra0348/repos","events_url":"https://api.github.com/users/Raghavendra0348/events{/privacy}","received_events_url":"https://api.github.com/users/Raghavendra0348/received_events","type":"User","user_view_type":"private","site_admin":false,"name":"A Raghavendra ","company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"notification_email":null,"public_repos":3,"public_gists":0,"followers":3,"following":2,"created_at":"2023-10-02T14:09:19Z","updated_at":"2025-02-14T18:36:06Z","private_gists":0,"total_private_repos":0,"owned_private_repos":0,"disk_usage":367,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] ✔  Success! Logged into GitHub as Raghavendra0348 
+[info] 
