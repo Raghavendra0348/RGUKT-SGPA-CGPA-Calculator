@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="rgukt.ico">
+
      <meta property="og:description" content="Easily calculate your SGPA and CGPA for all RGUKT departments including PUC(MPC/MBiPC), CSE, ECE, CIVIL, MECH, and more. Fast and accurate results." />
     
     <meta name="description" content="Calculate SGPA & CGPA for PUC(MPC & MBiPC), CSE, ECE, EEE ,CIVIL & More | Accurate, Reliable Tool for All RGUKT Students." /><title>Sign-In Page</title>
@@ -75,6 +77,21 @@ max-width: 350px; /* Limits the width on larger screens */
         width: 100%;
         height: auto;
     }
+        .spinner {
+    margin: 10px auto;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #0A1828;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 
     button {
         background-color: #0A1828; /* Black */
@@ -176,11 +193,16 @@ max-width: 350px; /* Limits the width on larger screens */
         firebase.initializeApp(firebaseConfig);
 
         // Handle authentication state
-        firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                window.location.replace('main.html');
-            }
-        });
+       firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        document.querySelector(".small_cont").style.display = "none"; // Hide main UI
+        document.getElementById("loader").style.display = "block";   // Show loader
+        setTimeout(() => {
+            window.location.replace('main.html');
+        }, 500); // 0.5 second delay
+    }
+});
+
 
         // Google Sign-In
         function signInWithGoogle() {
@@ -201,6 +223,7 @@ max-width: 350px; /* Limits the width on larger screens */
     </script>
 </head>
 <body>
+    
     <div class="small_cont">
         <div class="message">Sign in and never lose your grades</div>
         <div class="image-upload">
@@ -208,5 +231,10 @@ max-width: 350px; /* Limits the width on larger screens */
         </div>
         <button onclick="signInWithGoogle()">Sign In with Google</button>
     </div>
+    <div id="loader" style="display: none; text-align: center; color: white;">
+    <p>Redirecting, please wait...</p>
+    <div class="spinner"></div>
+</div>
+
 </body>
 </html>
