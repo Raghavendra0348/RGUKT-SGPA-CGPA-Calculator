@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - RGUKT SGPA CGPA Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 50px 20px;
+    }
+
+    .about-card {
+      background: #ffffff;
+      max-width: 950px;
+      width: 100%;
+      padding: 50px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-size: 2.6em;
+      margin-bottom: 20px;
+      color: #007aff;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .highlight {
+      color: #007aff;
+      font-weight: bold;
+    }
+
+    .divider {
+      height: 4px;
+      width: 60px;
+      background: #007aff;
+      margin: 10px auto 20px;
+      border-radius: 2px;
+    }
+
+    .cta {
+      margin-top: 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 12px 25px;
+      background: #007aff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cta:hover {
+      background: #005bb5;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.95rem;
+      color: #777;
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      .about-card {
+        padding: 40px 20px;
+      }
+
+      h1 {
+        font-size: 2.2em;
+      }
+
+      p {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="about-card">
+    <h1>About </h1>
+    <div class="divider"></div>
+    <p>
+      Welcome to the <span class="highlight">RGUKT SGPA CGPA Calculator</span>, a powerful tool designed to simplify academic calculations for RGUKT students.
+    </p>
+    <p>
+      Our platform, built by students and developers, ensures <span class="highlight">accuracy, security, and ease</span> in tracking SGPA and CGPA without compromising data privacy.
+    </p>
+    <p>
+      Whether you're planning your academic future or analyzing your progress, our intuitive tool provides reliable results in seconds.
+    </p>
+    <p>
+      We continuously enhance our calculator with new features based on user feedback. <span class="highlight">Thank you for being part of our journey!</span>
+    </p>
+    <button class="cta">Start Calculating</button>
+    <footer>
+      &copy; 2025 RGUKT SGPA CGPA Calculator | Designed for Academic Success
+    </footer>
+  </div>
+
+</body>
+</html>

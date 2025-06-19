@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - RGUKT SGPA CGPA Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #232526, #414345);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 50px 20px;
+    }
+
+    .contact-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      max-width: 650px;
+      width: 100%;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      font-size: 2.4em;
+      margin-bottom: 15px;
+      color: #ffffff;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .divider {
+      height: 3px;
+      width: 50px;
+      background: #ffffff;
+      margin: 10px auto 20px;
+      border-radius: 2px;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-group i {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: #ffffff;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px 40px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.3);
+      transition: 0.3s;
+      color: #ffffff;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    .submit-btn {
+      font-size: 1rem;
+      padding: 12px 25px;
+      background: #ffffff;
+      color: #232526;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .submit-btn:hover {
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .accordion {
+      margin-top: 25px;
+      text-align: left;
+    }
+
+    .accordion-item {
+      background: rgba(255, 255, 255, 0.2);
+      margin-bottom: 10px;
+      border-radius: 8px;
+      padding: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .accordion-item:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 10px;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      .contact-container {
+        padding: 30px 20px;
+      }
+
+      h2 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+    <div class="divider"></div>
+    <form id="contactForm">
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" id="name" placeholder="Your Name" required>
+      </div>
+
+      <div class="input-group">
+        <i class="fas fa-envelope"></i>
+        <input type="email" id="email" placeholder="Your Email" required>
+      </div>
+
+      <div class="input-group">
+        <i class="fas fa-comment-dots"></i>
+        <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+
+    <div class="accordion">
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <strong>How long does it take to get a response?</strong>
+        <div class="accordion-content">We typically reply within 24 hours.</div>
+      </div>
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <strong>Is my data safe?</strong>
+        <div class="accordion-content">Yes, we ensure full privacy and never share your data.</div>
+      </div>
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <strong>Can I suggest improvements?</strong>
+        <div class="accordion-content">Of course! We love receiving feedback.</div>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 RGUKT SGPA CGPA Calculator | Your academic partner!
+    </footer>
+  </div>
+
+  <script>
+    function toggleAccordion(element) {
+      const content = element.querySelector(".accordion-content");
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>
