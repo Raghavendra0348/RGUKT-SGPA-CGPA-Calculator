@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RGUKT CGPA SGPA CALCULATOR</title>
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T486B8C5X0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T486B8C5X0');
+</script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
@@ -328,6 +337,199 @@ iframe {
         font-size: 1.5rem;
     }
 }
+#user-profile-pic {
+  transition: transform 0.2s;
+}
+#user-profile-pic:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.user-dropdown {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 15px;
+  z-index: 9999;
+  min-width: 220px;
+  transition: all 0.3s ease;
+}
+
+.user-dropdown.show {
+  display: block;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.user-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #09b4f8;
+  object-fit: cover;
+}
+
+.user-details {
+  flex: 1;
+}
+
+.user-name {
+  margin: 0;
+  font-weight: 600;
+  font-size: 15px;
+  color: #333;
+}
+
+.user-email {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.dropdown-btn {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  font-size: 14px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.logout-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+.user-dropdown {
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 14px;
+  padding: 16px;
+  z-index: 9999;
+  min-width: 240px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.user-dropdown.show {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #09b4f8;
+  object-fit: cover;
+}
+
+.user-details {
+  margin-left: 10px;
+}
+
+.user-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.user-email {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.dropdown-btn {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  background-color: #f5f5f5;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-btn i {
+  margin-right: 10px;
+  color: #09b4f8;
+}
+
+.dropdown-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.logout-btn {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.logout-btn i {
+  color: #fff;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#user-profile-pic {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+#user-profile-pic:hover {
+  transform: scale(1.1);
+}
+
 
     </style>
 </head>
@@ -345,72 +547,159 @@ iframe {
             </div>
             <div class="calc-line">CGPA & SGPA Calculator</div>
         </div>
-        <div>
+       
+          
+        <div class="header-icons">
             <i class="home-icon fas fa-home" onclick="window.location.href='main.html'"></i>
+            <img id="user-profile-pic" src="" alt="User Profile Picture" style="display: none;">
             <i class="menu-icon fas fa-bars" onclick="toggleMenu()"></i>
         </div>
+        
     </header>
 
     <div id="content">
         <iframe src="department.html"></iframe>
     </div>
 
-    <div class="menu-overlay" onclick="toggleMenu()"></div>
+ 
+    
+    <!-- ✅ This is OUTSIDE the menu-bar, placed globally in the body near header -->
+  <!-- Profile Dropdown -->
+<!-- Overlay (invisible background to detect clicks outside) -->
+<div id="user-dropdown-overlay" style="display: none; position: fixed; inset: 0; z-index: 9998;"></div>
 
-    <div class="menu-bar">
-        <div class="menu-heading">Menu</div>
-        <button onclick="navigateTo('coming_soon.html')">Profile</button>
-        <button onclick="navigateTo('coming_soon.html')">Settings</button>
-        <button onclick="logout()" class="logout">Logout</button>
+<!-- Enhanced Dropdown -->
+<div id="user-dropdown" class="user-dropdown">
+  <div class="dropdown-header">
+    <img id="dropdown-profile-img" src="" alt="User" class="user-img" />
+    <div class="user-details">
+      <p id="user-name" class="user-name">RGUKT User</p>
+      <p id="user-email" class="user-email">user@example.com</p>
     </div>
+  </div>
+  <hr>
+  <button onclick="navigateTo('coming_soon.html')" class="dropdown-btn">
+    <i class="fas fa-user-circle"></i> View Profile
+  </button>
+  <button onclick="logout()" class="dropdown-btn logout-btn">
+    <i class="fas fa-sign-out-alt"></i> Logout
+  </button>
+</div>
+<div class="menu-overlay" onclick="toggleMenu()"></div>
 
-    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
-    <script>
-        // Firebase Config
-         const firebaseConfig = {
-            apiKey: "AIzaSyBa5bYbUgLiluU6eCimeA8-jVx1i4_xRmA",
-            authDomain: "rgukt-sgpa-cgpa-calculator.firebaseapp.com",
-            projectId: "rgukt-sgpa-cgpa-calculator",
-            storageBucket: "rgukt-sgpa-cgpa-calculator.firebasestorage.app",
-            messagingSenderId: "71013965900",
-            appId: "1:71013965900:web:9dc65476149f6ff91954e9",
-            measurementId: "G-K22L37T7Z2"
+<div class="menu-bar">
+    <div class="menu-heading">Menu</div>
+    <button onclick="navigateTo('about.html')">
+        <i class="fas fa-info-circle"></i> About
+    </button>
+    <button onclick="navigateTo('contact.html')">
+        <i class="fas fa-envelope"></i>
+        Contact</button>
+        <button onclick="navigateTo('terms.html')">
+            
+            <i class="fas fa-file-alt"></i>
+            Terms & Conditions</button>
+        </button>
+        <button onclick="navigateTo('privacy_policy.html')">
+            <i class="fas fa-shield-alt"></i>
+            Privacy Policy</button>
+    <button onclick="logout()" class="logout">Logout</button>
+</div>
+
+    
+
+      <script>
+        // Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyBa5bYbUgLiluU6eCimeA8-jVx1i4_xRmA",
+          authDomain: "rgukt-sgpa-cgpa-calculator.firebaseapp.com",
+          projectId: "rgukt-sgpa-cgpa-calculator",
+          storageBucket: "rgukt-sgpa-cgpa-calculator.firebasestorage.app",
+          messagingSenderId: "71013965900",
+          appId: "1:71013965900:web:9dc65476149f6ff91954e9",
+          measurementId: "G-K22L37T7Z2"
         };
-        const app = firebase.initializeApp(firebaseConfig);
+      
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
-
+      
+        // Refresh logo click
         function refreshLogo() {
-            window.location.reload();
+          window.location.reload();
         }
-
+      
+        // Toggle side menu
         function toggleMenu() {
-            document.querySelector('.menu-bar').classList.toggle('open');
-            document.querySelector('.menu-overlay').classList.toggle('open');
+          document.querySelector('.menu-bar').classList.toggle('open');
+          document.querySelector('.menu-overlay').classList.toggle('open');
         }
-
+      
+        // Navigate to other pages
         function navigateTo(page) {
-            window.location.href = page;
+          window.location.href = page;
         }
-
+      
+        // Logout user
         function logout() {
-            auth.signOut().then(() => {
-                alert("You have logged out.");
-                window.location.href = 'index.html';
-            });
+          auth.signOut().then(() => {
+            alert("You have logged out.");
+            window.location.href = 'index.html';
+          }).catch((error) => {
+            console.error("Logout error:", error);
+          });
         }
+      
+        // Toggle profile dropdown on profile image click
+        const profileImg = document.getElementById("user-profile-pic");
+const dropdown = document.getElementById("user-dropdown");
+const overlay = document.getElementById("user-dropdown-overlay");
 
-        // Firebase Authentication State Observer
-        firebase.auth().onAuthStateChanged((user) => {
-            if (user) {
-                // User is logged in
-                console.log(user);
-            } else {
-                // User is logged out
-                console.log("User not logged in.");
-            }
-        });
-    </script>
+profileImg.addEventListener("click", (e) => {
+  e.stopPropagation();
+  dropdown.classList.toggle("show");
+  overlay.style.display = dropdown.classList.contains("show") ? "block" : "none";
+});
+
+// Click outside — anywhere — closes it
+overlay.addEventListener("click", () => {
+  dropdown.classList.remove("show");
+  overlay.style.display = "none";
+});
+
+// Optional: Hide on scroll or resize too
+window.addEventListener("scroll", () => {
+  dropdown.classList.remove("show");
+  overlay.style.display = "none";
+});
+window.addEventListener("resize", () => {
+  dropdown.classList.remove("show");
+  overlay.style.display = "none";
+});
+
+  // Firebase Auth State
+  firebase.auth().onAuthStateChanged((user) => {
+    const dropdownImg = document.getElementById("dropdown-profile-img");
+    const nameDisplay = document.getElementById("user-name");
+    const emailDisplay = document.getElementById("user-email");
+
+    if (user) {
+      const profileURL = user.photoURL || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.displayName || "User")}`;
+      profileImg.src = profileURL;
+      profileImg.style.display = "inline-block";
+      dropdownImg.src = profileURL;
+      nameDisplay.textContent = user.displayName || "RGUKT User";
+      emailDisplay.textContent = user.email;
+    } else {
+      profileImg.style.display = "none";
+      dropdown.classList.remove("show");
+    }
+  });
+
+
+      </script>
+      
+      
 </body>
 
 </html>
