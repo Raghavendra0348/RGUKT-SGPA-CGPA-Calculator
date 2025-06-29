@@ -529,6 +529,93 @@ iframe {
 #user-profile-pic:hover {
   transform: scale(1.1);
 }
+/* Fieldset Styling */
+.connect-section {
+    margin: 20px auto;
+    padding: 10px;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    border-radius: 12px;
+    max-width: 600px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #09b4f8;
+    text-align: center;
+}
+
+/* Legend Styling */
+.connect-section legend {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+    padding: 0 10px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+/* Links Container */
+.connect-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 15px; /* Space between items */
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* Individual Link Styling */
+.connect-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background-color: #2c3e50;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon Styling */
+.connect-link i {
+    color: #09b4f8;
+    font-size: 18px;
+}
+
+/* Hover Effects */
+.connect-link:hover {
+    background-color: #34495e;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .connect-links {
+        grid-template-columns: 1fr;
+         /* Single column for small screens */
+         font-size: 14px;
+         padding: 10px 15px;
+         
+        }
+        .section-gap {
+            margin-top: 8em; /* 1em ≈ 1 line-height, so 15em ≈ 15 lines */
+        }
+    .connect-link {
+        font-size: 1.3rem;
+        padding: 10px 15px;
+        
+    }
+}
+
+.section-gap {
+  margin-top: 1em; /* 1em ≈ 1 line-height, so 15em ≈ 15 lines */
+}
 
 
     </style>
@@ -586,24 +673,45 @@ iframe {
   </button>
 </div>
 <div class="menu-overlay" onclick="toggleMenu()"></div>
-
 <div class="menu-bar">
-    <div class="menu-heading">Menu</div>
-    <button onclick="navigateTo('about.html')">
-        <i class="fas fa-info-circle"></i> About
-    </button>
-    <button onclick="navigateTo('contact.html')">
-        <i class="fas fa-envelope"></i>
-        Contact</button>
-        <button onclick="navigateTo('terms.html')">
-            
-            <i class="fas fa-file-alt"></i>
-            Terms & Conditions</button>
-        </button>
-        <button onclick="navigateTo('privacy_policy.html')">
-            <i class="fas fa-shield-alt"></i>
-            Privacy Policy</button>
-    <button onclick="logout()" class="logout">Logout</button>
+  <div class="menu-heading">Menu</div>
+  <button onclick="navigateTo('about.html')">
+      <i class="fas fa-info-circle"></i> About
+  </button>
+  <button onclick="navigateTo('contact.html')">
+      <i class="fas fa-envelope"></i> Contact
+  </button>
+  <button onclick="navigateTo('terms.html')">
+      <i class="fas fa-file-alt"></i> Terms & Conditions
+  </button>
+  <button onclick="navigateTo('privacy_policy.html')">
+      <i class="fas fa-shield-alt"></i> Privacy Policy
+  </button>
+  <button onclick="logout()" class="logout">Logout</button>
+
+  <div class="section-gap"></div>
+
+
+<!-- Developer Details Section -->
+<fieldset class="connect-section">
+  <legend>Connect With Me</legend>
+  <div class="connect-links">
+      <a href="https://www.linkedin.com/in/arella-raghavendra/" target="_blank" class="connect-link">
+          <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/Raghavendra0348/" target="_blank" class="connect-link">
+          <i class="fab fa-github"></i> GitHub
+      </a>
+      <a href="https://www.youtube.com/channel/UC5OsM-QsDhtqw1ITmjXMrZw" target="_blank" class="connect-link">
+          <i class="fab fa-youtube"></i> YouTube
+      </a>
+      <a href="https://www.instagram.com/raghavendra_348/" target="_blank" class="connect-link">
+          <i class="fab fa-instagram"></i> Instagram
+      </a>
+  </div>
+</fieldset>
+
+
 </div>
 
     
