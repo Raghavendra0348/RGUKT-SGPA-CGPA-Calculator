@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="rgukt.png">
 
   <!-- Title -->
-<title>RGUKT SGPA & CGPA Calculator | All Branches & Semesters</title>
+  <title>RGUKT SGPA & CGPA Calculator</title>
 
   <!-- SEO Meta Tags -->
   <meta name="description" content="Calculate SGPA & CGPA for RGUKT Students (PUC, CSE, ECE, EEE, CIVIL & More). Fast, Accurate & Easy to Use Tool for All Branches.">
@@ -21,12 +21,11 @@
   <meta property="og:url" content="https://rgukt-sgpa-cgpa-calculator.vercel.app/">
   <meta name="twitter:card" content="summary_large_image">
    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="RGUKT CGPA SGPA CALCULATOR">
     <meta name="twitter:description" content="Easily calculate your CGPA and SGPA. Free and accurate calculator for RGUKT students.">
-    <meta name="twitter:image" content="https://rgukt-sgpa-cgpa-calculator.vercel.app/rgukt.png"> <!-- Replace with actual image -->
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://rgukt-sgpa-cgpa-calculator.vercel.app/"><!-- to avoid duplicate content-->
-<meta name="google-site-verification" content="oV2S_gZ56eWiDhGlfQQ0iObG3g0dELLAWsTfqEA5w-o" />
+    <meta name="twitter:image" content="https://yourdomain.com/preview.jpg"> <!-- Replace with actual image -->
+
     <!-- Google AdSense (required) -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         crossorigin="anonymous"></script>
@@ -40,21 +39,6 @@
         gtag('js', new Date());
         gtag('config', 'G-T486B8C5X0');
     </script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "RGUKT SGPA & CGPA Calculator",
-  "url": "https://rgukt-sgpa-cgpa-calculator.vercel.app/",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://rgukt-sgpa-cgpa-calculator.vercel.app/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
-
-
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
@@ -580,6 +564,35 @@ legend {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
 }
+.mobile-nav-profile-btn {
+  background: black;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  display: none; /* shown via JS */
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-nav-profile-btn:hover {
+  background-color: white;
+  color: black;
+  transform: translateY(-2px);
+}
+
+.mobile-nav-profile-btn img {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
 
 </style>
 
@@ -604,18 +617,21 @@ legend {
 
   <!-- Icons on the right -->
   <div class="header-icons">
-    <i class="home-icon fas fa-home" onclick="window.location.href='index.html'"></i>
-<button id="mobile-profile-btn" style="display:none; background:none; border:none;">
-  <img id="user-profile-pic" src="" alt="User Profile" style="height:30px; width:30px; border-radius:50%;">
-</button>
+    <i class="home-icon fas fa-home" onclick="window.location.href='main.html'"></i>
+<!-- Mobile Signup/Profile Button -->
+
+
     <i class="menu-icon fas fa-bars" onclick="toggleMenu()"></i>
+    <button id="mobile-profile-btn" class="mobile-nav-profile-btn">
+  <span id="mobile-profile-content">Signup</span>
+</button>
   </div>
 
   <div class="desktop-nav">
           <button id="signup-btn" onclick="navigateTo('login.html')">Signup</button>
         <button onclick="toggleMenu()">Menu</button>
 
-        <button onclick="navigateTo('index.html')">Home</button>
+        <button onclick="navigateTo('main.html')">Home</button>
     <button onclick="navigateTo('about.html')"> <i class="fas fa-info-circle"></i> About</button>
 
     <button onclick="navigateTo('contact.html')"> <i class="fas fa-envelope"></i> Contact</button>
@@ -728,90 +744,82 @@ legend {
                 }
 
                 // Navigate to other pages
-                function navigateTo(page) {
-                        window.location.href = page;
-                }
+    function navigateTo(page) {
+        window.location.href = page;
+    }
 
-                // Logout user
-                function logout() {
-                        auth.signOut().then(() => {
-                                alert("You have logged out.");
-                                window.location.href = 'index.html';
-                        }).catch((error) => {
-                                console.error("Logout error:", error);
-                        });
-                }
-function toggleDropdown(e) {
-    e.stopPropagation(); // Prevent it from closing immediately
+    function logout() {
+        auth.signOut().then(() => {
+            alert("You have logged out.");
+            window.location.href = 'index.html';
+        }).catch((error) => {
+            console.error("Logout error:", error);
+        });
+    }
+
+    // Dropdown references
     const dropdown = document.getElementById("user-dropdown");
     const overlay = document.getElementById("user-dropdown-overlay");
 
-    dropdown.classList.toggle("show");
-    overlay.style.display = dropdown.classList.contains("show") ? "block" : "none";
-}
-
-                // Toggle profile dropdown on profile image click
-                const profileImg = document.getElementById("user-profile-pic");
-                const dropdown = document.getElementById("user-dropdown");
-                const overlay = document.getElementById("user-dropdown-overlay");
-
-                profileImg.addEventListener("click", (e) => {
-                        e.stopPropagation();
-                        dropdown.classList.toggle("show");
-                        overlay.style.display = dropdown.classList.contains("show") ? "block" : "none";
-                });
-
-                // Click outside — anywhere — closes it
-                overlay.addEventListener("click", () => {
-                        dropdown.classList.remove("show");
-                        overlay.style.display = "none";
-                });
-
-                // Optional: Hide on scroll or resize too
-                window.addEventListener("scroll", () => {
-                        dropdown.classList.remove("show");
-                        overlay.style.display = "none";
-                });
-                window.addEventListener("resize", () => {
-                        dropdown.classList.remove("show");
-                        overlay.style.display = "none";
-                });
-
-                // Firebase Auth State
-               firebase.auth().onAuthStateChanged((user) => {
-    const signupBtn = document.getElementById("signup-btn");
-    const dropdownImg = document.getElementById("dropdown-profile-img");
-    const nameDisplay = document.getElementById("user-name");
-    const emailDisplay = document.getElementById("user-email");
-
-    const mobileBtn = document.getElementById("mobile-profile-btn");
-    const mobileImg = document.getElementById("user-profile-pic");
-
-    if (user) {
-        const profileURL = user.photoURL || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.displayName || "User")}`;
-
-        // Desktop
-        signupBtn.innerHTML = `<img src="${profileURL}" alt="User" style="height: 30px; width: 30px; border-radius: 50%; vertical-align: middle;">`;
-        signupBtn.onclick = toggleDropdown;
-
-        // Mobile
-        mobileBtn.style.display = "inline-block"; // ✅ show it
-        mobileImg.src = profileURL;
-        mobileBtn.onclick = toggleDropdown; // ✅ bind same toggle
-
-        // Dropdown data
-        dropdownImg.src = profileURL;
-        nameDisplay.textContent = user.displayName || "RGUKT User";
-        emailDisplay.textContent = user.email;
-    } else {
-        // Desktop
-        signupBtn.textContent = "Signup";
-        signupBtn.onclick = () => navigateTo('login.html');
-
-        // Mobile
-        mobileBtn.style.display = "none"; // ✅ hide it
+    function toggleDropdown(e) {
+        e.stopPropagation(); // Prevent immediate close
+        dropdown.classList.toggle("show");
+        overlay.style.display = dropdown.classList.contains("show") ? "block" : "none";
     }
-});
+
+    // Close dropdown on outside click, scroll, resize
+    overlay.addEventListener("click", () => {
+        dropdown.classList.remove("show");
+        overlay.style.display = "none";
+    });
+
+    window.addEventListener("scroll", () => {
+        dropdown.classList.remove("show");
+        overlay.style.display = "none";
+    });
+
+    window.addEventListener("resize", () => {
+        dropdown.classList.remove("show");
+        overlay.style.display = "none";
+    });
+
+    // ✅ Firebase Auth State
+    firebase.auth().onAuthStateChanged((user) => {
+        const signupBtn = document.getElementById("signup-btn");
+        const dropdownImg = document.getElementById("dropdown-profile-img");
+        const nameDisplay = document.getElementById("user-name");
+        const emailDisplay = document.getElementById("user-email");
+
+        const mobileBtn = document.getElementById("mobile-profile-btn");
+        const mobileProfileContent = document.getElementById("mobile-profile-content");
+
+        if (user) {
+            const profileURL = user.photoURL || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.displayName || "User")}`;
+
+            // Desktop view
+            signupBtn.innerHTML = `<img src="${profileURL}" alt="User" style="height: 30px; width: 30px; border-radius: 50%; vertical-align: middle;">`;
+            signupBtn.onclick = toggleDropdown;
+
+            // Mobile view
+            mobileBtn.style.display = "inline-flex";
+            mobileProfileContent.innerHTML = `<img src="${profileURL}" alt="User">`;
+            mobileBtn.onclick = toggleDropdown;
+
+            // Dropdown content
+            dropdownImg.src = profileURL;
+            nameDisplay.textContent = user.displayName || "RGUKT User";
+            emailDisplay.textContent = user.email;
+        } else {
+            // Desktop (Logged out)
+            signupBtn.textContent = "Signup";
+            signupBtn.onclick = () => navigateTo('login.html');
+
+            // Mobile (Logged out)
+            mobileBtn.style.display = "inline-flex";
+            mobileProfileContent.textContent = "Signup";
+            mobileBtn.onclick = () => navigateTo('login.html');
+        }
+    });
 
 
 function refreshLogo() {
