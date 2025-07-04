@@ -1,39 +1,35 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- 
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="rgukt.webp">
 
-  <!-- Favicon -->
-<link rel="icon" type="image/webp" href="rgukt.webp">
+    <!-- Title -->
+    <title>RGUKT SGPA & CGPA Calculator for All Branches</title>
 
-  <!-- Title -->
-<title>RGUKT SGPA & CGPA Calculator for All Branches</title>
-
-  <!-- SEO Meta Tags -->
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Free SGPA & CGPA Calculator for RGUKT students. Supports PUC, CSE, ECE, EEE, Civil & more branches. Fast, accurate, mobile-friendly tool for calculating GPA with ease.">
+    <meta name="keywords" content="RGUKT GPA Calculator, SGPA Calculator, CGPA Calculator, RGUKT CSE GPA, PUC GPA Tool, ECE GPA Calculator, EEE GPA Calculator, Civil GPA Calculator, University GPA India, GPA to CGPA Converter, RGUKT Academic Tools">
+    <meta name="author" content="Raghavendra Arella">
+    <meta name="robots" content="index, follow">
 
-<meta name="keywords" content="RGUKT GPA Calculator, SGPA Calculator, CGPA Calculator, RGUKT CSE GPA, PUC GPA Tool, ECE GPA Calculator, EEE GPA Calculator, Civil GPA Calculator, University GPA India, GPA to CGPA Converter, RGUKT Academic Tools">
-<meta name="author" content="Raghavendra Arella">
-<meta name="robots" content="index, follow">
-
-  <!-- Social Media Previews -->
-  <meta property="og:title" content="RGUKT SGPA & CGPA Calculator">
-  <meta property="og:description" content="Easily Calculate SGPA & CGPA for PUC, CSE, ECE, EEE, CIVIL & More. Accurate & Reliable Tool for All RGUKT Students.">
-<meta property="og:image" content="https://rgukt-sgpa-cgpa-calculator.vercel.app/rgukt.webp">
-  <meta property="og:url" content="https://rgukt-sgpa-cgpa-calculator.vercel.app/">
-  <meta name="twitter:card" content="summary_large_image">
-   
+    <!-- Social Media Previews -->
+    <meta property="og:title" content="RGUKT SGPA & CGPA Calculator">
+    <meta property="og:description" content="Easily Calculate SGPA & CGPA for PUC, CSE, ECE, EEE, CIVIL & More. Accurate & Reliable Tool for All RGUKT Students.">
+    <meta property="og:image" content="https://rgukt-sgpa-cgpa-calculator.vercel.app/rgukt.webp">
+    <meta property="og:url" content="https://rgukt-sgpa-cgpa-calculator.vercel.app/">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="RGUKT CGPA SGPA CALCULATOR">
     <meta name="twitter:description" content="Easily calculate your CGPA and SGPA. Free and accurate calculator for RGUKT students.">
-    <meta name="twitter:image" content="https://rgukt-sgpa-cgpa-calculator.vercel.app/rgukt.webp"> <!-- Replace with actual image -->
+    <meta name="twitter:image" content="https://rgukt-sgpa-cgpa-calculator.vercel.app/rgukt.webp">
 
-    <!-- Google AdSense (required) -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX"> <!-- Replace with your AdSense publisher ID -->
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T486B8C5X0"></script>
@@ -44,22 +40,25 @@
         gtag('config', 'G-T486B8C5X0');
     </script>
 
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Firebase (Deferred Loading) -->
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
 
-    <!-- Fonts and Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
-<style>
+    <!-- Fonts and Icons (Optimized preload and async fallback) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&family=Playfair+Display:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&family=Playfair+Display:wght@700&display=swap"></noscript>
 
-</style>
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
 
+    <!-- Inline critical CSS suggestion area -->
+    <link rel="preload" href="index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="index.css"></noscript>
 </head>
+
 
 <body>
        <header>
@@ -186,13 +185,8 @@
 
         </div>
 
-
-
-        <script src="index.js" defer> </script>
-
-     
-
-
+    <!-- ... BODY CONTENT UNCHANGED ... -->
+    <script src="index.js" defer></script>
 </body>
 
 </html>
