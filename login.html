@@ -9,24 +9,7 @@
   <!-- Title -->
   <title>LOGIN or SIGNUP </title>
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Calculate SGPA & CGPA for RGUKT Students (PUC, CSE, ECE, EEE, CIVIL & More). Fast, Accurate & Easy to Use Tool for All Branches.">
-  <meta name="keywords" content="RGUKT, SGPA Calculator, CGPA Calculator, RGUKT GPA, PUC GPA, CSE GPA, ECE GPA, EEE GPA, CIVIL GPA, GPA Tool, University GPA, CGPA Tool India">
 
-  <!-- Social Media Previews -->
-  <meta property="og:title" content="RGUKT SGPA & CGPA Calculator">
-  <meta property="og:description" content="Easily Calculate SGPA & CGPA for PUC, CSE, ECE, EEE, CIVIL & More. Accurate & Reliable Tool for All RGUKT Students.">
-  <meta property="og:image" content="rgukt.png"> <!-- Replace this with your image URL -->
-  <meta property="og:url" content="https://rgukt-sgpa-cgpa-calculator.vercel.app/">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-
-
-    <style>
-     @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
     /* Base Styles */
     body {
@@ -96,13 +79,10 @@ max-width: 350px; /* Limits the width on larger screens */
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+
+
 
 
     button {
@@ -116,7 +96,6 @@ max-width: 350px; /* Limits the width on larger screens */
         position: relative;
         font-family: 'Lobster', cursive;
         font-size: medium;
-        transition: all 0.3s ease;
         box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5); /* White color shadow */
     }
 
@@ -191,48 +170,50 @@ max-width: 350px; /* Limits the width on larger screens */
         }
     }
 </style>
-    <script>
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyBa5bYbUgLiluU6eCimeA8-jVx1i4_xRmA",
-            authDomain: "rgukt-sgpa-cgpa-calculator.firebaseapp.com",
-            projectId: "rgukt-sgpa-cgpa-calculator",
-            storageBucket: "rgukt-sgpa-cgpa-calculator.firebasestorage.app",
-            messagingSenderId: "71013965900",
-            appId: "1:71013965900:web:9dc65476149f6ff91954e9",
-            measurementId: "G-K22L37T7Z2"
-        };
-        firebase.initializeApp(firebaseConfig);
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+  import { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
 
-        // Handle authentication state
-       firebase.auth().onAuthStateChanged(user => {
+  const firebaseConfig = {
+    apiKey: "AIzaSyBa5bYbUgLiluU6eCimeA8-jVx1i4_xRmA",
+    authDomain: "rgukt-sgpa-cgpa-calculator.firebaseapp.com",
+    projectId: "rgukt-sgpa-cgpa-calculator",
+    storageBucket: "rgukt-sgpa-cgpa-calculator.firebasestorage.app",
+    messagingSenderId: "71013965900",
+    appId: "1:71013965900:web:9dc65476149f6ff91954e9",
+    measurementId: "G-K22L37T7Z2"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  onAuthStateChanged(auth, user => {
     if (user) {
-        document.querySelector(".small_cont").style.display = "none"; // Hide main UI
-        document.getElementById("loader").style.display = "block";   // Show loader
-        setTimeout(() => {
-            window.location.replace('index.html');
-        }, 500); // 0.5 second delay
+      document.querySelector(".small_cont").style.display = "none";
+      document.getElementById("loader").style.display = "block";
+      setTimeout(() => {
+        window.location.replace('index.html');
+      }, 500);
     }
-});
+  });
 
-
-        // Google Sign-In
-        function signInWithGoogle() {
-            const provider = new firebase.auth.GoogleAuthProvider();
-            firebase.auth().signInWithPopup(provider)
-                .then(result => {
-                    console.log("User signed in:", result.user);
-                    window.location.href = 'index.html';
-                })
-                .catch(error => {
-                    if (error.code === 'auth/popup-closed-by-user') {
-                        alert("Popup closed before signing in. Please try again.");
-                    } else {
-                        alert("Sign-in failed: " + error.message);
-                    }
-                });
+  window.signInWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then(result => {
+        console.log("User signed in:", result.user);
+        window.location.href = 'index.html';
+      })
+      .catch(error => {
+        if (error.code === 'auth/popup-closed-by-user') {
+          alert("Popup closed before signing in. Please try again.");
+        } else {
+          alert("Sign-in failed: " + error.message);
         }
-    </script>
+      });
+  };
+</script>
+
 </head>
 <body>
     
