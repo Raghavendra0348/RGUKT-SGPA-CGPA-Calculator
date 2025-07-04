@@ -53,84 +53,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <!-- Firebase (Deferred Loading) -->
-    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-
-    <!-- Fonts and Icons (Optimized preload and async fallback) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&family=Playfair+Display:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&family=Playfair+Display:wght@700&display=swap"></noscript>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
- 
-
-  <!-- Favicon -->
-<link rel="icon" type="image/webp" href="rgukt.webp">
-
-  <!-- Title -->
-<title>RGUKT SGPA & CGPA Calculator for All Branches</title>
-
-  <!-- SEO Meta Tags -->
-    <meta name="description" content="Free SGPA & CGPA Calculator for RGUKT students. Supports PUC, CSE, ECE, EEE, Civil & more branches. Fast, accurate, mobile-friendly tool for calculating GPA with ease.">
-
-<meta name="keywords" content="RGUKT GPA Calculator, SGPA Calculator, CGPA Calculator, RGUKT CSE GPA, PUC GPA Tool, ECE GPA Calculator, EEE GPA Calculator, Civil GPA Calculator, University GPA India, GPA to CGPA Converter, RGUKT Academic Tools">
-<meta name="author" content="Raghavendra Arella">
-<meta name="robots" content="index, follow">
-
-  <!-- Social Media Previews -->
-  <meta property="og:title" content="RGUKT SGPA & CGPA Calculator">
-  <meta property="og:description" content="Easily Calculate SGPA & CGPA for PUC, CSE, ECE, EEE, CIVIL & More. Accurate & Reliable Tool for All RGUKT Students.">
-<meta property="og:image" content="https://rgukt-sgpa-cgpa-calculator.vercel.app/rgukt.webp">
-  <meta property="og:url" content="https://rgukt-sgpa-cgpa-calculator.vercel.app/">
-  <meta name="twitter:card" content="summary_large_image">
    
-    <meta name="twitter:title" content="RGUKT CGPA SGPA CALCULATOR">
-    <meta name="twitter:description" content="Easily calculate your CGPA and SGPA. Free and accurate calculator for RGUKT students.">
-    <meta name="twitter:image" content="https://rgukt-sgpa-cgpa-calculator.vercel.app/rgukt.webp"> <!-- Replace with actual image -->
-
-   <!-- Instead of loading immediately in <head> -->
-<!-- MOVE this to after LCP or defer it -->
-<script>
-  window.addEventListener('load', function () {
-    const gtagScript = document.createElement('script');
-    gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-T486B8C5X0';
-    gtagScript.async = true;
-    document.head.appendChild(gtagScript);
-
-    gtagScript.onload = () => {
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-T486B8C5X0');
-    };
-  });
-</script>
-
-
-  
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <!-- Firebase (Deferred Loading) -->
-  
     <!-- Fonts and Icons (Optimized preload and async fallback) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&family=Playfair+Display:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&family=Playfair+Display:wght@700&display=swap"></noscript>
 
-    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
-
+   
     <!-- Fonts and Icons -->
      <link rel="stylesheet" href="index.css">
-<style>
-
-</style>
 
 </head>
 
@@ -145,155 +77,7 @@
   class="logo" 
   width="100" 
   height="40" 
-  decoding="async" 
-  onclick="refreshLogo()"
      loading="eager"
-/>
-
-  <!-- Heading in the center -->
-  <div class="heading"  onclick="refreshLogo()">
-    <div class="rgukt-line"  onclick="refreshLogo()">
-      <span style="--index: 1">R</span>
-      <span style="--index: 2">G</span>
-      <span style="--index: 3">U</span>
-      <span style="--index: 4">K</span>
-      <span style="--index: 5">T</span>
-    </div>
-    <div class="calc-line">CGPA & SGPA Calculator</div>
-  </div>
-
-  <!-- Icons on the right -->
-  <div class="header-icons">
-    <i class="home-icon fas fa-home" onclick="window.location.href='index.html'"></i>
-<!-- Mobile Signup/Profile Button -->
-
-
-    <i class="menu-icon fas fa-bars" onclick="toggleMenu()"></i>
-    <button id="mobile-profile-btn" class="mobile-nav-profile-btn">
-  <span id="mobile-profile-content">Signup</span>
-</button>
-  </div>
-
-  <div class="desktop-nav">
-          <button id="signup-btn" onclick="navigateTo('login.html')">Signup</button>
-        <button onclick="toggleMenu()">Menu</button>
-
-        <button onclick="navigateTo('index.html')">Home</button>
-    <button onclick="navigateTo('about.html')"> <i class="fas fa-info-circle"></i> About</button>
-
-    <button onclick="navigateTo('contact.html')"> <i class="fas fa-envelope"></i> Contact</button>
-    
-</div>
-
-</header>
-
-
-        <div id="content">
-                <iframe src="department.html" title="Select Department"></iframe>
-        </div>
-
-
-
-        <!-- ✅ This is OUTSIDE the menu-bar, placed globally in the body near header -->
-        <!-- Profile Dropdown -->
-        <!-- Overlay (invisible background to detect clicks outside) -->
-        <div id="user-dropdown-overlay" style="display: none; position: fixed; inset: 0; z-index: 9998;"></div>
-
-        <!-- Enhanced Dropdown -->
-        <div id="user-dropdown" class="user-dropdown">
-                <div class="dropdown-header">
-                        <img id="dropdown-profile-img" src="" alt="User" class="user-img" />
-                        <div class="user-details">
-                                <p id="user-name" class="user-name">RGUKT User</p>
-                                <p id="user-email" class="user-email">user@example.com</p>
-                        </div>
-                </div>
-                <hr>
-                <button onclick="navigateTo('coming_soon.html')" class="dropdown-btn">
-                        <i class="fas fa-user-circle"></i> View Profile
-                </button>
-                <button onclick="logout()" class="dropdown-btn logout-btn">
-                        <i class="fas fa-sign-out-alt"></i> Logout
-                </button>
-        </div>
-        <div class="menu-overlay" onclick="toggleMenu()"></div>
-        <div class="menu-bar">
-                <div class="menu-heading">Menu</div>
-                <button onclick="navigateTo('about.html')">
-                        <i class="fas fa-info-circle"></i> About
-                </button>
-                <button onclick="navigateTo('contact.html')">
-                        <i class="fas fa-envelope"></i> Contact
-                </button>
-                <button onclick="navigateTo('terms.html')">
-                        <i class="fas fa-file-alt"></i> Terms & Conditions
-                </button>
-                <button onclick="navigateTo('privacy_policy.html')">
-                        <i class="fas fa-shield-alt"></i> Privacy Policy
-                </button>
-                <button onclick="logout()" class="logout">Logout</button>
-
-                <div class="section-gap"></div>
-
-
-                <!-- Developer Details Section -->
-                <fieldset class="connect-section">
-                        <legend>Connect With Me</legend>
-                        <div class="connect-links">
-                                <a href="https://www.linkedin.com/in/arella-raghavendra/" target="_blank"
-                                        class="connect-link">
-                                        <i class="fab fa-linkedin"></i> LinkedIn
-                                </a>
-                                <a href="https://github.com/Raghavendra0348/" target="_blank" class="connect-link">
-                                        <i class="fab fa-github"></i> GitHub
-                                </a>
-                                <a href="https://www.youtube.com/channel/UC5OsM-QsDhtqw1ITmjXMrZw" target="_blank"
-                                        class="connect-link">
-                                        <i class="fab fa-youtube"></i> YouTube
-                                </a>
-                                <a href="https://www.instagram.com/raghavendra_348/" target="_blank"
-                                        class="connect-link">
-                                        <i class="fab fa-instagram"></i> Instagram
-                                </a>
-                        </div>
-                </fieldset>
-
-
-        </div>
-
-
-
-        <script src="index.js" defer> </script>
-
-     
-
-
-</body>
-
-</html>
-
-    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
-
-    <!-- Fonts and Icons -->
-     <link rel="stylesheet" href="index.css">
-<style>
-
-</style>
-
-</head>
-
-<body>
-       <header>
-  <!-- Logo on the left -->
-<img 
-  src="rgukt.webp" 
-      fetchpriority="high" 
-
-  alt="RGUKT College Logo" 
-  class="logo" 
-  width="100" 
-  height="40" 
   decoding="async" 
   onclick="refreshLogo()"
 />
