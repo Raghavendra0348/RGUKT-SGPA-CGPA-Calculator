@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <!-- Basic SEO -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>RGUKT Blog & Guides – SGPA, CGPA, Step-by-Step Examples & Tips</title>
+        <meta name="description"
+                content="Clear, step-by-step guides for RGUKT students: how SGPA is calculated, the difference between SGPA and CGPA, and practical tips to improve grades. Includes worked examples and FAQs." />
+        <meta name="robots" content="index,follow" />
+        <link rel="canonical" href="https://rgukt-sgpa-cgpa-calculator.vercel.app/blog.html" />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="RGUKT Blog & Guides – SGPA, CGPA, Step-by-Step Examples & Tips" />
+        <meta property="og:description"
+                content="Step-by-step SGPA calculation, SGPA vs CGPA, and grade-boosting tips with examples and FAQs for RGUKT students." />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://rgukt-sgpa-cgpa-calculator.vercel.app/blog.html" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="RGUKT Blog & Guides – SGPA, CGPA, Step-by-Step Examples & Tips" />
+        <meta name="twitter:description"
+                content="Step-by-step SGPA calculation, SGPA vs CGPA, and grade-boosting tips with examples and FAQs for RGUKT students." />
+
+        <style>
+                :root {
+                        --bg: #0b0e12;
+                        --card: #11151b;
+                        --muted: #99a2ad;
+                        --text: #e8eef6;
+                        --accent: #5cc8ff;
+                        --success: #55d187;
+                        --warning: #ffd166;
+                        --radius: 16px;
+                        --maxw: 1000px;
+                }
+
+                html,
+                body {
+                        margin: 0;
+                        background: var(--bg);
+                        color: var(--text);
+                        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+                        line-height: 1.6
+                }
+
+                a {
+                        color: var(--accent);
+                        text-decoration: none
+                }
+
+                a:hover {
+                        text-decoration: underline
+                }
+
+                header {
+                        position: sticky;
+                        top: 0;
+                        backdrop-filter: saturate(180%) blur(8px);
+                        background: rgba(11, 14, 18, .75);
+                        border-bottom: 1px solid #1e2530;
+                        z-index: 10
+                }
+
+                .wrap {
+                        max-width: var(--maxw);
+                        margin: auto;
+                        padding: 18px
+                }
+
+                .title {
+                        display: flex;
+                        gap: 10px;
+                        align-items: center;
+                        flex-wrap: wrap
+                }
+
+                .title h1 {
+                        margin: 0;
+                        font-size: 1.5rem
+                }
+
+                nav {
+                        display: flex;
+                        gap: 12px;
+                        flex-wrap: wrap;
+                        margin-top: 8px
+                }
+
+                nav a {
+                        padding: 6px 10px;
+                        border: 1px solid #1f2833;
+                        border-radius: 999px
+                }
+
+                main {
+                        max-width: var(--maxw);
+                        margin: 20px auto;
+                        padding: 0 18px;
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        gap: 18px
+                }
+
+                @media(min-width:960px) {
+                        main {
+                                grid-template-columns: 260px 1fr
+                        }
+                }
+
+                .card {
+                        background: var(--card);
+                        border: 1px solid #1f2833;
+                        border-radius: var(--radius);
+                        padding: 16px
+                }
+
+                .muted {
+                        color: var(--muted)
+                }
+
+                .badge {
+                        display: inline-block;
+                        padding: .15rem .5rem;
+                        border: 1px solid #223042;
+                        border-radius: 999px;
+                        font-size: .78rem;
+                        color: #b9c4cf
+                }
+
+                .toc a {
+                        display: block;
+                        padding: 8px;
+                        border-radius: 10px
+                }
+
+                .toc a:hover {
+                        background: #0e141b
+                }
+
+                h2,
+                h3 {
+                        scroll-margin-top: 90px
+                }
+
+                table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        margin: 10px 0;
+                        border: 1px solid #233141;
+                        border-radius: 10px;
+                        overflow: hidden
+                }
+
+                th,
+                td {
+                        padding: 10px;
+                        border-bottom: 1px solid #233141;
+                        text-align: left
+                }
+
+                thead th {
+                        background: #0f1620
+                }
+
+                code,
+                .formula {
+                        background: #0f1620;
+                        border: 1px solid #233141;
+                        border-radius: 8px;
+                        padding: 2px 6px
+                }
+
+                .ad-slot {
+                        border: 1px dashed #2a3a4f;
+                        border-radius: 12px;
+                        padding: 14px;
+                        text-align: center;
+                        color: #8aa0b6;
+                        background: #0e141b
+                }
+
+                .tip {
+                        background: #0f1a13;
+                        border-left: 4px solid var(--success);
+                        padding: 12px;
+                        border-radius: 12px
+                }
+
+                .warn {
+                        background: #1a1410;
+                        border-left: 4px solid var(--warning);
+                        padding: 12px;
+                        border-radius: 12px
+                }
+
+                .kbd {
+                        padding: 1px 5px;
+                        border: 1px solid #2c3a4c;
+                        border-radius: 6px;
+                        background: #0f1620
+                }
+
+                footer {
+                        max-width: var(--maxw);
+                        margin: 32px auto;
+                        padding: 18px;
+                        color: #9fb0c2;
+                        border-top: 1px solid #1f2833
+                }
+
+                .search {
+                        display: flex;
+                        gap: 8px
+                }
+
+                .search input {
+                        flex: 1;
+                        padding: 10px;
+                        border-radius: 12px;
+                        border: 1px solid #223042;
+                        background: #0e141b;
+                        color: var(--text)
+                }
+
+                .pill {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 6px;
+                        padding: 6px 10px;
+                        border: 1px solid #223042;
+                        border-radius: 999px
+                }
+
+                .hidden {
+                        display: none
+                }
+
+                .breadcrumbs {
+                        font-size: .9rem;
+                        color: #9fb0c2;
+                        margin: 6px 0
+                }
+
+                .article-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        flex-wrap: wrap
+                }
+        </style>
+
+        <!-- Structured Data (JSON-LD) -->
+        <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "RGUKT SGPA & CGPA Blog",
+    "url": "https://rgukt-sgpa-cgpa-calculator.vercel.app/blog.html",
+    "description": "Guides for RGUKT students on SGPA, CGPA and study strategies.",
+    "inLanguage": "en"
+  }
+  </script>
+
+        <!-- HowTo for SGPA calculation (helps rich results) -->
+        <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How SGPA is Calculated in RGUKT",
+    "description": "Step-by-step process to compute SGPA with a worked example.",
+    "totalTime": "PT5M",
+    "estimatedCost": {"@type":"MonetaryAmount","currency":"INR","value":"0"},
+    "step": [
+      {"@type":"HowToStep","name":"List subjects with credits","text":"Write each subject and its credit value."},
+      {"@type":"HowToStep","name":"Convert grades to grade points","text":"Map grades to numeric points as per the official scheme."},
+      {"@type":"HowToStep","name":"Compute credit points","text":"Multiply each subject's credits by its grade points."},
+      {"@type":"HowToStep","name":"Sum totals","text":"Add all credit points and all credits."},
+      {"@type":"HowToStep","name":"Calculate SGPA","text":"Divide total credit points by total credits; round to two decimals."}
+    ]
+  }
+  </script>
+
+        <!-- FAQPage for common questions -->
+        <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What is SGPA?","acceptedAnswer":{"@type":"Answer","text":"SGPA stands for Semester Grade Point Average—the weighted average of grade points earned in a single semester."}},
+      {"@type":"Question","name":"What is CGPA?","acceptedAnswer":{"@type":"Answer","text":"CGPA is the cumulative average of grade points across all semesters, weighted by credits."}},
+      {"@type":"Question","name":"Is SGPA rounded?","acceptedAnswer":{"@type":"Answer","text":"Typically yes, institutions round to two decimal places. Always follow your official rules."}}
+    ]
+  }
+  </script>
+</head>
+
+<body>
+        <header>
+                <div class="wrap">
+                        <div class="title">
+                                <h1>RGUKT Blog & Info</h1>
+                                <span class="badge" id="updated">Last updated: </span>
+                        </div>
+
+                        <nav aria-label="Primary">
+                                <a href="index.html">Home</a>
+                                <a href="blog.html" aria-current="page">Blog</a>
+                                <a href="about.html">About</a>
+                                <a href="contact.html">Contact</a>
+                                <a href="privacy.html">Privacy</a>
+                        </nav>
+                </div>
+        </header>
+
+        <main>
+                <!-- Sidebar / TOC -->
+                <aside class="card">
+                        <div class="breadcrumbs">Home › Blog</div>
+
+                        <div class="search" role="search">
+                                <input id="search" type="search" placeholder="Search: SGPA, CGPA, tips…"
+                                        aria-label="Search articles" />
+                        </div>
+
+                        <div class="toc" style="margin-top:12px">
+                                <strong>On this page</strong>
+                                <a href="#how-sgpa">How SGPA is calculated in RGUKT</a>
+                                <a href="#sgpa-vs-cgpa">Difference between SGPA and CGPA</a>
+                                <a href="#improve-grades">Tips to improve your grades</a>
+                                <a href="#faq">FAQ</a>
+                        </div>
+
+                       
+                </aside>
+
+                <!-- Content -->
+                <section class="card" id="content">
+                        <!-- TOP AD SLOT -->
+                        
+
+                        <!-- Article 1 -->
+                        <article id="how-sgpa" data-tags="sgpa,calculation,credits,example,rgukt">
+                                <div class="article-header">
+                                        <h2>How SGPA is Calculated in RGUKT (Step-by-Step)</h2>
+                                        <span class="pill">Guide</span>
+                                </div>
+                                <p class="muted">SGPA = Semester Grade Point Average. It’s a <em>credit-weighted
+                                                average</em> of your grade points in one semester.</p>
+
+                                <div class="warn">
+                                        <strong>Note:</strong> Use the <em>official RGUKT grade–point mapping</em> from
+                                        your syllabus. The example mapping below (10-point scale) is commonly used, but
+                                        confirm your institute’s table.
+                                </div>
+
+                                <h3>Step 1 — List subjects with credits</h3>
+                                <p>Make a table of subjects and their credit values (e.g., 4, 3, 2 credits).</p>
+
+                                <h3>Step 2 — Convert grades to grade points</h3>
+                                <p>Map each grade to a numeric point (example mapping):</p>
+                                <table aria-label="Example grade to point mapping">
+                                        <caption class="muted">Example only — verify your official mapping</caption>
+                                        <thead>
+                                                <tr>
+                                                        <th>Grade</th>
+                                                        <th>Point</th>
+                                                </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>O</td>
+                                                        <td>10</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>A+</td>
+                                                        <td>9</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>A</td>
+                                                        <td>8</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>B</td>
+                                                        <td>7</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>C</td>
+                                                        <td>6</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>D</td>
+                                                        <td>5</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>E</td>
+                                                        <td>4</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>F (Fail)</td>
+                                                        <td>0</td>
+                                                </tr>
+                                        </tbody>
+                                </table>
+
+                                <h3>Step 3 — Compute Credit Points for each subject</h3>
+                                <p>For each subject: <span class="formula">Credit&nbsp;Points = Credits ×
+                                                Grade&nbsp;Point</span></p>
+
+                                <h3>Step 4 — Add totals</h3>
+                                <p>Total Credit Points = sum of all subject credit points. Total Credits = sum of all
+                                        subject credits.</p>
+
+                                <h3>Step 5 — Calculate SGPA</h3>
+                                <p class="formula">SGPA = (Total Credit Points) ÷ (Total Credits)</p>
+
+                                <h3>Worked Example</h3>
+                                <p>Suppose you have 5 subjects this semester:</p>
+                                <table aria-label="Worked example for SGPA">
+                                        <thead>
+                                                <tr>
+                                                        <th>Subject</th>
+                                                        <th>Credits</th>
+                                                        <th>Grade Point</th>
+                                                        <th>Credit Points (Credits × GP)</th>
+                                                </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>Digital Logic Design</td>
+                                                        <td>3</td>
+                                                        <td>9</td>
+                                                        <td>27</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>DBMS</td>
+                                                        <td>4</td>
+                                                        <td>8</td>
+                                                        <td>32</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Design & Analysis of Algorithms</td>
+                                                        <td>3</td>
+                                                        <td>10</td>
+                                                        <td>30</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Mathematics</td>
+                                                        <td>4</td>
+                                                        <td>7</td>
+                                                        <td>28</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Physical Education</td>
+                                                        <td>2</td>
+                                                        <td>8</td>
+                                                        <td>16</td>
+                                                </tr>
+                                        </tbody>
+                                        <tfoot>
+                                                <tr>
+                                                        <th>Total</th>
+                                                        <th>16</th>
+                                                        <th class="muted">—</th>
+                                                        <th>133</th>
+                                                </tr>
+                                        </tfoot>
+                                </table>
+                                <p>Now compute: <span class="formula">SGPA = 133 ÷ 16 = 8.3125 → <strong>8.31</strong>
+                                                (rounded to 2 decimals)</span>.</p>
+
+                                <div class="tip">
+                                        <strong>Pro tip:</strong> Backlogs/absent papers usually get <em>0 grade
+                                                points</em> until cleared, which can reduce SGPA. Always check your
+                                        campus rules for how re-evaluation and improvements affect SGPA.
+                                </div>
+
+                             
+                        </article>
+
+                        <hr style="border-color:#1f2833;opacity:.6">
+
+                        <!-- Article 2 -->
+                        <article id="sgpa-vs-cgpa" data-tags="sgpa,cgpa,difference,formula,example">
+                                <div class="article-header">
+                                        <h2>Difference Between SGPA and CGPA (with Example)</h2>
+                                        <span class="pill">Concepts</span>
+                                </div>
+
+                                <h3>Definitions</h3>
+                                <ul>
+                                        <li><strong>SGPA</strong>: Average grade points for a <em>single semester</em>,
+                                                weighted by subject credits.</li>
+                                        <li><strong>CGPA</strong>: Cumulative average grade points for <em>all
+                                                        semesters</em> completed, weighted by total credits.</li>
+                                </ul>
+
+                                <h3>Formulas</h3>
+                                <p class="formula">SGPA (Sem k) = (Σ Credit Points in Sem k) ÷ (Σ Credits in Sem k)</p>
+                                <p class="formula">CGPA = (Σ Credit Points across all semesters) ÷ (Σ Credits across all
+                                        semesters)</p>
+                                <p class="muted">Equivalently: <span class="formula">CGPA = (Σ (SGPA<sub>i</sub> ×
+                                                Credits<sub>i</sub>)) ÷ (Σ Credits<sub>i</sub>)</span></p>
+
+                                <h3>Worked CGPA Example (3 semesters)</h3>
+                                <table aria-label="CGPA example across 3 semesters">
+                                        <thead>
+                                                <tr>
+                                                        <th>Semester</th>
+                                                        <th>Total Credits</th>
+                                                        <th>SGPA</th>
+                                                        <th>Credit Points (SGPA × Credits)</th>
+                                                </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>Sem 1</td>
+                                                        <td>20</td>
+                                                        <td>8.31</td>
+                                                        <td>166.20</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Sem 2</td>
+                                                        <td>22</td>
+                                                        <td>8.75</td>
+                                                        <td>192.50</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Sem 3</td>
+                                                        <td>18</td>
+                                                        <td>9.10</td>
+                                                        <td>163.80</td>
+                                                </tr>
+                                        </tbody>
+                                        <tfoot>
+                                                <tr>
+                                                        <th>Totals</th>
+                                                        <th>60</th>
+                                                        <th class="muted">—</th>
+                                                        <th>522.50</th>
+                                                </tr>
+                                        </tfoot>
+                                </table>
+                                <p>Compute CGPA: <span class="formula">CGPA = 522.50 ÷ 60 = 8.7083 →
+                                                <strong>8.71</strong></span></p>
+
+                                <div class="tip">
+                                        <strong>Tip:</strong> CGPA is sensitive to credit loads. A high-credit semester
+                                        with a better SGPA helps more than a low-credit one.
+                                </div>
+                        </article>
+
+                        <hr style="border-color:#1f2833;opacity:.6">
+
+                        <!-- Article 3 -->
+                        <article id="improve-grades" data-tags="study,tips,grades,habits,rgukt">
+                                <div class="article-header">
+                                        <h2>12 Practical Tips to Improve Your Grades</h2>
+                                        <span class="pill">Strategy</span>
+                                </div>
+
+                                <ol>
+                                        <li><strong>Plan your week:</strong> Block 2–3 hour deep-work slots for core
+                                                subjects. Protect them like class time.</li>
+                                        <li><strong>Use Active Recall:</strong> After class, close notes and write what
+                                                you remember. Check gaps, repeat.</li>
+                                        <li><strong>Spaced Repetition:</strong> Review on Day 1, 3, 7, and 14. Short,
+                                                frequent sessions beat cramming.</li>
+                                        <li><strong>Solve past papers:</strong> Target exam-style questions. Time
+                                                yourself; check marking schemes.</li>
+                                        <li><strong>Teach a friend:</strong> If you can explain DLD flip-flops or DBMS
+                                                normalization, you’ve mastered it.</li>
+                                        <li><strong>Make an error log:</strong> Keep a running list of mistakes and “fix
+                                                recipes”. Review weekly.</li>
+                                        <li><strong>Office hours & labs:</strong> Ask specific questions. Bring 1–2
+                                                concrete doubts each time.</li>
+                                        <li><strong>Small daily quizzes:</strong> 5–10 questions per topic keep neurons
+                                                warm.</li>
+                                        <li><strong>Healthy cycles:</strong> Sleep 7–8 hrs, hydrate, short walks.
+                                                Cognitive energy matters.</li>
+                                        <li><strong>Group smart:</strong> 3–4 serious peers, fixed agenda, 45–60 mins.
+                                                No phones.</li>
+                                        <li><strong>Exam day playbook:</strong> Scan paper first, mark quick wins, keep
+                                                a strict time budget per section.</li>
+                                        <li><strong>After results:</strong> Analyze weak topics → update your plan for
+                                                the next semester.</li>
+                                </ol>
+
+                                <p class="tip">Try our <a href="/">SGPA/CGPA Calculator</a> to track your improvement
+                                        each semester and visualize your target CGPA.</p>
+
+                                <!-- IN-ARTICLE AD -->
+                                
+                        </article>
+
+                        <hr style="border-color:#1f2833;opacity:.6">
+
+                        <!-- FAQ -->
+                        <section id="faq" data-tags="faq,sgpa,cgpa,rgukt">
+                                <h2>Frequently Asked Questions</h2>
+                                <details>
+                                        <summary><strong>Does attendance affect SGPA?</strong></summary>
+                                        <p>Attendance can affect <em>eligibility</em> to sit for exams or internal marks
+                                                in some courses, but SGPA itself comes from grade points and credits.
+                                                Follow your campus regulations.</p>
+                                </details>
+                                <details>
+                                        <summary><strong>How many decimals should I use?</strong></summary>
+                                        <p>Most institutes round SGPA/CGPA to two decimals. If your marks memo shows a
+                                                different rule, follow that.</p>
+                                </details>
+                                <details>
+                                        <summary><strong>Do backlogs reduce CGPA?</strong></summary>
+                                        <p>Until cleared, backlog subjects usually contribute lower/zero points,
+                                                impacting SGPA and therefore CGPA. After clearing, recalculated results
+                                                will reflect the new grade.</p>
+                                </details>
+                        </section>
+
+                        
+                </section>
+        </main>
+
+        <footer>
+                <div>© <span id="yr"></span> RGUKT SGPA & CGPA Calculator • <a href="/">Calculator</a> • <a
+                                href="blog.html">Blog</a> • <a href="privacy.html">Privacy</a> • <a
+                                href="contact.html">Contact</a></div>
+                <div class="muted" style="margin-top:6px">Educational content only. Always cross-check with official
+                        RGUKT regulations.</div>
+        </footer>
+
+        <script>
+                // Set "Last updated" and year
+                (function () {
+                        const d = new Date();
+                        document.getElementById('yr').textContent = d.getFullYear();
+                        document.getElementById('updated').textContent = 'Last updated: ' + d.toLocaleDateString();
+                })();
+
+                // Simple client-side search filter for articles
+                const input = document.getElementById('search');
+                const sections = Array.from(document.querySelectorAll('article, section#faq'));
+                input.addEventListener('input', () => {
+                        const q = input.value.trim().toLowerCase();
+                        sections.forEach(sec => {
+                                const hay = (sec.innerText + ' ' + (sec.dataset.tags || '')).toLowerCase();
+                                sec.classList.toggle('hidden', q && !hay.includes(q));
+                        });
+                });
+        </script>
+</body>
+
+</html>
