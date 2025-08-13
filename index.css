@@ -439,7 +439,7 @@ iframe {
 
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   header {
     flex: 0 0 60px;
   }
@@ -484,14 +484,14 @@ iframe {
 }
 
 /* Hide icons on desktop (width > 768px) */
-@media (min-width: 769px) {
+@media (min-width: 481px) {
   .header-icons {
     display: none;
   }
 }
 
 /* Show only on mobile */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .header-icons {
     display: flex;
     align-items: center;
