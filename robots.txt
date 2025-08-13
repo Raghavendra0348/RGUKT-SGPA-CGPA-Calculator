@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rgukt-sgpa-cgpa-calculator.vercel.app/sitemap.xml
+
+# Disallow private or unused files/folders
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /temp/
+Disallow: /private/
