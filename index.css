@@ -164,7 +164,7 @@ header {
   .header-icons {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
   }
 
   .home-icon,
@@ -495,7 +495,7 @@ iframe {
   .header-icons {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
   }
 }
 
@@ -525,7 +525,7 @@ legend {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   display: none; /* shown via JS */
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
