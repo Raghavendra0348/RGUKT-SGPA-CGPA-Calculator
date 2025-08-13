@@ -62,7 +62,6 @@ header {
                 .rgukt-line {
                         display: flex;
                         justify-content: center;
-                        font-family: 'Brush Script MT', cursive;
                         font-weight: 700;
                 }
 
@@ -135,14 +134,15 @@ header {
 }
 
 .rgukt-line {
-  font-family: 'Brush Script MT', cursive;
+  font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
+
   font-weight: bold;
   font-size: 1.5rem;
   letter-spacing: 2px;
 }
 
 .calc-line {
-  font-family: 'Playfair Display', serif;
+font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
   font-weight: bold;
   font-size: 0.9rem;
   white-space: nowrap;
