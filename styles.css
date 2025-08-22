@@ -180,6 +180,8 @@ button:active {
 }
 .top-buttons button {
     margin-top: 20px;
+        margin-bottom: 20px;
+
     padding: 10px 20px;
     background-color: #000000; /* Black */
     color: #FFFFFF; /* White */
@@ -305,3 +307,8 @@ input[type="number"]:focus {
     margin: 0; /* Removes default margin */
 }
 
+.rem{
+color: red; /* Red color for REM option */
+    font-weight: bold; /* Bold text for emphasis */ 
+
+}

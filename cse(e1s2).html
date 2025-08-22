@@ -17,106 +17,123 @@
         </div>
         
         <!-- SGPA Calculator -->
-        <div id="sgpa-content" class="sgpa-section">
-            <fieldset>
-                <legend>SGPA Calculator</legend>
-                <form id="sgpaForm">
-                    <div class="form-row">
-                        <div class="form-item">
-                <label for="DM">DM</label>
-                <select id="DM">
-                    <option value="0">EX</option>
-                    <option value="4">A</option>
-                    <option value="8">B</option>
-                    <option value="12">C</option>
-                    <option value="16">D</option>
-                    <option value="20">E</option>
-                </select>
-            </div>
-            
-            <div class="form-item">
-                <label for="EP">EP</label>
-                <select id="EP">
-                    <option value="0">EX</option>
-                    <option value="4">A</option>
-                    <option value="8">B</option>
-                    <option value="12">C</option>
-                    <option value="16">D</option>
-                    <option value="20">E</option>
-                </select>
-            </div>
-            
-            <div class="form-item">
-                <label for="OOPS ">OOP'S Java </label>       
-                <select id="OOPS">
-                    <option value="0">EX</option>
-                    <option value="4">A</option>
-                    <option value="8">B</option>
-                    <option value="12">C</option>
-                    <option value="16">D</option>
-                    <option value="20">E</option>
-                </select>
-            </div>
-            
-            <div class="form-item">
-                <label for="OOPS LAB">OOP'S Java LAB</label>
-                <select id="OOPS LAB">
-                    <option value="0">EX</option>
-                    <option value="1.5">A</option>
-                    <option value="3">B</option>
-                    <option value="4.5">C</option>
-                    <option value="6">D</option>
-                    <option value="7.5">E</option>
-                </select>
-            </div>
-            <div class="form-item">
-                <label for="DS">DS</label>
-                <select id="DS">
-                    <option value="0">EX</option>
-                    <option value="3">A</option>
-                    <option value="6">B</option>
-                    <option value="9">C</option>
-                    <option value="12">D</option>
-                    <option value="15">E</option>
-                </select>
-            </div>
-            <div class="form-item">
-                <label for="DS LAB">DS LAB</label>
-                <select id="DS LAB">
-                    <option value="0">EX</option>
-                    <option value="1.5">A</option>
-                    <option value="3">B</option>
-                    <option value="4.5">C</option>
-                    <option value="6">D</option>
-                    <option value="7.5">E</option>
-                </select>
-            </div>
-            
-            <div class="form-item">
-                <label for="EP LAB">EP LAB</label>
-                <select id="EP LAB">
-                    <option value="0">EX</option>
-                    <option value="1.5">A</option>
-                    <option value="3">B</option>
-                    <option value="4.5">C</option>
-                    <option value="6">D</option>
-                    <option value="7.5">E</option>
-                </select>
-            </div>
-            
-           
-            
-            <div class="form-item">
-                <label for="MEFA">MEFA</label>
-                <select id="MEFA">
-                    <option value="0">EX</option>
-                    <option value="3">A</option>
-                    <option value="6">B</option>
-                    <option value="9">C</option>
-                    <option value="12">D</option>
-                    <option value="15">E</option>
-                </select>
-            </div>
+       <div id="sgpa-content" class="sgpa-section">
+    <fieldset>
+        <legend>SGPA Calculator</legend>
+        <form id="sgpaForm">
+            <div class="form-row">
+
+                <!-- DM (4 credits) -->
+                <div class="form-item">
+                    <label for="DM">DM</label>
+                    <select id="DM">
+                        <option value="0">EX</option>
+                        <option value="4">A</option>
+                        <option value="8">B</option>
+                        <option value="12">C</option>
+                        <option value="16">D</option>
+                        <option value="20">E</option>
+                        <option value="0" class="rem">REM</option> <!-- Fail -->
+                    </select>
+                </div>
+
+                <!-- EP (4 credits) -->
+                <div class="form-item">
+                    <label for="EP">EP</label>
+                    <select id="EP">
+                        <option value="0">EX</option>
+                        <option value="4">A</option>
+                        <option value="8">B</option>
+                        <option value="12">C</option>
+                        <option value="16">D</option>
+                        <option value="20">E</option>
+                        <option value="0" class="rem">REM</option> <!-- Fail -->
+                    </select>
+                </div>
+
+                <!-- OOPS (3 credits) -->
+                <div class="form-item">
+                    <label for="OOPS">OOP'S Java</label>
+                    <select id="OOPS">
+                        <option value="0">EX</option>
+                        <option value="4">A</option>
+                        <option value="8">B</option>
+                        <option value="12">C</option>
+                        <option value="16">D</option>
+                        <option value="20">E</option>
+                        <option value="0" class="rem">REM</option> <!-- Fail -->
+                    </select>
+                </div>
+
+                <!-- OOPS LAB (1.5 credits) -->
+                <div class="form-item">
+                    <label for="OOPS LAB">OOP'S Java LAB</label>
+                    <select id="OOPS LAB">
+                        <option value="0">EX</option>
+                        <option value="1.5">A</option>
+                        <option value="3">B</option>
+                        <option value="4.5">C</option>
+                        <option value="6">D</option>
+                        <option value="7.5">E</option>
+                        <option value="0" class="rem">REM</option> <!-- Fail -->
+                    </select>
+                </div>
+
+                <!-- DS (4 credits) -->
+                <div class="form-item">
+                    <label for="DS">DS</label>
+                    <select id="DS">
+                        <option value="0">EX</option>
+                        <option value="3">A</option>
+                        <option value="6">B</option>
+                        <option value="9">C</option>
+                        <option value="12">D</option>
+                        <option value="15">E</option>
+                        <option value="0" class="rem">REM</option> <!-- Fail -->
+                    </select>
+                </div>
+
+                <!-- DS LAB (1.5 credits) -->
+                <div class="form-item">
+                    <label for="DS LAB">DS LAB</label>
+                    <select id="DS LAB">
+                        <option value="0">EX</option>
+                        <option value="1.5">A</option>
+                        <option value="3">B</option>
+                        <option value="4.5">C</option>
+                        <option value="6">D</option>
+                        <option value="7.5">E</option>
+                        <option value="0" class="rem">REM</option> <!-- Fail -->
+                    </select>
+                </div>
+
+                <!-- EP LAB (1.5 credits) -->
+                <div class="form-item">
+                    <label for="EP LAB">EP LAB</label>
+                    <select id="EP LAB">
+                        <option value="0">EX</option>
+                        <option value="1.5">A</option>
+                        <option value="3">B</option>
+                        <option value="4.5">C</option>
+                        <option value="6">D</option>
+                        <option value="7.5">E</option>
+                        <option value="0" class="rem">REM</option> <!-- Fail -->
+                    </select>
+                </div>
+
+                <!-- MEFA (3 credits) -->
+                <div class="form-item">
+                    <label for="MEFA">MEFA</label>
+                    <select id="MEFA">
+                        <option value="0">EX</option>
+                        <option value="3">A</option>
+                        <option value="6">B</option>
+                        <option value="9">C</option>
+                        <option value="12">D</option>
+                        <option value="15">E</option>
+                        <option value="0" class="rem">REM</option> <!-- Fail -->
+                    </select>
+                </div>
             
             <button type="button" id="calculate-sgpa-btn" onclick="calculate()">Calculate SGPA</button>
 
