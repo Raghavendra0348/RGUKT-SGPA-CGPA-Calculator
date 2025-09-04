@@ -1,6 +1,6 @@
 /* General body styling */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+   font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -159,7 +159,7 @@ button {
     cursor: pointer;
     /* width: 100%; */
     /* position: relative; */
-    font-family: 'Lobster', cursive; /* Apply cursive font */
+    font-family: 'Poppins', sans-serif;/* Apply cursive font */
     font-size: medium;
     transition: all 0.3s ease;
     box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5); /* White color shadow */
@@ -191,7 +191,7 @@ button:active {
     cursor: pointer;
     /* width: 100%; */
     /* position: relative; */
-    font-family: 'Lobster', cursive; /* Apply cursive font */
+    font-family: 'Poppins', sans-serif; /* Apply cursive font */
     font-size: medium;
     transition: all 0.3s ease;
     box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5); /* White color shadow */
@@ -211,7 +211,7 @@ button:active {
     margin-top: 20px;
     font-size: 20px;
     font-weight: bold;
-    font-family: cursive;
+    font-family: 'Poppins', sans-serif;
 }
 
 .result .cgpa-score {
@@ -279,23 +279,22 @@ input[type="number"]:focus {
     font-size: 18px;
 }
 .distinction {
-    font-family: 'Lobster', cursive; /* Apply cursive font */
+    font-family: 'Poppins', sans-serif; /* Apply cursive font */
 
     color: #d8f5fa;
 }
 .first-class {
-    font-family: 'Lobster', cursive; /* Apply cursive font */
+   font-family: 'Poppins', sans-serif;/* Apply cursive font */
 
     color: #d8f5fa;
 }
 .second-class {
-    font-family: 'Lobster', cursive; /* Apply cursive font */
+    font-family: 'Poppins', sans-serif;/* Apply cursive font */
 
     color: #d8f5fa;
 }
 .failed {
-    font-family: 'Lobster', cursive; /* Apply cursive font */
-
+    font-family: 'Poppins', sans-serif;
     color: #d8f5fa;
 }
 .header-title {
