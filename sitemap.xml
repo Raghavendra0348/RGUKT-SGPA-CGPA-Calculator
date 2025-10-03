@@ -1,39 +1,37 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-		<!--	created with www.mysitemapgenerator.com	-->
-		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-	<loc>https://rgukt-sgpa-cgpa-calculator.vercel.app/</loc>
-	<lastmod>2025-08-13T12:14:15+01:00</lastmod>
-	<priority>1.0</priority>
+<loc>https://www.rgukt-sgpa-cgpa-calculator.tech/</loc>
+<lastmod>2025-10-03T09:44:44+01:00</lastmod>
+<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://rgukt-sgpa-cgpa-calculator.vercel.app/about.html</loc>
-	<lastmod>2025-08-13T12:14:15+01:00</lastmod>
-	<priority>1.0</priority>
+<loc>https://www.rgukt-sgpa-cgpa-calculator.tech/index.html</loc>
+<lastmod>2025-10-03T09:44:44+01:00</lastmod>
+<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://rgukt-sgpa-cgpa-calculator.vercel.app/contact.html</loc>
-	<lastmod>2025-08-13T12:14:15+01:00</lastmod>
-	<priority>1.0</priority>
+<loc>https://www.rgukt-sgpa-cgpa-calculator.tech/about.html</loc>
+<lastmod>2025-10-03T09:44:44+01:00</lastmod>
+<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://rgukt-sgpa-cgpa-calculator.vercel.app/privacy_policy.html</loc>
-	<lastmod>2025-08-13T12:14:15+01:00</lastmod>
-	<priority>1.0</priority>
+<loc>https://www.rgukt-sgpa-cgpa-calculator.tech/contact.html</loc>
+<lastmod>2025-10-03T09:44:44+01:00</lastmod>
+<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://rgukt-sgpa-cgpa-calculator.vercel.app/terms.html</loc>
-	<lastmod>2025-08-13T12:14:15+01:00</lastmod>
-	<priority>1.0</priority>
+<loc>https://www.rgukt-sgpa-cgpa-calculator.tech/privacy_policy.html</loc>
+<lastmod>2025-10-03T09:44:44+01:00</lastmod>
+<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://rgukt-sgpa-cgpa-calculator.vercel.app/department.html</loc>
-	<lastmod>2025-08-13T12:14:15+01:00</lastmod>
-	<priority>1.0</priority>
+<loc>https://www.rgukt-sgpa-cgpa-calculator.tech/terms.html</loc>
+<lastmod>2025-10-03T09:44:44+01:00</lastmod>
+<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://rgukt-sgpa-cgpa-calculator.vercel.app/blog.html</loc>
-	<lastmod>2025-08-13T12:14:15+01:00</lastmod>
-	<priority>1.0</priority>
+<loc>https://www.rgukt-sgpa-cgpa-calculator.tech/blog.html</loc>
+<lastmod>2025-10-03T09:44:44+01:00</lastmod>
+<priority>1.0</priority>
 </url>
 </urlset>
