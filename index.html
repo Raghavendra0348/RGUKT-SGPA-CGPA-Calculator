@@ -41,6 +41,24 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+
+    <!-- Analytics (Deferred Loading) -->
+    <script>
+        window.addEventListener('load', function () {
+            const gtagScript = document.createElement('script');
+            gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-T486B8C5X0';
+            gtagScript.async = true;
+            document.head.appendChild(gtagScript);
+
+            gtagScript.onload = () => {
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-T486B8C5X0');
+            };
+        });
+    </script>
+
 <!-- Structured Data for Google Rich Snippets -->
 <script type="application/ld+json">
 {
@@ -65,24 +83,6 @@
   }
 }
 </script>
-
-    <!-- Analytics (Deferred Loading) -->
-    <script>
-        window.addEventListener('load', function () {
-            const gtagScript = document.createElement('script');
-            gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-T486B8C5X0';
-            gtagScript.async = true;
-            document.head.appendChild(gtagScript);
-
-            gtagScript.onload = () => {
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-T486B8C5X0');
-            };
-        });
-    </script>
-
     <!-- Font (Single, Consistent) -->
    
     <!-- Icons -->
