@@ -9,15 +9,6 @@ A free, responsive web-based tool designed for **RGUKT students** to calculate t
 
 ---
 
-## 🏆 Project Badges
-
-![Static Badge](https://img.shields.io/badge/Made%20with-Firebase-orange?logo=firebase)
-![Static Badge](https://img.shields.io/badge/Frontend-HTML%20%7C%20CSS%20%7C%20JS-blue)
-![Static Badge](https://img.shields.io/badge/Status-Live%20on%20Web-green)
-![Static Badge](https://img.shields.io/badge/License-MIT-lightgrey)
-![Static Badge](https://img.shields.io/badge/Mobile-Friendly-success?logo=android)
-
----
 
 ## 🚀 Features
 
@@ -25,7 +16,6 @@ A free, responsive web-based tool designed for **RGUKT students** to calculate t
 - 📱 Fully **responsive** for mobile, tablet, and desktop users
 - 🎓 Supports **PUC & Engineering semesters**
 - 🔐 **Firebase Authentication** (Signup / Login)
-- 💾 Save, manage, and view your previous GPA data
 - 🌙 Modern **UI/UX** with gradient design and smooth animations
 - 📰 **Blog & Info Section** for GPA tips, FAQs, and guides
 - ⚡ **Fast-loading**, SEO optimized, and performance tested
@@ -36,9 +26,49 @@ A free, responsive web-based tool designed for **RGUKT students** to calculate t
 
 | Frontend | Backend | Hosting | Database |
 |-----------|----------|----------|-----------|
-| HTML5, CSS3, JavaScript (ES6 Modules) | Firebase Auth | GitHub Pages / Firebase Hosting | Firebase Firestore |
+| HTML5, CSS3, JavaScript (ES6 Modules) | Firebase Auth | Vercel | 
 
 ---
 
-## 📂 Folder Structure
+
+---
+
+## 🖼️ Website Preview
+
+### 🌟 Homepage  
+![Homepage Screenshot](home-preview.png)
+
+### 🧮 SGPA Calculator  
+![SGPA Calculator](sgpa-calculator.png)
+
+### 📰 Blog Section  
+![Blog Section](blog-section.png)
+
+---
+
+## 🎞️ Scrolling Animation (Live Preview)
+
+Here’s how the calculator flows and responds across devices:  
+
+![Scrolling Animation](./assets/screenshots/mobile-view.gif)
+
+> 💡 **Tip:**  
+> You can record your site’s animation using tools like:  
+> - 🖥️ [ScreenToGif (Windows)](https://www.screentogif.com/)  
+> - 💻 [RecordIt (macOS/Linux)](https://recordit.co/)  
+> Save the result as `mobile-view.gif` inside  
+> `assets/screenshots/` and commit it to your repo.
+
+---
+
+## 🧠 How to Run Locally
+
+You must serve this project via a **local web server**  
+(because it uses ES Modules + Firebase).
+
+### ▶️ Option 1 — Using Python
+```bash
+cd RGUKT-SGPA-CGPA-Calculator
+python3 -m http.server 8080
+
 
