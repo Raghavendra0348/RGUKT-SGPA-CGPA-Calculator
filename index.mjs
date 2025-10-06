@@ -38,11 +38,17 @@ window.logout = () => {
 const dropdown = document.getElementById("user-dropdown");
 const overlay = document.getElementById("user-dropdown-overlay");
 
-window.toggleDropdown = (e) => {
-  e.stopPropagation();
-  dropdown.classList.toggle("show");
-  overlay.style.display = dropdown.classList.contains("show") ? "block" : "none";
+window.toggleMenu = () => {
+  const menu = document.querySelector('.menu-bar');
+  const overlay = document.querySelector('.menu-overlay');
+  if (!menu || !overlay) {
+    console.warn("Menu or overlay not found in DOM.");
+    return;
+  }
+  menu.classList.toggle('open');
+  overlay.classList.toggle('open');
 };
+
 
 overlay.addEventListener("click", () => {
   dropdown.classList.remove("show");
