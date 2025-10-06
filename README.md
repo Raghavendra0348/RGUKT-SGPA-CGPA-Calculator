@@ -46,21 +46,6 @@ A free, responsive web-based tool designed for **RGUKT students** to calculate t
 
 ---
 
-## 🎞️ Scrolling Animation (Live Preview)
-
-Here’s how the calculator flows and responds across devices:  
-
-![Scrolling Animation](./assets/screenshots/mobile-view.gif)
-
-> 💡 **Tip:**  
-> You can record your site’s animation using tools like:  
-> - 🖥️ [ScreenToGif (Windows)](https://www.screentogif.com/)  
-> - 💻 [RecordIt (macOS/Linux)](https://recordit.co/)  
-> Save the result as `mobile-view.gif` inside  
-> `assets/screenshots/` and commit it to your repo.
-
----
-
 ## 🧠 How to Run Locally
 
 You must serve this project via a **local web server**  
