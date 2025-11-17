@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA And SGPA Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1 class="header-title">CSE E-01 SEM-02</h1>
+
+        <div class="top-buttons">
+            <button id="sgpa-btn" onclick="showSGPA()">SGPA</button>
+            <button id="cgpa-btn" onclick="showCGPA()">CGPA</button>
+        </div>
+        
+        <!-- SGPA Calculator -->
+       <div id="sgpa-content" class="sgpa-section">
+    <fieldset>
+        <legend>SGPA Calculator</legend>
+        <form id="sgpaForm">
+            <div class="form-row">
+
+                <!-- DM (4 credits) -->
+                <div class="form-item">
+                    <label for="DM">DM</label>
+                    <select id="DM">
+                        <option value="0">EX</option>
+                        <option value="4">A</option>
+                        <option value="8">B</option>
+                        <option value="12">C</option>
+                        <option value="16">D</option>
+                        <option value="20">E</option>
+                        <option value="0" class="rem">REM</option> <!-- Fail -->
+                    </select>
+                </div>
+
+                <!-- EP (4 credits) -->
+                <div class="form-item">
+                    <label for="EP">EP</label>
+                    <select id="EP">
+                        <option value="0">EX</option>
+                        <option value="4">A</option>
+                        <option value="8">B</option>
+                        <option value="12">C</option>
+                        <option value="16">D</option>
+                        <option value="20">E</option>
+                        <option value="0" class="rem">REM</option> <!-- Fail -->
+                    </select>
+                </div>
+
+                <!-- OOPS (3 credits) -->
+                <div class="form-item">
+                    <label for="OOPS">OOP'S Java</label>
+                    <select id="OOPS">
+                        <option value="0">EX</option>
+                        <option value="4">A</option>
+                        <option value="8">B</option>
+                        <option value="12">C</option>
+                        <option value="16">D</option>
+                        <option value="20">E</option>
+                        <option value="0" class="rem">REM</option> <!-- Fail -->
+                    </select>
+                </div>
+
+                <!-- OOPS LAB (1.5 credits) -->
+                <div class="form-item">
+                    <label for="OOPS LAB">OOP'S Java LAB</label>
+                    <select id="OOPS LAB">
+                        <option value="0">EX</option>
+                        <option value="1.5">A</option>
+                        <option value="3">B</option>
+                        <option value="4.5">C</option>
+                        <option value="6">D</option>
+                        <option value="7.5">E</option>
+                        <option value="0" class="rem">REM</option> <!-- Fail -->
+                    </select>
+                </div>
+
+                <!-- DS (4 credits) -->
+                <div class="form-item">
+                    <label for="DS">DS</label>
+                    <select id="DS">
+                        <option value="0">EX</option>
+                        <option value="3">A</option>
+                        <option value="6">B</option>
+                        <option value="9">C</option>
+                        <option value="12">D</option>
+                        <option value="15">E</option>
+                        <option value="0" class="rem">REM</option> <!-- Fail -->
+                    </select>
+                </div>
+
+                <!-- DS LAB (1.5 credits) -->
+                <div class="form-item">
+                    <label for="DS LAB">DS LAB</label>
+                    <select id="DS LAB">
+                        <option value="0">EX</option>
+                        <option value="1.5">A</option>
+                        <option value="3">B</option>
+                        <option value="4.5">C</option>
+                        <option value="6">D</option>
+                        <option value="7.5">E</option>
+                        <option value="0" class="rem">REM</option> <!-- Fail -->
+                    </select>
+                </div>
+
+                <!-- EP LAB (1.5 credits) -->
+                <div class="form-item">
+                    <label for="EP LAB">EP LAB</label>
+                    <select id="EP LAB">
+                        <option value="0">EX</option>
+                        <option value="1.5">A</option>
+                        <option value="3">B</option>
+                        <option value="4.5">C</option>
+                        <option value="6">D</option>
+                        <option value="7.5">E</option>
+                        <option value="0" class="rem">REM</option> <!-- Fail -->
+                    </select>
+                </div>
+
+                <!-- MEFA (3 credits) -->
+                <div class="form-item">
+                    <label for="MEFA">MEFA</label>
+                    <select id="MEFA">
+                        <option value="0">EX</option>
+                        <option value="3">A</option>
+                        <option value="6">B</option>
+                        <option value="9">C</option>
+                        <option value="12">D</option>
+                        <option value="15">E</option>
+                        <option value="0" class="rem">REM</option> <!-- Fail -->
+                    </select>
+                </div>
+            
+            <button type="button" id="calculate-sgpa-btn" onclick="calculate()">Calculate SGPA</button>
+
+            <div class="result" id="sgpa-result"></div>
+            <div class="congratulations" id="sgpa-congratulations"></div>
+        </form>
+    </fieldset>
+</div>
+
+<!-- CGPA Calculator -->
+<div id="cgpa-content" class="cgpa-section">
+    <fieldset>
+        <legend>CGPA Calculator</legend>
+        <form id="cgpaForm">
+            <div class="form-row">
+                <div class="form-item1">
+                    <label class="label" for="Sem1">E-01 S-01:</label>
+                    <input type="number" id="Sem1" placeholder="Enter E-01 S-01 Points" min="0" max="10" step="0.01">
+                </div>
+
+                <!-- Semester 2 -->
+                <div class="form-item1">
+                    <label class="label" for="Sem2">E-01 S-02:</label>
+                    <input type="number" id="Sem2" placeholder="Enter E-01 S-02 Points" min="0" max="10" step="0.01">
+                </div>
+
+                <!-- Semester 3 -->
+                
+            </div>
+            <button type="button" id="calculate-cgpa-btn" onclick="calculate()">Calculate CGPA</button>
+            <div class="result" id="cgpa-result"></div>
+            <div class="congratulations" id="cgpa-congratulations"></div>
+        </form>
+    </fieldset>
+</div>
+</div>
+
+<script>
+function showSGPA() {
+    document.getElementById('sgpa-content').style.display = 'block';
+    document.getElementById('cgpa-content').style.display = 'none';
+    document.getElementById('sgpa-result').innerHTML = '';
+    document.getElementById('sgpa-congratulations').innerHTML = '';
+}
+
+function showCGPA() {
+    document.getElementById('sgpa-content').style.display = 'none';
+    document.getElementById('cgpa-content').style.display = 'block';
+    document.getElementById('cgpa-result').innerHTML = '';
+    document.getElementById('cgpa-congratulations').innerHTML = '';
+}
+
+function calculate() {
+    let resultText = '';
+    let congratsMessage = '';
+    let divisionClass = '';
+
+    // Calculate SGPA
+    if (document.getElementById('sgpa-content').style.display !== 'none') {
+        let sum = 0;
+        const subjects = ['DM', 'EP', 'MEFA','OOPS' ,'OOPS LAB', 'DS', 'DS LAB', 'EP LAB'];
+
+
+        subjects.forEach(subject => {
+            sum += parseFloat(document.getElementById(subject).value) || 0; // Default to 0 if NaN
+        });
+
+        const sgpa =  (225 - sum) / 22.5;
+        resultText += 'Your SGPA is: <span class="cgpa-score">' + sgpa.toFixed(3) + '</span><span class="cgpa-total">/10</span><br>';
+
+        if (sgpa >= 8.00) {
+            congratsMessage = "Congratulations! You are Passed in Distinction.";
+            divisionClass = "distinction";
+        } else if (sgpa >= 7.00) {
+            congratsMessage = "Congratulations! You are Passed in First Class Division.";
+            divisionClass = "first-class";
+        } else if (sgpa >= 6.00) {
+            congratsMessage = "Congratulations! You are Passed in Second Class Division.";
+            divisionClass = "second-class";
+       
+        } else {
+            congratsMessage = "Sorry! You have Failed.";
+            divisionClass = "failed";
+        }
+
+        document.getElementById('sgpa-result').innerHTML = resultText;
+        document.getElementById('sgpa-congratulations').innerHTML = `<span class="${divisionClass}">${congratsMessage}</span>`;
+        return; // Exit the function to avoid executing CGPA calculation
+    }
+
+    // Calculate CGPA
+    if (document.getElementById('cgpa-content').style.display !== 'none') {
+        let totalPoints = 0;
+        let totalSemesters = 0;
+
+        for (let i = 1; i <= 2; i++) {
+            const points = parseFloat(document.getElementById(`Sem${i}`).value) || 0;
+            totalPoints += points;
+            totalSemesters++;
+        }
+
+        const cgpa = totalPoints / totalSemesters;
+        resultText += 'Your CGPA is: <span class="cgpa-score">' + cgpa.toFixed(3) + '</span><span class="cgpa-total">/10</span><br>';
+
+        if (cgpa >= 8.00) {
+            congratsMessage = "Congratulations! You are Passed in Distinction.";
+            divisionClass = "distinction";
+        } else if (cgpa >= 7.00) {
+            congratsMessage = "Congratulations! You are Passed in First Class Division.";
+            divisionClass = "first-class";
+        } else if (cgpa >= 6.00) {
+            congratsMessage = "Congratulations! You are Passed in Second Class Division.";
+            divisionClass = "second-class";
+        } else {
+            congratsMessage = "Sorry! You have Failed.";
+            divisionClass = "failed";
+        }
+
+        document.getElementById('cgpa-result').innerHTML = resultText;
+        document.getElementById('cgpa-congratulations').innerHTML = `<span class="${divisionClass}">${congratsMessage}</span>`;
+    }
+}
+window.onload = showSGPA;
+
+</script>
+
+</body>
+</html>
