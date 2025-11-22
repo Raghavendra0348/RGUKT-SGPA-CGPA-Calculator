@@ -1,37 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://www.rgukt-sgpa-cgpa-calculator.tech/</loc>
-<lastmod>2025-10-03T09:44:44+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.rgukt-sgpa-cgpa-calculator.tech/index.html</loc>
-<lastmod>2025-10-03T09:44:44+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.rgukt-sgpa-cgpa-calculator.tech/about.html</loc>
-<lastmod>2025-10-03T09:44:44+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.rgukt-sgpa-cgpa-calculator.tech/contact.html</loc>
-<lastmod>2025-10-03T09:44:44+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.rgukt-sgpa-cgpa-calculator.tech/privacy_policy.html</loc>
-<lastmod>2025-10-03T09:44:44+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.rgukt-sgpa-cgpa-calculator.tech/terms.html</loc>
-<lastmod>2025-10-03T09:44:44+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.rgukt-sgpa-cgpa-calculator.tech/blog.html</loc>
-<lastmod>2025-10-03T09:44:44+01:00</lastmod>
-<priority>1.0</priority>
-</url>
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Main Pages -->
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/index.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/about.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/contact.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/blog.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/disclaimer.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/privacy_policy.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/terms.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Department Selection -->
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/department.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- PUC -->
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/puc.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- CSE Branch -->
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/cse_semester.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- ECE Branch -->
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/ece_semester.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- EEE Branch -->
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/eee_semester.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Civil Branch -->
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/civil_semester.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Mechanical Branch -->
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/mech_semester.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Chemical Branch -->
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/chemical_semester.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- MME Branch -->
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/mme_semester.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Educational Content -->
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/how-to-calculate-sgpa.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.rgukt-sgpa-cgpa-calculator.tech/sgpa-vs-cgpa.html</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>

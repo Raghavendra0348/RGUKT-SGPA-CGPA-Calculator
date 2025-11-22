@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SGPA vs CGPA: Complete Difference Guide | RGUKT</title>
+        <meta name="description"
+                content="Understand the key differences between SGPA and CGPA at RGUKT. Learn how they are calculated, which is more important, and how to convert between them.">
+        <meta name="keywords"
+                content="SGPA vs CGPA, difference between SGPA and CGPA, SGPA meaning, CGPA meaning, RGUKT grading, semester GPA, cumulative GPA">
+        <link rel="canonical" href="https://www.rgukt-sgpa-cgpa-calculator.tech/sgpa-vs-cgpa.html" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                }
+
+                body {
+                        font-family: 'Poppins', sans-serif;
+                        background-color: #0A1828;
+                        color: #333;
+                        line-height: 1.8;
+                        padding: 20px;
+                        min-height: 100vh;
+                }
+
+                .container {
+                        max-width: 1000px;
+                        margin: 0 auto;
+                        background: #FFFFFF;
+                        padding: 50px;
+                        border-radius: 12px;
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                }
+
+                h1 {
+                        color: #0A1828;
+                        font-size: 2.8em;
+                        margin-bottom: 10px;
+                        text-align: center;
+                        font-weight: 700;
+                }
+
+                .breadcrumb {
+                        text-align: center;
+                        margin-bottom: 30px;
+                        color: #666;
+                        font-size: 0.9em;
+                }
+
+                .breadcrumb a {
+                        color: #0A1828;
+                        text-decoration: none;
+                        font-weight: 600;
+                }
+
+                .breadcrumb a:hover {
+                        text-decoration: underline;
+                }
+
+                h2 {
+                        color: #0A1828;
+                        font-size: 2em;
+                        margin-top: 40px;
+                        margin-bottom: 20px;
+                        border-left: 5px solid #000000;
+                        padding-left: 15px;
+                        font-weight: 700;
+                }
+
+                h3 {
+                        color: #000000;
+                        font-size: 1.5em;
+                        margin-top: 30px;
+                        margin-bottom: 15px;
+                        font-weight: 600;
+                }
+
+                p {
+                        margin-bottom: 20px;
+                        font-size: 1.05em;
+                        color: #333;
+                        color: #555;
+                }
+
+                .comparison-grid {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 30px;
+                        margin: 40px 0;
+                }
+
+                .card {
+                        background-color: #0A1828;
+                        padding: 30px;
+                        border-radius: 12px;
+                        color: #FFFFFF;
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+                        transition: transform 0.3s ease;
+                        border: 2px solid #000000;
+                }
+
+                .card:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+                }
+
+                .card h3 {
+                        color: #FFFFFF;
+                        margin-top: 0;
+                        font-size: 2em;
+                        font-weight: 700;
+                }
+
+                .card p {
+                        color: #FFFFFF;
+                        font-size: 1em;
+                        opacity: 0.95;
+                }
+
+                table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        margin: 30px 0;
+                        background: white;
+                        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+                        border-radius: 10px;
+                        overflow: hidden;
+                }
+
+                th,
+                td {
+                        padding: 18px;
+                        text-align: left;
+                        border-bottom: 1px solid #e0e0e0;
+                }
+
+                th {
+                        background-color: #0A1828;
+                        color: #FFFFFF;
+                        font-weight: 600;
+                        font-size: 1.1em;
+                }
+
+                tr:hover {
+                        background: #f5f5f5;
+                }
+
+                .highlight-box {
+                        background-color: #f5f5f5;
+                        padding: 30px;
+                        border-radius: 12px;
+                        margin: 30px 0;
+                        border-left: 5px solid #000000;
+                        border: 2px solid #0A1828;
+                }
+
+                .example-box {
+                        background: #f9f9f9;
+                        padding: 30px;
+                        border-radius: 12px;
+                        margin: 30px 0;
+                        border-left: 5px solid #0A1828;
+                        border: 2px solid #0A1828;
+                }
+
+                .formula {
+                        background-color: #0A1828;
+                        padding: 25px;
+                        border-radius: 10px;
+                        font-size: 1.3em;
+                        text-align: center;
+                        margin: 30px 0;
+                        border: 3px solid #000000;
+                        font-weight: 600;
+                        color: #FFFFFF;
+                }
+
+                .pros-cons {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 25px;
+                        margin: 30px 0;
+                }
+
+                .pros,
+                .cons {
+                        padding: 25px;
+                        border-radius: 12px;
+                }
+
+                .pros {
+                        background: #f9f9f9;
+                        border-left: 5px solid #0A1828;
+                        border: 2px solid #0A1828;
+                }
+
+                .cons {
+                        background: #f5f5f5;
+                        border-left: 5px solid #000000;
+                        border: 2px solid #000000;
+                }
+
+                .pros h4,
+                .cons h4 {
+                        margin-bottom: 15px;
+                        font-size: 1.3em;
+                }
+
+                .pros h4 {
+                        color: #0A1828;
+                        font-weight: 700;
+                }
+
+                .cons h4 {
+                        color: #000000;
+                        font-weight: 700;
+                }
+
+                ul {
+                        margin-left: 25px;
+                }
+
+                li {
+                        margin: 12px 0;
+                }
+
+                .cta-button {
+                        display: inline-block;
+                        padding: 15px 40px;
+                        background-color: #000000;
+                        color: #FFFFFF;
+                        text-decoration: none;
+                        border-radius: 8px;
+                        font-weight: 600;
+                        margin: 15px 10px;
+                        transition: all 0.3s ease;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                        border: 2px solid #000000;
+                }
+
+                .cta-button:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+                        background-color: #FFFFFF;
+                        color: #000000;
+                }
+
+                .cta-section {
+                        text-align: center;
+                        margin: 50px 0;
+                        padding: 40px;
+                        background-color: #f5f5f5;
+                        border-radius: 12px;
+                        border: 2px solid #0A1828;
+                }
+
+                /* Responsive Design */
+                @media (max-width: 768px) {
+                        body {
+                                padding: 10px;
+                        }
+
+                        .container {
+                                padding: 25px;
+                                border-radius: 8px;
+                        }
+
+                        h1 {
+                                font-size: 2em;
+                        }
+
+                        h2 {
+                                font-size: 1.5em;
+                        }
+
+                        h3 {
+                                font-size: 1.2em;
+                        }
+
+                        .comparison-grid,
+                        .pros-cons {
+                                grid-template-columns: 1fr;
+                        }
+
+                        h1 {
+                                font-size: 2em;
+                        }
+
+                        h2 {
+                                font-size: 1.6em;
+                        }
+                }
+        </style>
+</head>
+
+<body>
+        <div class="container">
+                <h1><i class="fas fa-balance-scale"></i> SGPA vs CGPA: Complete Guide</h1>
+                <div class="breadcrumb">
+                        <a href="index.html"><i class="fas fa-home"></i> Home</a> /
+                        <a href="blog.html">Blog</a> /
+                        SGPA vs CGPA
+                </div>
+
+                <p style="font-size: 1.15em; text-align: center; color: #666; font-style: italic;">
+                        Understanding the difference between SGPA and CGPA is crucial for tracking your academic
+                        progress at RGUKT
+                </p>
+
+                <h2><i class="fas fa-question-circle"></i> What is SGPA?</h2>
+                <div class="highlight-box">
+                        <h3><i class="fas fa-file-alt"></i> SGPA - Semester Grade Point Average</h3>
+                        <p><strong>SGPA</strong> stands for <strong>Semester Grade Point Average</strong>. It is the
+                                grade point average that a student earns in a <strong>single semester</strong>. SGPA is
+                                calculated by dividing the total credit points earned in that semester by the total
+                                number of credits attempted.</p>
+                        <div class="formula" style="margin-top: 20px;">
+                                SGPA = (Sum of Credit Points in One Semester) ÷ (Total Credits in That Semester)
+                        </div>
+                        <p style="margin-top: 20px;"><strong>Example:</strong> If you scored 180 credit points with 20
+                                total credits in Semester 1, your SGPA = 180 ÷ 20 = <strong>9.0</strong></p>
+                </div>
+
+                <h2><i class="fas fa-chart-line"></i> What is CGPA?</h2>
+                <div class="highlight-box">
+                        <h3><i class="fas fa-graduation-cap"></i> CGPA - Cumulative Grade Point Average</h3>
+                        <p><strong>CGPA</strong> stands for <strong>Cumulative Grade Point Average</strong>. It
+                                represents your <strong>overall performance</strong> across <strong>all
+                                        semesters</strong> completed so far. CGPA is calculated by dividing the total
+                                credit points earned in all semesters by the total number of credits attempted across
+                                all semesters.</p>
+                        <div class="formula" style="margin-top: 20px;">
+                                CGPA = (Sum of Credit Points of All Semesters) ÷ (Total Credits of All Semesters)
+                        </div>
+                        <p style="margin-top: 20px;"><strong>Example:</strong> If you scored 720 total credit points
+                                with 80 total credits across 4 semesters, your CGPA = 720 ÷ 80 = <strong>9.0</strong>
+                        </p>
+                </div>
+
+                <h2><i class="fas fa-columns"></i> SGPA vs CGPA: Quick Comparison</h2>
+
+                <div class="comparison-grid">
+                        <div class="card">
+                                <h3><i class="fas fa-calendar-alt"></i> SGPA</h3>
+                                <p><i class="fas fa-check-circle"></i> <strong>Scope:</strong> One Semester</p>
+                                <p><i class="fas fa-check-circle"></i> <strong>Purpose:</strong> Short-term performance
+                                </p>
+                                <p><i class="fas fa-check-circle"></i> <strong>Updates:</strong> Every semester</p>
+                                <p><i class="fas fa-check-circle"></i> <strong>Impact:</strong> Immediate feedback</p>
+                        </div>
+                        <div class="card" style="background: linear-gradient(135deg, #f64f59 0%, #c471ed 100%);">
+                                <h3><i class="fas fa-chart-line"></i> CGPA</h3>
+                                <p><i class="fas fa-check-circle"></i> <strong>Scope:</strong> All Semesters</p>
+                                <p><i class="fas fa-check-circle"></i> <strong>Purpose:</strong> Overall performance</p>
+                                <p><i class="fas fa-check-circle"></i> <strong>Updates:</strong> Every semester</p>
+                                <p><i class="fas fa-check-circle"></i> <strong>Impact:</strong> Cumulative record</p>
+                        </div>
+                </div>
+
+                <h2><i class="fas fa-list"></i> Detailed Comparison Table</h2>
+
+                <table>
+                        <thead>
+                                <tr>
+                                        <th>Aspect</th>
+                                        <th><i class="fas fa-file-alt"></i> SGPA</th>
+                                        <th><i class="fas fa-graduation-cap"></i> CGPA</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                        <td><strong>Full Form</strong></td>
+                                        <td>Semester Grade Point Average</td>
+                                        <td>Cumulative Grade Point Average</td>
+                                </tr>
+                                <tr>
+                                        <td><strong>Time Period</strong></td>
+                                        <td>One semester (6 months)</td>
+                                        <td>All semesters completed</td>
+                                </tr>
+                                <tr>
+                                        <td><strong>Calculation Basis</strong></td>
+                                        <td>Credits and grades of one semester</td>
+                                        <td>Credits and grades of all semesters</td>
+                                </tr>
+                                <tr>
+                                        <td><strong>Maximum Value</strong></td>
+                                        <td>10.0</td>
+                                        <td>10.0</td>
+                                </tr>
+                                <tr>
+                                        <td><strong>Frequency</strong></td>
+                                        <td>Calculated after each semester</td>
+                                        <td>Updated after each semester</td>
+                                </tr>
+                                <tr>
+                                        <td><strong>Appears On</strong></td>
+                                        <td>Semester grade card</td>
+                                        <td>Consolidated grade card</td>
+                                </tr>
+                                <tr>
+                                        <td><strong>Used For</strong></td>
+                                        <td>Tracking semester performance</td>
+                                        <td>Final degree classification, placements</td>
+                                </tr>
+                                <tr>
+                                        <td><strong>Can Change?</strong></td>
+                                        <td>No (fixed after semester ends)</td>
+                                        <td>Yes (updates every semester)</td>
+                                </tr>
+                                <tr>
+                                        <td><strong>Importance</strong></td>
+                                        <td>Immediate feedback</td>
+                                        <td>Overall academic record</td>
+                                </tr>
+                                <tr>
+                                        <td><strong>Recovery</strong></td>
+                                        <td>Cannot improve past SGPA</td>
+                                        <td>Can improve with better future performance</td>
+                                </tr>
+                        </tbody>
+                </table>
+
+                <h2><i class="fas fa-calculator"></i> How to Calculate CGPA from SGPA</h2>
+
+                <div class="example-box">
+                        <h3>Method 1: Simple Average (Equal Credits)</h3>
+                        <p>If all semesters have equal credits, you can simply average the SGPA values:</p>
+                        <div class="formula">
+                                CGPA = (SGPA₁ + SGPA₂ + SGPA₃ + ... + SGPAₙ) ÷ n
+                        </div>
+                        <p style="margin-top: 20px;"><strong>Example:</strong></p>
+                        <ul>
+                                <li>Semester 1 SGPA: 8.5</li>
+                                <li>Semester 2 SGPA: 9.0</li>
+                                <li>Semester 3 SGPA: 8.7</li>
+                                <li>Semester 4 SGPA: 9.2</li>
+                        </ul>
+                        <p style="margin-top: 15px; font-size: 1.1em;">
+                                <strong>CGPA = (8.5 + 9.0 + 8.7 + 9.2) ÷ 4 = 35.4 ÷ 4 = <span
+                                                style="color: #27ae60; font-size: 1.3em;">8.85</span></strong>
+                        </p>
+                </div>
+
+                <div class="example-box">
+                        <h3>Method 2: Weighted Average (Different Credits)</h3>
+                        <p>If semesters have different total credits, use the weighted average method:</p>
+                        <div class="formula">
+                                CGPA = (Total Credit Points of All Semesters) ÷ (Total Credits of All Semesters)
+                        </div>
+                        <p style="margin-top: 20px;"><strong>Example:</strong></p>
+                        <table style="margin-top: 15px; font-size: 0.95em;">
+                                <thead>
+                                        <tr>
+                                                <th>Semester</th>
+                                                <th>SGPA</th>
+                                                <th>Credits</th>
+                                                <th>Credit Points</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                                <td>Semester 1</td>
+                                                <td>8.5</td>
+                                                <td>20</td>
+                                                <td>8.5 × 20 = 170</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Semester 2</td>
+                                                <td>9.0</td>
+                                                <td>22</td>
+                                                <td>9.0 × 22 = 198</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Semester 3</td>
+                                                <td>8.7</td>
+                                                <td>21</td>
+                                                <td>8.7 × 21 = 182.7</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Semester 4</td>
+                                                <td>9.2</td>
+                                                <td>23</td>
+                                                <td>9.2 × 23 = 211.6</td>
+                                        </tr>
+                                        <tr style="background: #e8f5e9; font-weight: bold;">
+                                                <td>TOTAL</td>
+                                                <td>-</td>
+                                                <td>86</td>
+                                                <td>762.3</td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                        <p style="margin-top: 15px; font-size: 1.1em;">
+                                <strong>CGPA = 762.3 ÷ 86 = <span
+                                                style="color: #27ae60; font-size: 1.3em;">8.87</span></strong>
+                        </p>
+                </div>
+
+                <h2><i class="fas fa-lightbulb"></i> Key Differences Explained</h2>
+
+                <h3>1. Scope of Evaluation</h3>
+                <div class="pros-cons">
+                        <div class="pros">
+                                <h4><i class="fas fa-file-alt"></i> SGPA</h4>
+                                <ul>
+                                        <li>Evaluates single semester only</li>
+                                        <li>Focuses on current performance</li>
+                                        <li>Reflects recent efforts</li>
+                                </ul>
+                        </div>
+                        <div class="cons" style="background: #e3f2fd; border-left-color: #2196f3;">
+                                <h4 style="color: #2196f3;"><i class="fas fa-graduation-cap"></i> CGPA</h4>
+                                <ul>
+                                        <li>Evaluates entire academic journey</li>
+                                        <li>Reflects overall consistency</li>
+                                        <li>Shows long-term performance</li>
+                                </ul>
+                        </div>
+                </div>
+
+                <h3>2. Impact on Future</h3>
+                <div class="pros-cons">
+                        <div class="pros">
+                                <h4><i class="fas fa-file-alt"></i> SGPA</h4>
+                                <ul>
+                                        <li>Important for semester scholarships</li>
+                                        <li>Determines semester rank</li>
+                                        <li>Affects next semester registration</li>
+                                        <li>Used for branch change eligibility</li>
+                                </ul>
+                        </div>
+                        <div class="cons" style="background: #e3f2fd; border-left-color: #2196f3;">
+                                <h4 style="color: #2196f3;"><i class="fas fa-graduation-cap"></i> CGPA</h4>
+                                <ul>
+                                        <li>Determines degree classification (First Class, etc.)</li>
+                                        <li>Primary factor in campus placements</li>
+                                        <li>Required for higher education applications</li>
+                                        <li>Used by employers for hiring</li>
+                                        <li>Determines overall university rank</li>
+                                </ul>
+                        </div>
+                </div>
+
+                <h3>3. Flexibility</h3>
+                <div class="pros-cons">
+                        <div class="pros">
+                                <h4><i class="fas fa-file-alt"></i> SGPA</h4>
+                                <ul>
+                                        <li>Cannot be changed once calculated</li>
+                                        <li>Fixed after semester ends</li>
+                                        <li>Past SGPA remains as is</li>
+                                </ul>
+                        </div>
+                        <div class="cons" style="background: #e3f2fd; border-left-color: #2196f3;">
+                                <h4 style="color: #2196f3;"><i class="fas fa-graduation-cap"></i> CGPA</h4>
+                                <ul>
+                                        <li>Can improve with better future semesters</li>
+                                        <li>Poor performance can be compensated</li>
+                                        <li>Dynamic and updates regularly</li>
+                                </ul>
+                        </div>
+                </div>
+
+                <h2><i class="fas fa-star"></i> Which is More Important?</h2>
+
+                <div class="highlight-box">
+                        <h3><i class="fas fa-trophy"></i> The Verdict</h3>
+                        <p><strong>Both are important, but for different reasons:</strong></p>
+                        <ul style="margin-top: 15px; margin-left: 25px;">
+                                <li><strong>SGPA is important for:</strong>
+                                        <ul style="margin-left: 20px; margin-top: 10px;">
+                                                <li>Semester-wise tracking</li>
+                                                <li>Identifying weak areas immediately</li>
+                                                <li>Semester scholarships and awards</li>
+                                                <li>Branch change eligibility (after first year)</li>
+                                        </ul>
+                                </li>
+                                <li style="margin-top: 15px;"><strong>CGPA is important for:</strong>
+                                        <ul style="margin-left: 20px; margin-top: 10px;">
+                                                <li><strong>Final degree classification</strong></li>
+                                                <li><strong>Campus placements (most companies have CGPA cutoff)</strong>
+                                                </li>
+                                                <li><strong>Higher education admissions (MS, MBA, etc.)</strong></li>
+                                                <li><strong>Government job applications</strong></li>
+                                                <li>Overall university ranking</li>
+                                        </ul>
+                                </li>
+                        </ul>
+                        <p
+                                style="margin-top: 20px; padding: 20px; background: rgba(255, 255, 255, 0.5); border-radius: 10px;">
+                                <i class="fas fa-exclamation-circle"></i> <strong>Bottom Line:</strong> Focus on getting
+                                good SGPA every semester, as this will automatically result in a good CGPA. CGPA is what
+                                matters most for your career, but you build it through consistent SGPA performance!
+                        </p>
+                </div>
+
+                <h2><i class="fas fa-chart-bar"></i> Common Scenarios</h2>
+
+                <div class="example-box">
+                        <h3>Scenario 1: High SGPA but Low CGPA</h3>
+                        <p><strong>Situation:</strong> You got 9.5 SGPA in current semester, but your CGPA is 7.2</p>
+                        <p><strong>Reason:</strong> Poor performance in earlier semesters is bringing down your overall
+                                average.</p>
+                        <p><strong>Action:</strong> Keep performing well! Your CGPA will gradually improve with each
+                                good semester.</p>
+                </div>
+
+                <div class="example-box">
+                        <h3>Scenario 2: Low SGPA but Good CGPA</h3>
+                        <p><strong>Situation:</strong> You got 7.0 SGPA in current semester, but your CGPA is still 8.5
+                        </p>
+                        <p><strong>Reason:</strong> Your previous semesters' excellent performance is maintaining your
+                                CGPA.</p>
+                        <p><strong>Action:</strong> Be careful! Continued low SGPA will eventually lower your CGPA.</p>
+                </div>
+
+                <div class="example-box">
+                        <h3>Scenario 3: Consistent Performance</h3>
+                        <p><strong>Situation:</strong> Your SGPA is 8.8 and CGPA is 8.7</p>
+                        <p><strong>Reason:</strong> Consistent performance across all semesters.</p>
+                        <p><strong>Action:</strong> Excellent! Maintain this consistency for best results.</p>
+                </div>
+
+                <h2><i class="fas fa-rocket"></i> Tips for Managing Both</h2>
+
+                <div style="background: #f0f8ff; padding: 30px; border-radius: 15px; margin: 30px 0;">
+                        <h3 style="color: #2c3e50; margin-top: 0;">
+                                <i class="fas fa-check-circle"></i> Smart Strategies
+                        </h3>
+                        <ol style="margin-left: 25px;">
+                                <li><strong>Start Strong:</strong> First semester SGPA sets the foundation. A good start
+                                        makes maintaining high CGPA easier.</li>
+                                <li><strong>Stay Consistent:</strong> Aim for similar SGPA each semester rather than
+                                        fluctuating performance.</li>
+                                <li><strong>Don't Panic on Bad Semester:</strong> One low SGPA won't destroy your CGPA
+                                        if you recover quickly.</li>
+                                <li><strong>Focus on High-Credit Subjects:</strong> They impact your GPA more
+                                        significantly.</li>
+                                <li><strong>Monitor Both Regularly:</strong> Use our calculator to track SGPA and CGPA
+                                        after each exam.</li>
+                                <li><strong>Set Semester Goals:</strong> Decide target SGPA before each semester and
+                                        work towards it.</li>
+                                <li><strong>Learn from Past:</strong> If SGPA was low, identify reasons and improve in
+                                        next semester.</li>
+                                <li><strong>Balance is Key:</strong> Don't burn out chasing 10.0. A consistent 8.5+ is
+                                        excellent!</li>
+                        </ol>
+                </div>
+
+                <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+
+                <div class="example-box">
+                        <h3>Q: Can CGPA be higher than SGPA?</h3>
+                        <p><strong>Answer:</strong> Yes! If your current semester SGPA is lower than your previous
+                                semesters' average, your CGPA will be higher than current SGPA.</p>
+                </div>
+
+                <div class="example-box">
+                        <h3>Q: How many semesters does it take to significantly improve CGPA?</h3>
+                        <p><strong>Answer:</strong> It depends on how low your CGPA is and how much you improve.
+                                Generally, 2-3 semesters of excellent performance (9.0+) can boost CGPA by 0.5-1.0
+                                points.</p>
+                </div>
+
+                <div class="example-box">
+                        <h3>Q: What CGPA is considered good at RGUKT?</h3>
+                        <p><strong>Answer:</strong></p>
+                        <ul>
+                                <li>9.0+: Outstanding (Top tier placements)</li>
+                                <li>8.0-8.9: Excellent (Most companies)</li>
+                                <li>7.0-7.9: Good (Many opportunities)</li>
+                                <li>6.0-6.9: Average (Limited options)</li>
+                        </ul>
+                </div>
+
+                <div class="example-box">
+                        <h3>Q: Do companies look at SGPA or CGPA?</h3>
+                        <p><strong>Answer:</strong> Most companies primarily look at <strong>CGPA</strong> for
+                                eligibility cutoffs (usually 6.5 or 7.0 minimum). However, some may also check
+                                semester-wise SGPA to see consistency.</p>
+                </div>
+
+                <div class="cta-section">
+                        <h3><i class="fas fa-calculator"></i> Calculate Your SGPA & CGPA Now!</h3>
+                        <p>Use our free calculator to instantly compute your SGPA and CGPA for all semesters</p>
+                        <a href="index.html" class="cta-button"><i class="fas fa-arrow-right"></i> Start Calculating</a>
+                        <a href="how-to-calculate-sgpa.html" class="cta-button"><i class="fas fa-book"></i> SGPA
+                                Guide</a>
+                </div>
+
+                <div
+                        style="margin-top: 40px; padding: 30px; background: #f5f5f5; border-radius: 15px; text-align: center;">
+                        <p style="color: #666; margin-bottom: 15px;">
+                                <i class="fas fa-share-alt"></i> <strong>Found this comparison helpful? Share with your
+                                        classmates!</strong>
+                        </p>
+                        <p style="font-size: 0.9em; color: #999;">
+                                This guide is for educational purposes. Always verify with official RGUKT academic
+                                regulations.
+                        </p>
+                        <p style="margin-top: 20px;">
+                                <a href="index.html" style="color: #c471ed; text-decoration: none;"><i
+                                                class="fas fa-home"></i> Back to Home</a> |
+                                <a href="blog.html" style="color: #c471ed; text-decoration: none;"><i
+                                                class="fas fa-blog"></i> More Articles</a> |
+                                <a href="contact.html" style="color: #c471ed; text-decoration: none;"><i
+                                                class="fas fa-envelope"></i> Contact Us</a>
+                        </p>
+                </div>
+        </div>
+
+        <!-- Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-T486B8C5X0"></script>
+        <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-T486B8C5X0');
+        </script>
+</body>
+
+</html>

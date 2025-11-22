@@ -1,87 +1,81 @@
-/* General body styling */
+/* General body styling - AdSense Ready Theme */
 body {
-   font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 120vh;
+    min-height: 100vh;
     background-color: #0A1828;
-    background-size: 800% 800%;
-    animation: gradientAnimation 10s ease infinite;
+    color: #FFFFFF;
 }
 
 
-/* Main container styling */
+/* Main container styling - Clean and Professional */
 .container {
-    background-size: 600% 600%;
-    animation: gradientAnimation 10s ease infinite;
-    background-color: #d8f5fa;
-    
-    border-radius: 10px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
     padding: 30px;
     width: 100%;
     max-width: 600px;
     text-align: center;
     position: relative;
     z-index: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Header and text styles */
-h1, h2 {
+/* Header and text styles - Consistent Theme */
+h1,
+h2 {
     background-color: #0A1828;
-    color: #333;
+    color: #FFFFFF;
     font-size: 2em;
     border-radius: 10px;
-    padding: 10px;
+    padding: 15px;
+    margin: 10px 0;
 }
 
+/* Fieldset styling - Professional appearance */
 fieldset {
-    /* background-size: 600% 600%; */
-    /* animation: gradientAnimation 10s ease infinite; */
-    border: 2px solid #d8f5fa;
+    border: 2px solid #0A1828;
     border-radius: 10px;
     padding: 20px;
-    /* margin-top: 20px; */
-    color: white;
-    height: 100%;
+    color: #FFFFFF;
     background-color: #0A1828;
+    margin-bottom: 20px;
 }
 
-
+/* Legend styling - Clean and readable */
 legend {
-    /* background: linear-gradient(45deg, #ff6f91, #ff9671, #ffc75f, #f9f871, #00d4ff, #845ec2); */
-    background-size: 600% 600%;
-    animation: gradientAnimation 10s ease infinite;
     font-size: 1.2em;
     font-weight: bold;
     color: #0A1828;
-    padding: 5px 10px;
-    border: 1px solid #51e2f5;
-    
-        border-top: 1px solid  #0A1828;    /* Top border color */
-        /* border-bottom: 3px solid white; Bottom border color */
-    
-    
+    padding: 8px 15px;
+    border: 2px solid #0A1828;
     border-radius: 8px;
-    background-color: white;
-}
-.cgpa-fieldset {
-    border: 2px solid #28a745; /* Green border for CGPA */
-    border-radius: 15px; /* Rounded corners */
-    padding: 25px;
-    background-color: rgba(40, 167, 69, 0.1); /* Light green background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: background-color 0.3s ease;
+    background-color: #FFFFFF;
 }
 
-/* Legend Styling */
+/* CGPA Fieldset - Consistent with main theme */
+.cgpa-fieldset {
+    border: 2px solid #0A1828;
+    border-radius: 12px;
+    padding: 25px;
+    background-color: #0A1828;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* CGPA Legend Styling - Matches main theme */
 .cgpa-fieldset legend {
     font-size: 1.5em;
     font-weight: bold;
-    color: #28a745; /* Green text */
-    padding: 0 10px;
+    color: #0A1828;
+    background-color: #FFFFFF;
+    border: 2px solid #0A1828;
+    border-radius: 8px;
+    padding: 8px 15px;
 }
 
 /* CGPA Form Row */
@@ -97,7 +91,8 @@ legend {
 .cgpa-form-item {
     display: flex;
     flex-direction: column;
-    flex: 1 1 45%; /* Responsive width */
+    flex: 1 1 45%;
+    /* Responsive width */
 }
 
 /* Form and button styles */
@@ -107,9 +102,10 @@ legend {
     align-items: center;
     margin-bottom: 15px;
     width: 100%;
-    
-   
+
+
 }
+
 .form-item1 {
     display: flex;
     justify-content: space-between;
@@ -123,87 +119,95 @@ legend {
     color: #0A1828;
     border: 1px solid #0A1828;
     background-color: #d8f5fa;
-   
+
 }
 
+/* Label styling - Improved readability */
 label {
     font-weight: bold;
     flex-basis: 45%;
     text-align: center;
-    
+    color: #FFFFFF;
 }
 
-
+/* Select dropdown styling - Clean and professional */
 select {
     flex-basis: 50%;
     padding: 10px;
     font-size: 16px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    background-color: white;
-    
+    border-radius: 8px;
+    border: 2px solid #0A1828;
+    background-color: #FFFFFF;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
+select:hover {
+    border-color: #000000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
-
+select:focus {
+    outline: none;
+    border-color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 
+/* Button styling - Professional and accessible */
 button {
     margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #000000; /* Black */
-    color: #FFFFFF; /* White */
-    /* padding: 10px; */
-    border-color: #BFA181, #f3c90e;
-    border-radius: 12px;
+    padding: 12px 25px;
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 8px;
     cursor: pointer;
-    /* width: 100%; */
-    /* position: relative; */
-    font-family: 'Poppins', sans-serif;/* Apply cursive font */
-    font-size: medium;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5); /* White color shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: #dee6df;
+    background-color: #FFFFFF;
     color: #000000;
-    transform: translateY(-7px);
-    font-size: 20px;
-    font-weight: bold;
+    border-color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 button:active {
-    background-color: #FFFFFF;
-    color: #000000;
-    font-weight: bold;
+    background-color: #0A1828;
+    color: #FFFFFF;
+    border-color: #0A1828;
+    transform: translateY(0);
 }
+
+/* Top buttons styling - Consistent with main buttons */
 .top-buttons button {
-    margin-top: 20px;
-        margin-bottom: 20px;
-
-    padding: 10px 20px;
-    background-color: #000000; /* Black */
-    color: #FFFFFF; /* White */
-    /* padding: 10px; */
-    border-color: #BFA181, #f3c90e;
-    border-radius: 12px;
+    margin: 20px 10px;
+    padding: 12px 25px;
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 8px;
     cursor: pointer;
-    /* width: 100%; */
-    /* position: relative; */
-    font-family: 'Poppins', sans-serif; /* Apply cursive font */
-    font-size: medium;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5); /* White color shadow */
-
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .top-buttons button:hover {
-    background-color: #dee6df;
+    background-color: #FFFFFF;
     color: #000000;
-    transform: translateY(-7px);
-    font-size: 20px;
-    font-weight: bold;
+    border-color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Result section */
@@ -228,86 +232,239 @@ button:active {
 
 
 
-/* Responsive design for mobile devices */
+/* Responsive design for mobile and tablet devices */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 25px;
+        max-width: 100%;
+    }
+
+    h1, h2 {
+        font-size: 1.5em;
+        padding: 12px;
+    }
+
+    fieldset {
+        padding: 15px;
+    }
+
+    legend {
+        font-size: 1.1em;
+        padding: 6px 12px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+
+    .top-buttons button {
+        padding: 10px 20px;
+        font-size: 15px;
+        margin: 15px 8px;
+    }
+}
+
+/* Mobile devices (600px and below) */
 @media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+        border-radius: 8px;
+    }
+
     .branch-box {
-        width: 10px; /* Smaller width for smaller screens */
+        width: 10px;
         padding: 15px;
     }
 
     .branches {
-        gap: 15px; /* Reduced gap for smaller screens */
+        gap: 15px;
     }
 
-    h1 {
-        font-size: 20px; /* Smaller font size for header */
+    h1, h2 {
+        font-size: 1.3em;
+        padding: 10px;
     }
 
     .social-icon {
-        font-size: 20px; /* Smaller icons on mobile */
+        font-size: 20px;
+    }
+
+    fieldset {
+        padding: 12px;
+    }
+
+    legend {
+        font-size: 1em;
+        padding: 5px 10px;
+    }
+
+    .form-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    label {
+        text-align: left;
+        flex-basis: 100%;
+    }
+
+    select {
+        flex-basis: 100%;
+        width: 100%;
+    }
+
+    input[type="number"] {
+        width: 100%;
+    }
+
+    button {
+        padding: 10px 18px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .top-buttons button {
+        padding: 10px 18px;
+        font-size: 14px;
+        margin: 10px 5px;
+    }
+
+    .cgpa-form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cgpa-form-item {
+        flex: 1 1 100%;
     }
 }
 
-input[type="number"] {
-    width: 65%; /* Full width */
-    padding: 10px 15px; /* Inner spacing */
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 70px; /* Rounded corners */
-    font-size: 16px; /* Font size */
-    color: #555; /* Dark text color */
-    background-color: #fff; /* White background */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+/* Small phones (480px and below) */
+@media (max-width: 480px) {
+    body {
+        padding: 8px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1, h2 {
+        font-size: 1.2em;
+        padding: 8px;
+    }
+
+    legend {
+        font-size: 0.9em;
+    }
+
+    button {
+        font-size: 13px;
+        padding: 8px 15px;
+    }
+
+    .top-buttons button {
+        font-size: 13px;
+        padding: 8px 15px;
+        margin: 8px 3px;
+    }
+
+    .result {
+        font-size: 16px;
+    }
+
+    .cgpa-score {
+        font-size: 20px;
+    }
 }
 
-/* Focus State */
+/* Number input styling - Professional and accessible */
+input[type="number"] {
+    width: 65%;
+    padding: 10px 15px;
+    border: 2px solid #0A1828;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #000000;
+    background-color: #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+/* Focus State - Consistent with theme */
 input[type="number"]:focus {
-    border-color: #007bff; /* Change border color on focus */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Shadow effect on focus */
-    outline: none; /* Remove default outline */
+    border-color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+
+input[type="number"]:hover {
+    border-color: #000000;
 }
 
 
 .result {
     margin-top: 20px;
 }
+
 .cgpa-score {
     font-weight: bold;
     font-size: 24px;
 }
+
 .congratulations {
     margin-top: 10px;
     font-size: 18px;
 }
+
+/* Result classification styles - Professional appearance */
 .distinction {
-    font-family: 'Poppins', sans-serif; /* Apply cursive font */
-
-    color: #d8f5fa;
+    font-family: 'Poppins', sans-serif;
+    color: #FFFFFF;
+    font-weight: bold;
 }
+
 .first-class {
-   font-family: 'Poppins', sans-serif;/* Apply cursive font */
-
-    color: #d8f5fa;
+    font-family: 'Poppins', sans-serif;
+    color: #FFFFFF;
+    font-weight: bold;
 }
+
 .second-class {
-    font-family: 'Poppins', sans-serif;/* Apply cursive font */
-
-    color: #d8f5fa;
+    font-family: 'Poppins', sans-serif;
+    color: #FFFFFF;
+    font-weight: bold;
 }
+
 .failed {
     font-family: 'Poppins', sans-serif;
-    color: #d8f5fa;
+    color: #FFFFFF;
+    font-weight: bold;
 }
+
+/* Header title styling - Professional */
 .header-title {
-      background-color: #0A1828;
-      color: white
-    ; /* Change this to your desired color */
-    padding: 10px; /* Optional: Adds some padding around the text */
-    display: inline-block; /* Makes the background color fit the text */
-    margin: 0; /* Removes default margin */
+    background-color: #0A1828;
+    color: #FFFFFF;
+    padding: 15px;
+    display: inline-block;
+    margin: 0;
+    border-radius: 8px;
 }
 
-.rem{
-color: red; /* Red color for REM option */
-    font-weight: bold; /* Bold text for emphasis */ 
-
+/* REM (Failed) option styling - Clear indication */
+.rem {
+    color: #FF0000;
+    font-weight: bold;
 }

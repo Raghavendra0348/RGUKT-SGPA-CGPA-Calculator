@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>How to Calculate SGPA - Step by Step Guide | RGUKT</title>
+        <meta name="description"
+                content="Learn how to calculate SGPA (Semester Grade Point Average) at RGUKT. Complete step-by-step guide with examples, formulas, and tips for all branches.">
+        <meta name="keywords"
+                content="SGPA calculation, how to calculate SGPA, RGUKT SGPA formula, grade points, credit system, semester GPA">
+        <link rel="canonical" href="https://www.rgukt-sgpa-cgpa-calculator.tech/how-to-calculate-sgpa.html" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                }
+
+                body {
+                        font-family: 'Poppins', sans-serif;
+                        background-color: #0A1828;
+                        color: #333;
+                        line-height: 1.8;
+                        padding: 20px;
+                        min-height: 100vh;
+                }
+
+                .container {
+                        max-width: 900px;
+                        margin: 0 auto;
+                        background: #FFFFFF;
+                        padding: 40px;
+                        border-radius: 12px;
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                }
+
+                h1 {
+                        color: #0A1828;
+                        font-size: 2.5em;
+                        margin-bottom: 10px;
+                        text-align: center;
+                        font-weight: 700;
+                }
+
+                .breadcrumb {
+                        text-align: center;
+                        margin-bottom: 30px;
+                        color: #666;
+                        font-size: 0.9em;
+                }
+
+                .breadcrumb a {
+                        color: #0A1828;
+                        text-decoration: none;
+                        font-weight: 600;
+                }
+
+                .breadcrumb a:hover {
+                        text-decoration: underline;
+                }
+
+                h2 {
+                        color: #0A1828;
+                        font-size: 1.8em;
+                        margin-top: 40px;
+                        margin-bottom: 20px;
+                        border-left: 5px solid #000000;
+                        padding-left: 15px;
+                        font-weight: 700;
+                }
+
+                h3 {
+                        color: #000000;
+                        font-size: 1.4em;
+                        margin-top: 30px;
+                        margin-bottom: 15px;
+                        font-weight: 600;
+                }
+
+                p {
+                        margin-bottom: 20px;
+                        font-size: 1.05em;
+                        color: #333;
+                }
+
+                .highlight-box {
+                        background: #f5f5f5;
+                        padding: 25px;
+                        border-radius: 12px;
+                        margin: 30px 0;
+                        border-left: 5px solid #000000;
+                        border: 2px solid #0A1828;
+                }
+
+                .highlight-box h3 {
+                        color: #0A1828;
+                        margin-top: 0;
+                        font-weight: 700;
+                }
+
+                .formula {
+                        background: #0A1828;
+                        padding: 20px;
+                        border-radius: 10px;
+                        font-size: 1.2em;
+                        text-align: center;
+                        margin: 25px 0;
+                        border: 3px solid #000000;
+                        font-weight: 600;
+                        color: #FFFFFF;
+                }
+
+                .example-box {
+                        background: #f9f9f9;
+                        padding: 25px;
+                        border-radius: 12px;
+                        margin: 30px 0;
+                        border-left: 5px solid #0A1828;
+                        border: 2px solid #0A1828;
+                }
+
+                table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        margin: 25px 0;
+                        background: white;
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                        border-radius: 10px;
+                        overflow: hidden;
+                }
+
+                th,
+                td {
+                        padding: 15px;
+                        text-align: left;
+                        border-bottom: 1px solid #e0e0e0;
+                }
+
+                th {
+                        background-color: #0A1828;
+                        color: #FFFFFF;
+                        font-weight: 600;
+                }
+
+                tr:hover {
+                        background: #f5f5f5;
+                }
+
+                .step {
+                        background: #FFFFFF;
+                        padding: 20px;
+                        margin: 20px 0;
+                        border-radius: 10px;
+                        border-left: 5px solid #0A1828;
+                        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+                        border: 1px solid #e0e0e0;
+                }
+
+                .step-number {
+                        display: inline-block;
+                        width: 40px;
+                        height: 40px;
+                        background-color: #000000;
+                        color: #FFFFFF;
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 40px;
+                        font-weight: bold;
+                        margin-right: 15px;
+                        font-size: 1.2em;
+                }
+
+                .tips-list {
+                        background: #f9f9f9;
+                        padding: 25px;
+                        border-radius: 12px;
+                        margin: 25px 0;
+                        border: 2px solid #0A1828;
+                }
+
+                .tips-list li {
+                        margin: 15px 0;
+                        padding-left: 10px;
+                        color: #333;
+                }
+
+                .tips-list li::marker {
+                        color: #000000;
+                        font-size: 1.5em;
+                }
+
+                .cta-button {
+                        display: inline-block;
+                        padding: 15px 40px;
+                        background-color: #000000;
+                        color: #FFFFFF;
+                        text-decoration: none;
+                        border-radius: 8px;
+                        font-weight: 600;
+                        margin: 20px 10px;
+                        transition: all 0.3s ease;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                        border: 2px solid #000000;
+                }
+
+                .cta-button:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+                        background-color: #FFFFFF;
+                        color: #000000;
+                }
+
+                .cta-section {
+                        text-align: center;
+                        margin: 40px 0;
+                        padding: 30px;
+                        background-color: #f5f5f5;
+                        border-radius: 12px;
+                        border: 2px solid #0A1828;
+                }
+
+                .note {
+                        background: #fff9e6;
+                        border-left: 5px solid #000000;
+                        padding: 20px;
+                        margin: 25px 0;
+                        border-radius: 10px;
+                        border: 1px solid #e0e0e0;
+                }
+
+                /* Responsive Design */
+                @media (max-width: 768px) {
+                        body {
+                                padding: 10px;
+                        }
+
+                        .container {
+                                padding: 20px;
+                                border-radius: 8px;
+                        }
+
+                        h1 {
+                                font-size: 1.8em;
+                        }
+
+                        h2 {
+                                font-size: 1.4em;
+                        }
+
+                        h3 {
+                                font-size: 1.2em;
+                        }
+
+                        table {
+                                font-size: 0.9em;
+                                overflow-x: auto;
+                                display: block;
+                        }
+
+                        th,
+                        td {
+                                padding: 10px;
+                                font-size: 0.85em;
+                        }
+                }
+        </style>
+</head>
+
+<body>
+        <div class="container">
+                <h1><i class="fas fa-calculator"></i> How to Calculate SGPA at RGUKT</h1>
+                <div class="breadcrumb">
+                        <a href="index.html"><i class="fas fa-home"></i> Home</a> /
+                        <a href="blog.html">Blog</a> /
+                        How to Calculate SGPA
+                </div>
+
+                <p style="font-size: 1.1em; text-align: center; color: #666; font-style: italic;">
+                        A complete step-by-step guide to understanding and calculating your Semester Grade Point Average
+                        (SGPA) at RGUKT
+                </p>
+
+                <div class="highlight-box">
+                        <h3><i class="fas fa-lightbulb"></i> What is SGPA?</h3>
+                        <p><strong>SGPA (Semester Grade Point Average)</strong> is a measure of your academic
+                                performance in a particular semester. It represents the weighted average of grade points
+                                you earned in all courses during that semester, considering the credit value of each
+                                course.</p>
+                </div>
+
+                <h2><i class="fas fa-book"></i> Understanding the RGUKT Grading System</h2>
+
+                <p>Before calculating SGPA, you need to understand how RGUKT assigns grades and grade points:</p>
+
+                <table>
+                        <thead>
+                                <tr>
+                                        <th>Marks Range</th>
+                                        <th>Grade</th>
+                                        <th>Grade Point</th>
+                                        <th>Performance</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                        <td>90 - 100</td>
+                                        <td>EX (Excellent)</td>
+                                        <td>10</td>
+                                        <td>Outstanding</td>
+                                </tr>
+                                <tr>
+                                        <td>80 - 89</td>
+                                        <td>A (Very Good)</td>
+                                        <td>9</td>
+                                        <td>Excellent</td>
+                                </tr>
+                                <tr>
+                                        <td>70 - 79</td>
+                                        <td>B (Good)</td>
+                                        <td>8</td>
+                                        <td>Very Good</td>
+                                </tr>
+                                <tr>
+                                        <td>60 - 69</td>
+                                        <td>C (Average)</td>
+                                        <td>7</td>
+                                        <td>Good</td>
+                                </tr>
+                                <tr>
+                                        <td>50 - 59</td>
+                                        <td>D (Pass)</td>
+                                        <td>6</td>
+                                        <td>Average</td>
+                                </tr>
+                                <tr>
+                                        <td>40 - 49</td>
+                                        <td>E (Marginal)</td>
+                                        <td>5</td>
+                                        <td>Pass</td>
+                                </tr>
+                                <tr>
+                                        <td>Below 40</td>
+                                        <td>F (Fail)</td>
+                                        <td>0</td>
+                                        <td>Fail</td>
+                                </tr>
+                        </tbody>
+                </table>
+
+                <h2><i class="fas fa-calculator"></i> SGPA Calculation Formula</h2>
+
+                <div class="formula">
+                        SGPA = (Sum of Credit Points) ÷ (Total Credits)
+                </div>
+
+                <p>Where:</p>
+                <ul style="margin-left: 30px; margin-bottom: 25px;">
+                        <li><strong>Credit Points</strong> = Grade Point × Credits for that subject</li>
+                        <li><strong>Total Credits</strong> = Sum of credits of all subjects in that semester</li>
+                </ul>
+
+                <h2><i class="fas fa-list-ol"></i> Step-by-Step Calculation Process</h2>
+
+                <div class="step">
+                        <span class="step-number">1</span>
+                        <strong>List all your subjects</strong> for the semester along with their credits and grades
+                        obtained.
+                </div>
+
+                <div class="step">
+                        <span class="step-number">2</span>
+                        <strong>Convert grades to grade points</strong> using the RGUKT grading table (shown above).
+                </div>
+
+                <div class="step">
+                        <span class="step-number">3</span>
+                        <strong>Calculate credit points</strong> for each subject by multiplying Grade Point × Credits.
+                </div>
+
+                <div class="step">
+                        <span class="step-number">4</span>
+                        <strong>Sum all credit points</strong> obtained in step 3.
+                </div>
+
+                <div class="step">
+                        <span class="step-number">5</span>
+                        <strong>Sum all credits</strong> of subjects taken in that semester.
+                </div>
+
+                <div class="step">
+                        <span class="step-number">6</span>
+                        <strong>Divide total credit points by total credits</strong> to get your SGPA.
+                </div>
+
+                <h2><i class="fas fa-graduation-cap"></i> Practical Example: CSE E1 Semester 1</h2>
+
+                <div class="example-box">
+                        <h3>Example Calculation</h3>
+                        <p>Let's calculate SGPA for a CSE student in E1 Semester 1:</p>
+
+                        <table>
+                                <thead>
+                                        <tr>
+                                                <th>Subject</th>
+                                                <th>Credits</th>
+                                                <th>Grade</th>
+                                                <th>Grade Point</th>
+                                                <th>Credit Points</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                                <td>Mathematics-I</td>
+                                                <td>4</td>
+                                                <td>A</td>
+                                                <td>9</td>
+                                                <td>4 × 9 = 36</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Physics</td>
+                                                <td>4</td>
+                                                <td>EX</td>
+                                                <td>10</td>
+                                                <td>4 × 10 = 40</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Chemistry</td>
+                                                <td>4</td>
+                                                <td>B</td>
+                                                <td>8</td>
+                                                <td>4 × 8 = 32</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Programming in C</td>
+                                                <td>3</td>
+                                                <td>A</td>
+                                                <td>9</td>
+                                                <td>3 × 9 = 27</td>
+                                        </tr>
+                                        <tr>
+                                                <td>C Lab</td>
+                                                <td>2</td>
+                                                <td>EX</td>
+                                                <td>10</td>
+                                                <td>2 × 10 = 20</td>
+                                        </tr>
+                                        <tr>
+                                                <td>English</td>
+                                                <td>2</td>
+                                                <td>B</td>
+                                                <td>8</td>
+                                                <td>2 × 8 = 16</td>
+                                        </tr>
+                                        <tr style="background: #e8f5e9; font-weight: bold;">
+                                                <td>TOTAL</td>
+                                                <td>19</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>171</td>
+                                        </tr>
+                                </tbody>
+                        </table>
+
+                        <div
+                                style="margin-top: 25px; padding: 20px; background: white; border-radius: 10px; text-align: center;">
+                                <p style="font-size: 1.1em; margin-bottom: 10px;">
+                                        <strong>SGPA Calculation:</strong>
+                                </p>
+                                <p style="font-size: 1.3em; color: #667eea; font-weight: bold;">
+                                        SGPA = 171 ÷ 19 = <span style="font-size: 1.5em; color: #764ba2;">9.00</span>
+                                </p>
+                                <p style="color: #27ae60; font-weight: 600; margin-top: 15px;">
+                                        <i class="fas fa-star"></i> Excellent Performance!
+                                </p>
+                        </div>
+                </div>
+
+                <h2><i class="fas fa-exclamation-circle"></i> Important Points to Remember</h2>
+
+                <div class="tips-list">
+                        <ul>
+                                <li><strong>Failed Subjects:</strong> If you fail a subject (Grade F), it gets 0 grade
+                                        points but credits are still counted in the total.</li>
+                                <li><strong>Lab Subjects:</strong> Lab courses typically have 1.5 or 2 credits and are
+                                        graded separately.</li>
+                                <li><strong>Audit Courses:</strong> Some courses may not be counted in SGPA calculation
+                                        (check your curriculum).</li>
+                                <li><strong>Rounding:</strong> SGPA is usually rounded to 2 decimal places (e.g., 8.47).
+                                </li>
+                                <li><strong>Maximum SGPA:</strong> The highest possible SGPA is 10.00 (all EX grades).
+                                </li>
+                                <li><strong>Minimum Pass SGPA:</strong> You typically need at least 5.0 SGPA to pass a
+                                        semester.</li>
+                        </ul>
+                </div>
+
+                <h2><i class="fas fa-chart-line"></i> SGPA Performance Categories</h2>
+
+                <table>
+                        <thead>
+                                <tr>
+                                        <th>SGPA Range</th>
+                                        <th>Category</th>
+                                        <th>Description</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                <tr style="background: #e8f5e9;">
+                                        <td>9.0 - 10.0</td>
+                                        <td><strong>Outstanding</strong></td>
+                                        <td>Top performance, excellent understanding</td>
+                                </tr>
+                                <tr style="background: #e3f2fd;">
+                                        <td>8.0 - 8.9</td>
+                                        <td><strong>Excellent</strong></td>
+                                        <td>Very good performance, strong grasp</td>
+                                </tr>
+                                <tr style="background: #fff9c4;">
+                                        <td>7.0 - 7.9</td>
+                                        <td><strong>Very Good</strong></td>
+                                        <td>Good performance, solid understanding</td>
+                                </tr>
+                                <tr style="background: #ffe0b2;">
+                                        <td>6.0 - 6.9</td>
+                                        <td><strong>Good</strong></td>
+                                        <td>Satisfactory performance</td>
+                                </tr>
+                                <tr style="background: #ffcdd2;">
+                                        <td>5.0 - 5.9</td>
+                                        <td><strong>Average</strong></td>
+                                        <td>Needs improvement</td>
+                                </tr>
+                                <tr style="background: #ffebee;">
+                                        <td>Below 5.0</td>
+                                        <td><strong>Poor</strong></td>
+                                        <td>Significant improvement needed</td>
+                                </tr>
+                        </tbody>
+                </table>
+
+                <div class="note">
+                        <p><i class="fas fa-info-circle"></i> <strong>Note:</strong> These categories are general
+                                guidelines. Always check your official RGUKT grade card for accurate SGPA and consult
+                                academic advisors for any clarifications.</p>
+                </div>
+
+                <h2><i class="fas fa-rocket"></i> Tips to Improve Your SGPA</h2>
+
+                <div class="tips-list">
+                        <ol>
+                                <li><strong>Regular Study:</strong> Don't wait for exams. Study consistently throughout
+                                        the semester.</li>
+                                <li><strong>Attend Classes:</strong> Regular attendance helps in understanding concepts
+                                        better.</li>
+                                <li><strong>Complete Assignments:</strong> Internal marks contribute to your final
+                                        grade.</li>
+                                <li><strong>Focus on High-Credit Subjects:</strong> They have more impact on your SGPA.
+                                </li>
+                                <li><strong>Clear Doubts:</strong> Ask professors or seniors when you don't understand
+                                        something.</li>
+                                <li><strong>Practice Problems:</strong> Especially for technical subjects like Math,
+                                        Physics, and Programming.</li>
+                                <li><strong>Group Study:</strong> Discuss concepts with peers to deepen understanding.
+                                </li>
+                                <li><strong>Previous Papers:</strong> Solve past question papers to understand exam
+                                        patterns.</li>
+                                <li><strong>Time Management:</strong> Balance study time across all subjects.</li>
+                                <li><strong>Stay Healthy:</strong> Good sleep, nutrition, and exercise improve
+                                        concentration.</li>
+                        </ol>
+                </div>
+
+                <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+
+                <div class="example-box">
+                        <h3>Q1: What if I have a backlog (failed subject)?</h3>
+                        <p><strong>Answer:</strong> Failed subjects (Grade F) get 0 grade points, which will lower your
+                                SGPA. You'll need to clear the backlog in subsequent semesters. The improved grade will
+                                be considered for CGPA calculation.</p>
+                </div>
+
+                <div class="example-box">
+                        <h3>Q2: How is SGPA different from CGPA?</h3>
+                        <p><strong>Answer:</strong> SGPA measures performance for ONE semester, while CGPA (Cumulative
+                                GPA) is the average of all semesters combined. CGPA = Total Credit Points of All
+                                Semesters ÷ Total Credits of All Semesters.</p>
+                </div>
+
+                <div class="example-box">
+                        <h3>Q3: Can SGPA be greater than 10?</h3>
+                        <p><strong>Answer:</strong> No. Since the maximum grade point is 10 (EX grade), the maximum
+                                possible SGPA is also 10.00.</p>
+                </div>
+
+                <div class="example-box">
+                        <h3>Q4: Do all subjects have equal credits?</h3>
+                        <p><strong>Answer:</strong> No. Theory subjects typically have 3-4 credits, lab subjects have
+                                1.5-2 credits, and some subjects may have different credit values based on contact
+                                hours.</p>
+                </div>
+
+                <div class="cta-section">
+                        <h3><i class="fas fa-calculator"></i> Ready to Calculate Your SGPA?</h3>
+                        <p>Use our free, easy-to-use calculator to instantly compute your SGPA for any semester!</p>
+                        <a href="index.html" class="cta-button"><i class="fas fa-arrow-right"></i> Calculate SGPA
+                                Now</a>
+                        <a href="blog.html" class="cta-button"><i class="fas fa-book"></i> Read More Articles</a>
+                </div>
+
+                <div
+                        style="margin-top: 40px; padding: 25px; background: #f5f5f5; border-radius: 15px; text-align: center;">
+                        <p style="color: #666; margin-bottom: 15px;">
+                                <i class="fas fa-share-alt"></i> <strong>Found this helpful? Share with your
+                                        friends!</strong>
+                        </p>
+                        <p style="font-size: 0.9em; color: #999;">
+                                This guide is for educational purposes. Always verify with official RGUKT academic
+                                regulations.
+                        </p>
+                        <p style="margin-top: 20px;">
+                                <a href="index.html" style="color: #667eea; text-decoration: none;"><i
+                                                class="fas fa-home"></i> Back to Home</a> |
+                                <a href="contact.html" style="color: #667eea; text-decoration: none;"><i
+                                                class="fas fa-envelope"></i> Contact Us</a> |
+                                <a href="disclaimer.html" style="color: #667eea; text-decoration: none;"><i
+                                                class="fas fa-exclamation-triangle"></i> Disclaimer</a>
+                        </p>
+                </div>
+        </div>
+
+        <!-- Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-T486B8C5X0"></script>
+        <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-T486B8C5X0');
+        </script>
+</body>
+
+</html>

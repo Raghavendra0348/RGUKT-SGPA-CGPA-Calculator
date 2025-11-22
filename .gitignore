@@ -1,2 +1,104 @@
+# ========================================
+# RGUKT SGPA-CGPA Calculator .gitignore
+# ========================================
+
+# Firebase
 firebase-debug.log
+.firebase/
+.firebaserc
+
+# Python Virtual Environment
 venv/
+env/
+ENV/
+.venv/
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Node.js (if needed in future)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.npm/
+.yarn/
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Backup and Temporary Files
+*.bak
+*.tmp
+*.temp
+*_backup.*
+*_old.*
+BACKUP_*/
+OLD_*/
+
+# Log Files
+*.log
+logs/
+*.log.*
+
+# Environment Variables (if added)
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Build and Distribution
+dist/
+build/
+*.zip
+*.tar.gz
+*.rar
+
+# Documentation Backups (keep only essential)
+*_BACKUP.md
+*_OLD.md
+*_DRAFT.md
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Test Coverage
+coverage/
+.nyc_output/
+*.coverage
+
+# Database (if added)
+*.db
+*.sqlite
+*.sqlite3
+
+# Sensitive Information
+private/
+secret/
+credentials/
+*.key
+*.pem
+*.cert
+
+# AdSense (don't commit your real publisher ID)
+# ads.txt should be committed but with placeholder
+
+# Analytics Keys (if storing separately)
+analytics-keys.json
+ga-credentials.json
