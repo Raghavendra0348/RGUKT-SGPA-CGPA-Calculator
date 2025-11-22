@@ -467,6 +467,64 @@
   <script>
     // Dynamically update the year
     document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Toggle Mobile Menu
+    function toggleMenu() {
+      const menuBar = document.querySelector('.menu-bar');
+      const menuOverlay = document.querySelector('.menu-overlay');
+      const hamburgerBtn = document.querySelector('.hamburger-btn');
+      
+      menuBar.classList.toggle('open');
+      menuOverlay.classList.toggle('open');
+      hamburgerBtn.classList.toggle('active');
+      
+      // Prevent body scroll when menu is open
+      if (menuBar.classList.contains('open')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // Navigate to page and close menu
+    function navigateTo(page) {
+      window.location.href = page;
+    }
+
+    // Logout function
+    function logout() {
+      // Add your logout logic here
+      alert('Logout functionality - Add your authentication logout logic here');
+      // Example: Clear session, redirect to login page, etc.
+    }
+
+    // Refresh logo - reload page
+    function refreshLogo() {
+      window.location.href = 'index.html';
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const menuBar = document.querySelector('.menu-bar');
+      const menuOverlay = document.querySelector('.menu-overlay');
+      const hamburgerBtn = document.querySelector('.hamburger-btn');
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      
+      // Check if menu is open and click is outside menu and toggle button
+      if (menuBar.classList.contains('open') && 
+          !menuBar.contains(event.target) && 
+          !mobileMenuToggle.contains(event.target)) {
+        toggleMenu();
+      }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function(event) {
+      const menuBar = document.querySelector('.menu-bar');
+      if (event.key === 'Escape' && menuBar.classList.contains('open')) {
+        toggleMenu();
+      }
+    });
   </script>
 
 </body>
