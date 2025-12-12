@@ -29,15 +29,14 @@
         body {
             overflow: auto;
             font-family: 'Poppins', sans-serif;
-            
             background: linear-gradient(160deg, #0A1828 0%, #764ba2 100%);
-  
-              padding-top: 15px;
+            padding: 15px 10px 20px 10px;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             flex-direction: column;
-            min-height: 90vh;
+            min-height: 100vh;
+            height: auto;
             background-size: 800% 800%;
         }
 
@@ -79,28 +78,27 @@
 
 @media (max-width: 480px) {
   .search-container {
-    margin: 20px auto 10px;
+    margin: 15px auto 10px;
     max-width: 100%;
     display: flex;
-
+    padding: 0 10px;
   }
 
   #searchBar {
     width: 100%;
-    max-width: 320px;
-    font-size: 14px;
-    padding: 12px 38px 12px 14px;
+    max-width: 95%;
+    font-size: 13px;
+    padding: 10px 35px 10px 12px;
     border-radius: 25px;
     justify-content: center;
-    align-items:center;
+    align-items: center;
   }
 
   .search-icon {
-    right: 20px;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 16px;
-    width:15%;
+    font-size: 14px;
   }
 }
 
@@ -180,12 +178,13 @@
 
         h1 {
             color: blueviolet;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
+            margin-top: 15px;
             font-size: 24px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-           font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', sans-serif;
             letter-spacing: -1px;
         }
 
@@ -196,15 +195,23 @@
             margin: 0 .5px;
         }
 
-
-
+        /* Main Content Container */
+        .content-wrapper {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+        }
 
         .branches {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            width: 100%;
         }
 
         .branch-box {
@@ -235,9 +242,16 @@
         }
 
         @media (max-width: 600px) {
+            body {
+                padding: 10px;
+                min-height: auto;
+                justify-content: flex-start;
+            }
+
             #searchBar {
                 width: 90%;
                 font-size: 14px;
+                padding: 12px 38px 12px 14px;
             }
 
             .suggestions-box {
@@ -247,16 +261,67 @@
             }
 
             h1 {
-                font-size: 20px;
+                font-size: 18px;
+                margin-bottom: 15px;
+                margin-top: 10px;
             }
 
             .branch-box {
-                width: 120px;
-                padding: 15px;
+                width: 100px;
+                padding: 12px;
+            }
+
+            .branch-box h2 {
+                font-size: 15px;
             }
 
             .branches {
                 gap: 8px;
+                padding: 0 5px;
+                margin-bottom: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 8px;
+                min-height: auto;
+                height: auto;
+            }
+
+            .search-container {
+                margin-bottom: 10px;
+            }
+
+            #searchBar {
+                width: 95%;
+                font-size: 13px;
+                padding: 10px 35px 10px 12px;
+            }
+
+            h1 {
+                font-size: 16px;
+                margin-bottom: 12px;
+                margin-top: 8px;
+            }
+
+            .branch-box {
+                width: 85px;
+                padding: 10px;
+            }
+
+            .branch-box h2 {
+                font-size: 13px;
+            }
+
+            .branches {
+                gap: 6px;
+                padding: 0 3px;
+                margin-bottom: 6px;
+            }
+
+            .content-wrapper {
+                padding-bottom: 10px;
             }
         }
         
@@ -313,32 +378,31 @@
   </div>
 </div>
 
+<div class="content-wrapper">
+    <h1 id="department-title"></h1>
 
-
-        <h1 id="department-title"></h1>
-
-        <div class="branches">
-            <div class="branch-box" onclick="redirectTo('puc.html')"><h2>MPC</h2></div>
-            <div class="branch-box" onclick="redirectTo('PUC(MBIPC).html')"><h2>MBIPC</h2></div>
-        </div>
-        <div class="branches">
-            <div class="branch-box" onclick="redirectTo('cse_semester.html')"><h2>CSE</h2></div>
-
-
-        </div>
-        <div class="branches">
-            <div class="branch-box" onclick="redirectTo('ece_semester.html')"><h2>ECE</h2></div>
-            <div class="branch-box" onclick="redirectTo('civil_semester.html')"><h2>CIVIL</h2></div>
-        </div>
-        <div class="branches">
-            <div class="branch-box" onclick="redirectTo('mech_semester.html')"><h2>MECH</h2></div>
-            <div class="branch-box" onclick="redirectTo('mme_semester.html')"><h2>MME</h2></div>
-        </div>
-        <div class="branches">
-            <div class="branch-box" onclick="redirectTo('chemical_semester.html')"><h2>CHEMICAL</h2></div>
-            <div class="branch-box" onclick="redirectTo('eee_semester.html')"><h2>EEE</h2></div>
-        </div>
+    <div class="branches">
+        <div class="branch-box" onclick="redirectTo('puc.html')"><h2>MPC</h2></div>
+        <div class="branch-box" onclick="redirectTo('PUC(MBIPC).html')"><h2>MBIPC</h2></div>
     </div>
+    <div class="branches">
+        <div class="branch-box" onclick="redirectTo('cse_semester.html')"><h2>CSE</h2></div>
+
+
+    </div>
+    <div class="branches">
+        <div class="branch-box" onclick="redirectTo('ece_semester.html')"><h2>ECE</h2></div>
+        <div class="branch-box" onclick="redirectTo('civil_semester.html')"><h2>CIVIL</h2></div>
+    </div>
+    <div class="branches">
+        <div class="branch-box" onclick="redirectTo('mech_semester.html')"><h2>MECH</h2></div>
+        <div class="branch-box" onclick="redirectTo('mme_semester.html')"><h2>MME</h2></div>
+    </div>
+    <div class="branches">
+        <div class="branch-box" onclick="redirectTo('chemical_semester.html')"><h2>CHEMICAL</h2></div>
+        <div class="branch-box" onclick="redirectTo('eee_semester.html')"><h2>EEE</h2></div>
+    </div>
+</div>
 
 <script>
     let suggestionClicked = false;

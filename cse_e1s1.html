@@ -24,112 +24,84 @@
         <style>
                 /* General body styling */
 html, body {
-    font-family: 'Lobster', cursive;
+    font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
     margin: 0;
     padding: 0;
     background-color: #0A1828;
-    background-size: 800% 800%;
-    animation: gradientAnimation 10s ease infinite;
     width: 100%;
 }
 
-
-
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
 /* Header and text styles */
 h1, h2 {
     background-color: #0A1828;
-    color: #333;
+    color: white;
     font-size: 2em;
     border-radius: 10px;
     padding: 10px;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
 }
 
 fieldset {
-    /* background-size: 600% 600%; */
-    /* animation: gradientAnimation 10s ease infinite; */
     border: 2px solid #d8f5fa;
     border-radius: 10px;
-    padding-left: 1px;
-  justify-content:center;
+    padding: 20px;
     color: white;
-    height: 100%;
     background-color: #0A1828;
+    margin-bottom: 20px;
 }
 
-
 legend {
-    
-
     font-size: 1.2em;
     font-weight: bold;
     color: #0A1828;
-    padding: 5px 10px;
+    padding: 5px 15px;
     border: 1px solid #51e2f5;
-    
-        border-top: 1px solid  #0A1828;    
-    
-    
     border-radius: 8px;
     background-color: white;
 }
 
-
-
-/* Main container styling */
-
-
-/* Header and text styles */
-h1, h2 {
-
-    background-color: #0A1828;
-    color: white;
-    font-size: 2em;
-    border-radius: 10px;
-    padding: 10px;
-    width:60%;
-
-}
-    font-weight: bold;
-    color: #28a745; /* Green text */
-    padding: 0 10px;
-}
-
-
-
 /* Form and button styles */
 .form-item {
-    
-    align-items: left;
-    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 15px;
     width: 100%;
-    
-   
 }
+
 .form-item1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
-    width: 300px;
-    flex-basis: 50%;
+    width: 100%;
+    max-width: 400px;
     padding: 10px;
     font-size: 18px;
     border-radius: 10px;
     color: #0A1828;
     border: 1px solid #0A1828;
     background-color: #d8f5fa;
-   
 }
 
 label {
     font-weight: bold;
-    flex-basis: 45%;
-      padding-left:1px;
-    
+    color: white;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 16px;
 }
-
 
 select {
     width: 100%;
@@ -137,10 +109,9 @@ select {
     font-size: 16px;
     border: 2px solid #51e2f5;
     border-radius: 8px;
-
     background-color: #ffffff;
     color: #0A1828;
-    font-family: 'Lobster', cursive;
+    font-family: 'Poppins', sans-serif;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -151,30 +122,25 @@ select:focus {
     outline: none;
 }
 
-
-
 button {
     margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #000000; /* Black */
-    color: #FFFFFF; /* White */
-    /* padding: 10px; */
-    border-color: #BFA181, #f3c90e;
+    padding: 12px 25px;
+    background-color: #000000;
+    color: #FFFFFF;
+    border: none;
     border-radius: 12px;
     cursor: pointer;
-    /* width: 100%; */
-    /* position: relative; */
-    font-family: 'Lobster', cursive; /* Apply cursive font */
-    font-size: medium;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
     transition: all 0.3s ease;
-    box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5); /* White color shadow */
+    box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+    display: inline-block;
 }
 
 button:hover {
     background-color: #dee6df;
     color: #000000;
-    transform: translateY(-7px);
-    font-size: 20px;
+    transform: translateY(-3px);
     font-weight: bold;
 }
 
@@ -182,31 +148,7 @@ button:active {
     background-color: #FFFFFF;
     color: #000000;
     font-weight: bold;
-}
-.top-buttons button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #000000; /* Black */
-    color: #FFFFFF; /* White */
-    /* padding: 10px; */
-    border-color: #BFA181, #f3c90e;
-    border-radius: 12px;
-    cursor: pointer;
-    /* width: 100%; */
-    /* position: relative; */
-    font-family: 'Lobster', cursive; /* Apply cursive font */
-    font-size: medium;
-    transition: all 0.3s ease;
-    box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5); /* White color shadow */
-
-}
-
-.top-buttons button:hover {
-    background-color: #dee6df;
-    color: #000000;
-    transform: translateY(-7px);
-    font-size: 20px;
-    font-weight: bold;
+    transform: translateY(-1px);
 }
 
 /* Result section */
@@ -214,100 +156,175 @@ button:active {
     margin-top: 20px;
     font-size: 20px;
     font-weight: bold;
-    font-family: cursive;
-}
-
-.result .cgpa-score {
-    font-size: 40px;
-    color: #cde0f7;
-}
-
-.result .cgpa-total {
-    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
     color: white;
 }
 
-/* Footer section */
+.result strong {
+    font-size: 32px;
+    color: #51e2f5;
+}
 
-
+/* Chart Container */
+#gradeDistributionChart {
+    max-width: 100%;
+    height: auto !important;
+    margin-top: 20px;
+}
 
 /* Responsive design for mobile devices */
-@media (max-width: 480px) {
-    .branch-box {
-        width: 10px; /* Smaller width for smaller screens */
+@media (max-width: 768px) {
+    .container {
         padding: 15px;
     }
 
-    .branches {
-        gap: 15px; /* Reduced gap for smaller screens */
+    h1 {
+        font-size: 1.5em;
+        padding: 8px;
+    }
+
+    fieldset {
+        padding: 15px;
+    }
+
+    legend {
+        font-size: 1em;
+        padding: 5px 10px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    select {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    button:hover {
+        font-size: 14px;
+        transform: translateY(-2px);
+    }
+
+    .result {
+        font-size: 16px;
+    }
+
+    .result strong {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
     }
 
     h1 {
-        font-size: 20px; /* Smaller font size for header */
+        font-size: 1.3em;
+        padding: 6px;
     }
 
-    .social-icon {
-        font-size: 20px; /* Smaller icons on mobile */
+    fieldset {
+        padding: 10px;
+    }
+
+    legend {
+        font-size: 0.9em;
+    }
+
+    label {
+        font-size: 13px;
+    }
+
+    select {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    .result {
+        font-size: 14px;
+    }
+
+    .result strong {
+        font-size: 20px;
     }
 }
 
 input[type="number"] {
-    width: 6%; /* Full width */
-    padding: 1px 1px; /* Inner spacing */
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 70px; /* Rounded corners */
-    font-size: 16px; /* Font size */
-    color: #555; /* Dark text color */
-    background-color: #fff; /* White background */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    width: 100%;
+    max-width: 150px;
+    padding: 10px;
+    border: 2px solid #51e2f5;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #0A1828;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Focus State */
 input[type="number"]:focus {
-    border-color: #007bff; /* Change border color on focus */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Shadow effect on focus */
-    outline: none; /* Remove default outline */
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
 }
 
-
-.result {
-    margin-top: 20px;
-}
-.cgpa-score {
-    font-weight: bold;
-    font-size: 24px;
-}
-.congratulations {
-    margin-top: 10px;
-    font-size: 18px;
-}
 .distinction {
-    font-family: 'Lobster', cursive; /* Apply cursive font */
-
+    font-family: 'Poppins', sans-serif;
     color: #d8f5fa;
 }
+
 .first-class {
-    font-family: 'Lobster', cursive; /* Apply cursive font */
-
+    font-family: 'Poppins', sans-serif;
     color: #d8f5fa;
 }
+
 .second-class {
-    font-family: 'Lobster', cursive; /* Apply cursive font */
-
+    font-family: 'Poppins', sans-serif;
     color: #d8f5fa;
 }
+
 .failed {
-    font-family: 'Lobster', cursive; /* Apply cursive font */
-
-    color: #d8f5fa;
+    font-family: 'Poppins', sans-serif;
+    color: #ff6b6b;
 }
+
 .header-title {
-      background-color: #0A1828;
-      color: white
-    ; /* Change this to your desired color */
-    padding: 10px; /* Optional: Adds some padding around the text */
-    display: inline-block; /* Makes the background color fit the text */
-    margin: 0; /* Removes default margin */
+    background-color: #0A1828;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    margin: 0;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    input[type="number"] {
+        max-width: 120px;
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    input[type="number"] {
+        max-width: 100px;
+        font-size: 13px;
+        padding: 6px;
+    }
 }
 
 
