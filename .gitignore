@@ -102,3 +102,5 @@ credentials/
 # Analytics Keys (if storing separately)
 analytics-keys.json
 ga-credentials.json
+
+add_adsense.py

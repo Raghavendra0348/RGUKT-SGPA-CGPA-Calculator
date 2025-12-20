@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T486B8C5X0"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-T486B8C5X0');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-T486B8C5X0');
     </script>
 
     <meta charset="UTF-8">
@@ -16,10 +17,9 @@
 
     <title>Department Selector</title>
 
-     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
- 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
     <style>
-       
         * {
             margin: 0;
             padding: 0;
@@ -40,141 +40,206 @@
             background-size: 800% 800%;
         }
 
-.search-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 1px auto;
+        .search-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 1px auto;
 
-}
-
-
-#searchBar {
-    width: 100%;
-    max-width: 450px;
-    padding: 14px 44px 14px 18px;
-    border: 2px solid #ccc;
-    border-radius: 30px;
-    font-size: 16px;
-    outline: none;
-    background-color: #ffffff;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease-in-out;
-}
-
-.search-icon {
-    position: absolute;
-    right: calc(50% - 225px + 18px); /* Adjust according to max-width */
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 18px;
-    color: #aaa;
-    pointer-events: none;
-}
+        }
 
 
+        #searchBar {
+            width: 100%;
+            max-width: 450px;
+            padding: 14px 44px 14px 18px;
+            border: 2px solid #ccc;
+            border-radius: 30px;
+            font-size: 16px;
+            outline: none;
+            background-color: #ffffff;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease-in-out;
+        }
 
-@media (max-width: 480px) {
-  .search-container {
-    margin: 15px auto 10px;
-    max-width: 100%;
-    display: flex;
-    padding: 0 10px;
-  }
-
-  #searchBar {
-    width: 100%;
-    max-width: 95%;
-    font-size: 13px;
-    padding: 10px 35px 10px 12px;
-    border-radius: 25px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .search-icon {
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 14px;
-  }
-}
-
-
-  h1 {
-    font-size: 18px;
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 1px;
-  }
-
-  .branch-box {
-    width: 110px;
-    padding: 14px;
-  }
-
-  .branches {
-    gap: 6px;
-  }
-
-::placeholder {
-  font-size: 14px;
-  justify-content: center;
-    align-items:center;
-}
-
-#searchBar:focus {
-    border-color: #09b4f8;
-    box-shadow: 0 6px 20px rgba(9, 180, 248, 0.2);
-}
-
-/* Optional search icon using pseudo-element */
+        .search-icon {
+            position: absolute;
+            right: calc(50% - 225px + 18px);
+            /* Adjust according to max-width */
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #aaa;
+            pointer-events: none;
+        }
 
 
 
-/* Suggestions Dropdown Box */
-.suggestions-box {
-    position: absolute;
-    top: 100%; /* Aligns directly under the input */
-    left: 0;
-    width: 100%;
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    display: none;
-    animation: fadeIn 0.3s ease-in-out;
-    overflow: hidden;
-}
+        @media (max-width: 480px) {
+            .search-container {
+                margin: 15px auto 10px;
+                max-width: 100%;
+                display: flex;
+                padding: 0 10px;
+            }
+
+            #searchBar {
+                width: 100%;
+                max-width: 95%;
+                font-size: 13px;
+                padding: 10px 35px 10px 12px;
+                border-radius: 25px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .search-icon {
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 14px;
+            }
+        }
 
 
-.suggestions-box div {
-    padding: 14px 18px;
-    font-size: 15px;
-    color: #333;
-    cursor: pointer;
-    transition: background-color 0.25s ease;
-    border-bottom: 1px solid #f1f1f1;
-}
+        h1 {
+            font-size: 18px;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 1px;
+        }
 
-.suggestions-box div:last-child {
-    border-bottom: none;
-}
+        .branch-box {
+            width: 110px;
+            padding: 14px;
+        }
 
-.suggestions-box div:hover {
-    background-color: #f1faff;
-    color: #09b4f8;
-    font-weight: 500;
-    transform: translateX(3px);
-}
+        .branches {
+            gap: 6px;
+        }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-8px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+        ::placeholder {
+            font-size: 14px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #searchBar:focus {
+            border-color: #09b4f8;
+            box-shadow: 0 6px 20px rgba(9, 180, 248, 0.2);
+        }
+
+        /* Optional search icon using pseudo-element */
+
+
+
+
+
+        @media (max-width: 480px) {
+            .search-container {
+                margin: 15px auto 10px;
+                max-width: 100%;
+                display: flex;
+                padding: 0 10px;
+            }
+
+            #searchBar {
+                width: 100%;
+                max-width: 95%;
+                font-size: 13px;
+                padding: 10px 35px 10px 12px;
+                border-radius: 25px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .search-icon {
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 14px;
+            }
+        }
+
+
+        h1 {
+            font-size: 18px;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 1px;
+        }
+
+        .branch-box {
+            width: 110px;
+            padding: 14px;
+        }
+
+        .branches {
+            gap: 6px;
+        }
+
+        ::placeholder {
+            font-size: 14px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #searchBar:focus {
+            border-color: #09b4f8;
+            box-shadow: 0 6px 20px rgba(9, 180, 248, 0.2);
+        }
+
+        /* Suggestions Dropdown Box */
+        .suggestions-box {
+            position: absolute;
+            top: 100%;
+            /* Aligns directly under the input */
+            left: 0;
+            width: 100%;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+
+        .suggestions-box div {
+            padding: 14px 18px;
+            font-size: 15px;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.25s ease;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .suggestions-box div:last-child {
+            border-bottom: none;
+        }
+
+        .suggestions-box div:hover {
+            background-color: #f1faff;
+            color: #09b4f8;
+            font-weight: 500;
+            transform: translateX(3px);
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         h1 {
             color: blueviolet;
@@ -267,7 +332,7 @@
             }
 
             .branch-box {
-                width: 100px;
+                width: 300px;
                 padding: 12px;
             }
 
@@ -306,16 +371,17 @@
             }
 
             .branch-box {
-                width: 85px;
-                padding: 10px;
+                width: 120px;
+                padding: 12px;
+                margin: 20px;
             }
 
             .branch-box h2 {
-                font-size: 13px;
+                font-size: 20px;
             }
 
             .branches {
-                gap: 6px;
+                gap: 16px;
                 padding: 0 3px;
                 margin-bottom: 6px;
             }
@@ -324,314 +390,325 @@
                 padding-bottom: 10px;
             }
         }
-        
+
         .tooltip {
-  position: relative;
-  display: inline-block;
-}
+            position: relative;
+            display: inline-block;
+        }
 
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: max-content;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 6px 10px;
-  position: absolute;
-  z-index: 1;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: max-content;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 6px 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
 
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
     </style>
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7812693991042173"
-    crossorigin="anonymous"></script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7812693991042173"
+        crossorigin="anonymous"></script>
 
 </head>
+
 <body>
 
-<div class="search-container">
-  <div style="position: relative; width: 100%; max-width: 450px; display: flex; justify-content: center;">
-    <input 
-      type="text" 
-      id="searchBar" 
-      placeholder="Search like cse(eXsX)..." 
-      oninput="handleSearch()" 
-      onkeypress="checkEnter(event)" 
-      onfocus="showPreviousSearches()"
-      autocomplete="off" 
-      autocorrect="off" 
-      autocapitalize="off" 
-      spellcheck="false"
-    />
-    <i class="fas fa-search search-icon"></i>
-    <div id="searchSuggestions" class="suggestions-box"></div>
-  </div>
-</div>
-
-<div class="content-wrapper">
-    <h1 id="department-title"></h1>
-
-    <div class="branches">
-        <div class="branch-box" onclick="redirectTo('puc.html')"><h2>MPC</h2></div>
-        <div class="branch-box" onclick="redirectTo('PUC(MBIPC).html')"><h2>MBIPC</h2></div>
+    <div class="search-container">
+        <div style="position: relative; width: 100%; max-width: 450px; display: flex; justify-content: center;">
+            <input type="text" id="searchBar" placeholder="Search like cse(eXsX)..." oninput="handleSearch()"
+                onkeypress="checkEnter(event)" onfocus="showPreviousSearches()" autocomplete="off" autocorrect="off"
+                autocapitalize="off" spellcheck="false" />
+            <i class="fas fa-search search-icon"></i>
+            <div id="searchSuggestions" class="suggestions-box"></div>
+        </div>
     </div>
-    <div class="branches">
-        <div class="branch-box" onclick="redirectTo('cse_semester.html')"><h2>CSE</h2></div>
+
+    <div class="content-wrapper">
+        <h1 id="department-title"></h1>
+
+        <div class="branches">
+            <div class="branch-box" onclick="redirectTo('puc.html')">
+                <h2>MPC</h2>
+            </div>
+            <div class="branch-box" onclick="redirectTo('PUC(MBIPC).html')">
+                <h2>MBIPC</h2>
+            </div>
+        </div>
+        <div class="branches">
+            <div class="branch-box" onclick="redirectTo('cse_semester.html')">
+                <h2>CSE</h2>
+            </div>
 
 
+        </div>
+        <div class="branches">
+            <div class="branch-box" onclick="redirectTo('ece_semester.html')">
+                <h2>ECE</h2>
+            </div>
+            <div class="branch-box" onclick="redirectTo('civil_semester.html')">
+                <h2>CIVIL</h2>
+            </div>
+        </div>
+        <div class="branches">
+            <div class="branch-box" onclick="redirectTo('mech_semester.html')">
+                <h2>MECH</h2>
+            </div>
+            <div class="branch-box" onclick="redirectTo('mme_semester.html')">
+                <h2>MME</h2>
+            </div>
+        </div>
+        <div class="branches">
+            <div class="branch-box" onclick="redirectTo('chemical_semester.html')">
+                <h2>CHEMICAL</h2>
+            </div>
+            <div class="branch-box" onclick="redirectTo('eee_semester.html')">
+                <h2>EEE</h2>
+            </div>
+        </div>
     </div>
-    <div class="branches">
-        <div class="branch-box" onclick="redirectTo('ece_semester.html')"><h2>ECE</h2></div>
-        <div class="branch-box" onclick="redirectTo('civil_semester.html')"><h2>CIVIL</h2></div>
-    </div>
-    <div class="branches">
-        <div class="branch-box" onclick="redirectTo('mech_semester.html')"><h2>MECH</h2></div>
-        <div class="branch-box" onclick="redirectTo('mme_semester.html')"><h2>MME</h2></div>
-    </div>
-    <div class="branches">
-        <div class="branch-box" onclick="redirectTo('chemical_semester.html')"><h2>CHEMICAL</h2></div>
-        <div class="branch-box" onclick="redirectTo('eee_semester.html')"><h2>EEE</h2></div>
-    </div>
-</div>
 
-<script>
-    let suggestionClicked = false;
-let clickedInsideSuggestion = false;
+    <script>
+        let suggestionClicked = false;
+        let clickedInsideSuggestion = false;
 
-    function redirectTo(url) {
-        document.body.style.opacity = 0;
-        setTimeout(() => {
-            window.location.href = url;
-        }, 500);
-    }
-
-    function animateTitle() {
-        const title = "Select   Department";
-        const titleContainer = document.getElementById('department-title');
-        title.split('').forEach((letter, index) => {
-            const span = document.createElement('span');
-            span.textContent = letter;
-            span.classList.add('letter');
-            titleContainer.appendChild(span);
+        function redirectTo(url) {
+            document.body.style.opacity = 0;
             setTimeout(() => {
-                span.style.opacity = 1;
-                span.style.transform = 'translateY(0)';
-            }, index * 150);
-        });
-    }
+                window.location.href = url;
+            }, 500);
+        }
 
-    animateTitle();
-
-    const pageLinks = {
-    "about": "about.html",
-    "contact": "contact.html",
-    "privacy policy": "privacy_policy.html",
-    "terms": "terms.html",
-    "home": "main.html",
-    "cgpa": "department.html",
-    "sgpa": "department.html",
-    "puc": "puc.html",
-    "puc mpipc": "puc(mbipc).html",
-
-    // CSE Semesters
-    "cse e1s1": "cse_e1s1.html",
-    "cse e1s2": "cse(e1s2).html",
-    "cse e2s1": "cse(e2s1).html",
-    "cse e2s2": "cse(e2s2).html",
-    "cse e3s1": "cse(e3s1).html",
-    "cse e3s2": "cse(e3s2).html",
-    "cse e4s1": "cse(e4s1).html",
-    "cse e4s2": "cse(e4s2).html",
-
-    // ECE Semesters
-    "ece e1s1": "ece(e1s1).html",
-    "ece e1s2": "ece(e1s2).html",
-    "ece e2s1": "ece(e2s1).html",
-    "ece e2s2": "ece(e2s2).html",
-    "ece e3s1": "ece(e3s1).html",
-    "ece e3s2": "ece(e3s2).html",
-    "ece e4s1": "ece(e4s1).html",
-    "ece e4s2": "ece(e4s2).html",
-
-    // CIVIL Semesters
-    "civil e1s1": "civil(e1s1).html",
-    "civil e1s2": "civil(e1s2).html",
-    "civil e2s1": "civil(e2s1).html",
-    "civil e2s2": "civil(e2s2).html",
-    "civil e3s1": "civil(e3s1).html",
-    "civil e3s2": "civil(e3s2).html",
-    "civil e4s1": "civil(e4s1).html",
-    "civil e4s2": "civil(e4s2).html",
-
-    // MECH Semesters
-    "mech e1s1": "mech(e1s1).html",
-    "mech e1s2": "mech(e1s2).html",
-    "mech e2s1": "mech(e2s1).html",
-    "mech e2s2": "mech(e2s2).html",
-    "mech e3s1": "mech(e3s1).html",
-    "mech e3s2": "mech(e3s2).html",
-    "mech e4s1": "mech(e4s1).html",
-    "mech e4s2": "mech(e4s2).html",
-
-    // MME Semesters
-    "mme e1s1": "mme(e1s1).html",
-    "mme e1s2": "mme(e1s2).html",
-    "mme e2s1": "mme(e2s1).html",
-    "mme e2s2": "mme(e2s2).html",
-    "mme e3s1": "mme(e3s1).html",
-    "mme e3s2": "mme(e3s2).html",
-    "mme e4s1": "mme(e4s1).html",
-    "mme e4s2": "mme(e4s2).html",
-
-    // CHEMICAL Semesters
-    "chemical e1s1": "chemical(e1s1).html",
-    "chemical e1s2": "chemical(e1s2).html",
-    "chemical e2s1": "chemical(e2s1).html",
-    "chemical e2s2": "chemical(e2s2).html",
-    "chemical e3s1": "chemical(e3s1).html",
-    "chemical e3s2": "chemical(e3s2).html",
-    "chemical e4s1": "chemical(e4s1).html",
-    "chemical e4s2": "chemical(e4s2).html",
-
-    // EEE Semesters
-    "eee e1s1": "eee(e1s1).html",
-    "eee e1s2": "eee(e1s2).html",
-    "eee e2s1": "eee(e2s1).html",
-    "eee e2s2": "eee(e2s2).html",
-    "eee e3s1": "eee(e3s1).html",
-    "eee e3s2": "eee(e3s2).html",
-    "eee e4s1": "eee(e4s1).html",
-    "eee e4s2": "eee(e4s2).html"
-};
-
-    function showPreviousSearches() {
-        const searchBar = document.getElementById("searchBar");
-        const suggestionBox = document.getElementById("searchSuggestions");
-        const previous = JSON.parse(localStorage.getItem("rgukt-searches") || "[]");
-
-        if (searchBar.value.trim() !== "") return;
-
-        suggestionBox.innerHTML = "";
-
-        if (previous.length > 0) {
-            previous.slice(-5).reverse().forEach(item => {
-                const div = document.createElement("div");
-                div.textContent = item;
-                div.onclick = () => {
-                    suggestionClicked = true;
-                    searchBar.value = item;
-                    const match = Object.keys(pageLinks).find(page => page === item.toLowerCase());
-                    if (match) {
-                        saveToHistory(item);
-                        window.location.href = pageLinks[match];
-                    } else {
-                        handleSearch();
-                    }
-                };
-                suggestionBox.appendChild(div);
+        function animateTitle() {
+            const title = "Select   Department";
+            const titleContainer = document.getElementById('department-title');
+            title.split('').forEach((letter, index) => {
+                const span = document.createElement('span');
+                span.textContent = letter;
+                span.classList.add('letter');
+                titleContainer.appendChild(span);
+                setTimeout(() => {
+                    span.style.opacity = 1;
+                    span.style.transform = 'translateY(0)';
+                }, index * 150);
             });
-            suggestionBox.style.display = "block";
-        }
-    }
-
-    function handleSearch() {
-        const query = document.getElementById("searchBar").value.toLowerCase().trim();
-        const suggestionBox = document.getElementById("searchSuggestions");
-        suggestionBox.innerHTML = '';
-
-        if (!query) {
-            suggestionBox.style.display = 'none';
-            return;
         }
 
-        const matches = Object.keys(pageLinks).filter(page =>
-            page.toLowerCase().includes(query)
-        );
+        animateTitle();
 
-        if (matches.length > 0) {
-            matches.forEach(match => {
-                const div = document.createElement("div");
-                div.textContent = match;
-         div.onmousedown = () => {
-    suggestionClicked = true;
-    saveToHistory(match.toLowerCase());
-    const matchedLink = pageLinks[match.toLowerCase()];
-    if (matchedLink) {
-        window.location.href = matchedLink;
-    } else {
-        alert("Page not found");
-    }
-};
+        const pageLinks = {
+            "about": "about.html",
+            "contact": "contact.html",
+            "privacy policy": "privacy_policy.html",
+            "terms": "terms.html",
+            "home": "main.html",
+            "cgpa": "department.html",
+            "sgpa": "department.html",
+            "puc": "puc.html",
+            "puc mpipc": "puc(mbipc).html",
 
+            // CSE Semesters
+            "cse e1s1": "cse_e1s1.html",
+            "cse e1s2": "cse(e1s2).html",
+            "cse e2s1": "cse(e2s1).html",
+            "cse e2s2": "cse(e2s2).html",
+            "cse e3s1": "cse(e3s1).html",
+            "cse e3s2": "cse(e3s2).html",
+            "cse e4s1": "cse(e4s1).html",
+            "cse e4s2": "cse(e4s2).html",
 
-                suggestionBox.appendChild(div);
-            });
-            suggestionBox.style.display = 'block';
-        } else {
-            suggestionBox.style.display = 'none';
-        }
-    }
+            // ECE Semesters
+            "ece e1s1": "ece(e1s1).html",
+            "ece e1s2": "ece(e1s2).html",
+            "ece e2s1": "ece(e2s1).html",
+            "ece e2s2": "ece(e2s2).html",
+            "ece e3s1": "ece(e3s1).html",
+            "ece e3s2": "ece(e3s2).html",
+            "ece e4s1": "ece(e4s1).html",
+            "ece e4s2": "ece(e4s2).html",
 
-    function checkEnter(event) {
-        if (event.key === "Enter") {
-            const query = document.getElementById("searchBar").value.toLowerCase().trim();
-            const match = Object.keys(pageLinks).find(page => page.toLowerCase() === query);
-            if (match) {
-                saveToHistory(query);
-                window.location.href = pageLinks[match];
-            } else {
-                alert("No matching page found.");
+            // CIVIL Semesters
+            "civil e1s1": "civil(e1s1).html",
+            "civil e1s2": "civil(e1s2).html",
+            "civil e2s1": "civil(e2s1).html",
+            "civil e2s2": "civil(e2s2).html",
+            "civil e3s1": "civil(e3s1).html",
+            "civil e3s2": "civil(e3s2).html",
+            "civil e4s1": "civil(e4s1).html",
+            "civil e4s2": "civil(e4s2).html",
+
+            // MECH Semesters
+            "mech e1s1": "mech(e1s1).html",
+            "mech e1s2": "mech(e1s2).html",
+            "mech e2s1": "mech(e2s1).html",
+            "mech e2s2": "mech(e2s2).html",
+            "mech e3s1": "mech(e3s1).html",
+            "mech e3s2": "mech(e3s2).html",
+            "mech e4s1": "mech(e4s1).html",
+            "mech e4s2": "mech(e4s2).html",
+
+            // MME Semesters
+            "mme e1s1": "mme(e1s1).html",
+            "mme e1s2": "mme(e1s2).html",
+            "mme e2s1": "mme(e2s1).html",
+            "mme e2s2": "mme(e2s2).html",
+            "mme e3s1": "mme(e3s1).html",
+            "mme e3s2": "mme(e3s2).html",
+            "mme e4s1": "mme(e4s1).html",
+            "mme e4s2": "mme(e4s2).html",
+
+            // CHEMICAL Semesters
+            "chemical e1s1": "chemical(e1s1).html",
+            "chemical e1s2": "chemical(e1s2).html",
+            "chemical e2s1": "chemical(e2s1).html",
+            "chemical e2s2": "chemical(e2s2).html",
+            "chemical e3s1": "chemical(e3s1).html",
+            "chemical e3s2": "chemical(e3s2).html",
+            "chemical e4s1": "chemical(e4s1).html",
+            "chemical e4s2": "chemical(e4s2).html",
+
+            // EEE Semesters
+            "eee e1s1": "eee(e1s1).html",
+            "eee e1s2": "eee(e1s2).html",
+            "eee e2s1": "eee(e2s1).html",
+            "eee e2s2": "eee(e2s2).html",
+            "eee e3s1": "eee(e3s1).html",
+            "eee e3s2": "eee(e3s2).html",
+            "eee e4s1": "eee(e4s1).html",
+            "eee e4s2": "eee(e4s2).html"
+        };
+
+        function showPreviousSearches() {
+            const searchBar = document.getElementById("searchBar");
+            const suggestionBox = document.getElementById("searchSuggestions");
+            const previous = JSON.parse(localStorage.getItem("rgukt-searches") || "[]");
+
+            if (searchBar.value.trim() !== "") return;
+
+            suggestionBox.innerHTML = "";
+
+            if (previous.length > 0) {
+                previous.slice(-5).reverse().forEach(item => {
+                    const div = document.createElement("div");
+                    div.textContent = item;
+                    div.onclick = () => {
+                        suggestionClicked = true;
+                        searchBar.value = item;
+                        const match = Object.keys(pageLinks).find(page => page === item.toLowerCase());
+                        if (match) {
+                            saveToHistory(item);
+                            window.location.href = pageLinks[match];
+                        } else {
+                            handleSearch();
+                        }
+                    };
+                    suggestionBox.appendChild(div);
+                });
+                suggestionBox.style.display = "block";
             }
         }
-    }
 
-    function saveToHistory(term) {
-        const previous = JSON.parse(localStorage.getItem("rgukt-searches") || "[]");
-        const lowerTerm = term.toLowerCase();
-        if (!previous.includes(lowerTerm)) {
-            previous.push(lowerTerm);
-            localStorage.setItem("rgukt-searches", JSON.stringify(previous));
+        function handleSearch() {
+            const query = document.getElementById("searchBar").value.toLowerCase().trim();
+            const suggestionBox = document.getElementById("searchSuggestions");
+            suggestionBox.innerHTML = '';
+
+            if (!query) {
+                suggestionBox.style.display = 'none';
+                return;
+            }
+
+            const matches = Object.keys(pageLinks).filter(page =>
+                page.toLowerCase().includes(query)
+            );
+
+            if (matches.length > 0) {
+                matches.forEach(match => {
+                    const div = document.createElement("div");
+                    div.textContent = match;
+                    div.onmousedown = () => {
+                        suggestionClicked = true;
+                        saveToHistory(match.toLowerCase());
+                        const matchedLink = pageLinks[match.toLowerCase()];
+                        if (matchedLink) {
+                            window.location.href = matchedLink;
+                        } else {
+                            alert("Page not found");
+                        }
+                    };
+
+
+                    suggestionBox.appendChild(div);
+                });
+                suggestionBox.style.display = 'block';
+            } else {
+                suggestionBox.style.display = 'none';
+            }
         }
-    }
-document.addEventListener("pointerdown", (event) => {
-    const suggestionsBox = document.getElementById("searchSuggestions");
-    if (suggestionsBox.contains(event.target)) {
-        clickedInsideSuggestion = true;
-    }
-});
 
-    // Toggle suggestions visibility on focus and blur with flag check
-    const searchBarEl = document.getElementById("searchBar");
-
-    searchBarEl.addEventListener("focus", () => {
-        const suggestionBox = document.getElementById("searchSuggestions");
-        if (suggestionBox.innerHTML.trim() !== "") {
-            suggestionBox.style.display = 'block';
+        function checkEnter(event) {
+            if (event.key === "Enter") {
+                const query = document.getElementById("searchBar").value.toLowerCase().trim();
+                const match = Object.keys(pageLinks).find(page => page.toLowerCase() === query);
+                if (match) {
+                    saveToHistory(query);
+                    window.location.href = pageLinks[match];
+                } else {
+                    alert("No matching page found.");
+                }
+            }
         }
-    });
 
-searchBarEl.addEventListener("blur", () => {
-    setTimeout(() => {
-        if (!clickedInsideSuggestion) {
-            document.getElementById("searchSuggestions").style.display = 'none';
+        function saveToHistory(term) {
+            const previous = JSON.parse(localStorage.getItem("rgukt-searches") || "[]");
+            const lowerTerm = term.toLowerCase();
+            if (!previous.includes(lowerTerm)) {
+                previous.push(lowerTerm);
+                localStorage.setItem("rgukt-searches", JSON.stringify(previous));
+            }
         }
-        clickedInsideSuggestion = false; // Always reset
-    }, 150);
-});
+        document.addEventListener("pointerdown", (event) => {
+            const suggestionsBox = document.getElementById("searchSuggestions");
+            if (suggestionsBox.contains(event.target)) {
+                clickedInsideSuggestion = true;
+            }
+        });
 
-</script>
+        // Toggle suggestions visibility on focus and blur with flag check
+        const searchBarEl = document.getElementById("searchBar");
+
+        searchBarEl.addEventListener("focus", () => {
+            const suggestionBox = document.getElementById("searchSuggestions");
+            if (suggestionBox.innerHTML.trim() !== "") {
+                suggestionBox.style.display = 'block';
+            }
+        });
+
+        searchBarEl.addEventListener("blur", () => {
+            setTimeout(() => {
+                if (!clickedInsideSuggestion) {
+                    document.getElementById("searchSuggestions").style.display = 'none';
+                }
+                clickedInsideSuggestion = false; // Always reset
+            }, 150);
+        });
+
+    </script>
 
 
 
 </body>
+
 </html>

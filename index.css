@@ -332,39 +332,52 @@ header {
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
+  padding: 0;
+  /* background: linear-gradient(160deg, #0A1828 0%, #764ba2 100%); */
 }
 
 iframe {
   width: 100%;
-  height: 100%;
+  height: 700px;
   max-width: 100%;
   border: none;
-  border-radius: 8px;
+  border-radius: 0;
   flex-grow: 1;
 }
 
 /* Responsive iframe adjustments */
 @media (max-width: 768px) {
   #content {
-    padding: 10px !important;
-    min-height: 50vh !important;
+    padding: 0 !important;
+    min-height: auto !important;
   }
-  
+
   iframe {
-    height: 480px !important;
-    border-radius: 8px;
+    height:100% !important;
+    border-radius: 0;
   }
 }
 
 @media (max-width: 480px) {
   #content {
-    padding: 5px !important;
-    min-height: 45vh !important;
+    padding: 0 !important;
+    min-height: auto !important;
   }
-  
+
   iframe {
-    height: 420px !important;
-    border-radius: 6px;
+    height: 100% !important;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  #content {
+    padding: 0 !important;
+  }
+
+  iframe {
+    height: 100% !important;
+    border-radius: 0;
   }
 }
 

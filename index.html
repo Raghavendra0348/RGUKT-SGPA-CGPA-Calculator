@@ -161,8 +161,8 @@
       </div>
     </div>
     <hr>
-    
-<!--    <button onclick="logout()" class="dropdown-btn logout-btn">Logout</button> -->
+
+    <!--    <button onclick="logout()" class="dropdown-btn logout-btn">Logout</button> -->
   </div>
 
   <!-- Mobile Menu Overlay and Sidebar -->
@@ -188,7 +188,7 @@
     <button onclick="navigateTo('privacy_policy.html')">Privacy Policy</button>
     <button onclick="navigateTo('terms.html')">Terms & Conditions</button>
 
-   <!--  <button onclick="logout()" class="logout">Logout</button> -->
+    <!--  <button onclick="logout()" class="logout">Logout</button> -->
 
     <!-- Developer Details Section -->
     <fieldset class="connect-section">
@@ -203,26 +203,8 @@
     </fieldset>
   </div>
 
-  <div id="content" style="
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
-  background: #0f172a;
-  min-height: 60vh;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-">
-    <iframe src="department.html" title="Select Department" style="
-      width: 100%;
-      max-width: 100%;
-      height: 550px;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-      background: white;
-    " loading="lazy"></iframe>
+  <div id="content">
+    <iframe src="department.html" title="Select Department" loading="lazy"></iframe>
   </div>
 
   <!--  Educational Resources Section -->
@@ -497,14 +479,14 @@
     function navigateTo(page) {
       window.location.href = page;
     }
-/* 
-    // Logout function
-    function logout() {
-      // Add your logout logic here
-      alert('Logout functionality - Add your authentication logout logic here');
-      // Example: Clear session, redirect to login page, etc.
-    }
-*/
+    /* 
+        // Logout function
+        function logout() {
+          // Add your logout logic here
+          alert('Logout functionality - Add your authentication logout logic here');
+          // Example: Clear session, redirect to login page, etc.
+        }
+    */
     // Refresh logo - reload page
     function refreshLogo() {
       window.location.href = 'index.html';
