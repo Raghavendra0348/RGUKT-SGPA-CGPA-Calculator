@@ -15,7 +15,6 @@ A free, responsive web-based tool designed for **RGUKT students** to calculate t
 - 🧮 Calculate **SGPA & CGPA** for all branches — *CSE, ECE, EEE, CIVIL, MECH, PUC, etc.*
 - 📱 Fully **responsive** for mobile, tablet, and desktop users
 - 🎓 Supports **PUC & Engineering semesters**
-- 🔐 **Firebase Authentication** (Signup / Login)
 - 🌙 Modern **UI/UX** with gradient design and smooth animations
 - 📰 **Blog & Info Section** for GPA tips, FAQs, and guides
 - ⚡ **Fast-loading**, SEO optimized, and performance tested
@@ -26,7 +25,7 @@ A free, responsive web-based tool designed for **RGUKT students** to calculate t
 
 | Frontend | Backend | Hosting | Database |
 |-----------|----------|----------|-----------|
-| HTML5, CSS3, JavaScript (ES6 Modules) | Firebase Auth | Vercel | 
+| HTML5, CSS3, Vanilla JS | — | Vercel | subjects.json
 
 ---
 
@@ -36,13 +35,13 @@ A free, responsive web-based tool designed for **RGUKT students** to calculate t
 ## 🖼️ Website Preview
 
 ### 🌟 Homepage  
-![Homepage Screenshot](home-preview.png)
+*(Screenshot coming soon)*
 
 ### 🧮 SGPA Calculator  
-![SGPA Calculator](sgpa-calculator.png)
+*(Screenshot coming soon)*
 
 ### 📰 Blog Section  
-![Blog Section](blog-section.png)
+*(Screenshot coming soon)*
 
 ---
 

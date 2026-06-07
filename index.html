@@ -37,7 +37,7 @@
   <meta name="twitter:description"
     content="Easily calculate your CGPA and SGPA. Free and accurate calculator for RGUKT students.">
   <meta name="twitter:image" content="https://www.rgukt-sgpa-cgpa-calculator.tech/rgukt.webp">
-  <meta name="twitter:site" content="@YourTwitterHandle">
+  <meta name="twitter:site" content="@RGUKTCalc">
 
   <!-- Additional SEO -->
   <meta name="theme-color" content="#0f172a">
@@ -97,6 +97,14 @@
 
   <!-- Main Styles -->
   <link rel="stylesheet" href="index.css">
+  <!-- AdSense Auto Ads (page-level) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7812693991042173" crossorigin="anonymous"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-7812693991042173",
+      enable_page_level_ads: true
+    });
+  </script>
 </head>
 
 <body>
@@ -149,20 +157,8 @@
     </div>
 
   </header>
-
-  <!-- Profile Dropdown -->
-  <div id="user-dropdown-overlay" style="display: none; position: fixed; inset: 0; z-index: 9998;"></div>
-  <div id="user-dropdown" class="user-dropdown">
-    <div class="dropdown-header">
-      <img id="dropdown-profile-img" src="" alt="User" class="user-img" />
-      <div class="user-details">
-        <p id="user-name" class="user-name">RGUKT User</p>
-        <p id="user-email" class="user-email">user@example.com</p>
-      </div>
     </div>
     <hr>
-
-    <!--    <button onclick="logout()" class="dropdown-btn logout-btn">Logout</button> -->
   </div>
 
   <!-- Mobile Menu Overlay and Sidebar -->
@@ -180,6 +176,16 @@
     <button onclick="navigateTo('about.html')">About</button>
     <button onclick="navigateTo('contact.html')">Contact</button>
 
+
+    <!-- AdSense — Sidebar Unit -->
+    <div style="margin:12px 0;text-align:center;">
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:100%;max-width:300px;min-height:250px;"
+           data-ad-client="ca-pub-7812693991042173"
+           data-ad-slot="3619938546"
+           data-ad-format="rectangle"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
     <!-- Divider -->
     <div style="width: 90%; height: 1px; background-color: rgba(255, 255, 255, 0.3); margin: 15px 0;"></div>
 
@@ -188,10 +194,8 @@
     <button onclick="navigateTo('privacy_policy.html')">Privacy Policy</button>
     <button onclick="navigateTo('terms.html')">Terms & Conditions</button>
 
-    <!--  <button onclick="logout()" class="logout">Logout</button> -->
-
     <!-- Developer Details Section -->
-    <fieldset class="connect-section">
+    <!-- <fieldset class="connect-section">
       <legend>Connect With Me</legend>
       <div class="connect-links">
         <a href="https://www.linkedin.com/in/arella-raghavendra/" target="_blank" class="connect-link">LinkedIn</a>
@@ -200,11 +204,22 @@
           class="connect-link">YouTube</a>
         <a href="https://www.instagram.com/raghavendra_348/" target="_blank" class="connect-link">Instagram</a>
       </div>
-    </fieldset>
+    </fieldset> -->
   </div>
 
   <div id="content">
-    <iframe src="department.html" title="Select Department" loading="lazy"></iframe>
+    <iframe src="department.html" id="content-frame" title="Select Department" loading="lazy"></iframe>
+  </div>
+
+  <!-- AdSense — Below Calculator Content -->
+  <div style="max-width:800px;margin:24px auto;padding:0 16px;text-align:center;">
+    <ins class="adsbygoogle"
+         style="display:block;margin:0 auto;"
+         data-ad-client="ca-pub-7812693991042173"
+         data-ad-slot="3619938546"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 
   <!--  Educational Resources Section -->
@@ -414,7 +429,7 @@
     </nav>
 
     <!-- 🧭 Social Media Links -->
-    <div style="margin-bottom: 20px;">
+    <!-- <div style="margin-bottom: 20px;">
       <a href="https://www.linkedin.com/in/arella-raghavendra/" target="_blank" aria-label="LinkedIn"
         style="color:#0ea5e9; margin: 0 10px; font-size:1.3rem;">
         <i class="fab fa-linkedin"></i>
@@ -431,14 +446,14 @@
         style="color:#e879f9; margin: 0 10px; font-size:1.3rem;">
         <i class="fab fa-instagram"></i>
       </a>
-    </div>
+    </div> -->
 
     <!-- 🧾 Legal + Info -->
-    <div style="font-size: 0.95rem; margin-bottom: 8px;">
+    <!-- <div style="font-size: 0.95rem; margin-bottom: 8px;">
       © <span id="yr"></span> <strong>RGUKT SGPA & CGPA Calculator</strong> — All Rights Reserved.<br>
       Built with ❤️ by <a href="https://www.linkedin.com/in/arella-raghavendra/" target="_blank"
         style="color:#60a5fa; text-decoration:none;">Raghavendra Arella</a>
-    </div>
+    </div> -->
 
     <div style="font-size: 0.85rem; color:#94a3b8; margin-top: 8px;">
       Educational content only. Please verify with official RGUKT academic regulations.
@@ -481,11 +496,6 @@
     }
     /* 
         // Logout function
-        function logout() {
-          // Add your logout logic here
-          alert('Logout functionality - Add your authentication logout logic here');
-          // Example: Clear session, redirect to login page, etc.
-        }
     */
     // Refresh logo - reload page
     function refreshLogo() {

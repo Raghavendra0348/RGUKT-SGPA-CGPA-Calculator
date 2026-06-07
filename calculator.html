@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SGPA &amp; CGPA Calculator — RGUKT</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7812693991042173" crossorigin="anonymous"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T486B8C5X0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T486B8C5X0');
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --accent:  #7c3aed;
+      --accent2: #2563eb;
+      --accent3: #f472b6;
+      --bg-outer: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      --card-bg:  rgba(255,255,255,0.95);
+      --card-border: rgba(124,58,237,0.2);
+      --text:    #0a0a0a;
+      --text-mid: #444;
+      --dim:     #666;
+      --input-bg: #f8f7ff;
+      --input-border: rgba(124,58,237,0.35);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0; padding: 0; min-height: 100vh;
+      background: var(--bg-outer);
+      background-size: 400% 400%;
+      animation: bgAnim 14s ease infinite;
+    }
+
+    @keyframes bgAnim {
+      0%,100% { background-position: 0% 50%; }
+      50%      { background-position: 100% 50%; }
+    }
+
+    /* ─ Container ─ */
+    .container {
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 16px 14px 56px;
+    }
+
+    /* ─ Back link ─ */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #a5b4fc;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      padding: 6px 14px;
+      border: 1px solid rgba(165,180,252,0.35);
+      border-radius: 20px;
+      background: rgba(165,180,252,0.1);
+      transition: all .2s;
+      white-space: nowrap;
+    }
+    .back-link:hover {
+      background: rgba(165,180,252,0.2);
+      transform: translateX(-3px);
+    }
+
+    /* ─ Page header ─ */
+    .page-header {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 16px;
+      padding: 20px 20px 14px;
+      text-align: center;
+      margin-bottom: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content:''; position:absolute; top:-40px; left:-40px;
+      width:150px; height:150px;
+      background: radial-gradient(circle, rgba(167,139,250,.35) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.15rem, 4vw, 1.65rem);
+      font-weight: 800; margin: 0 0 5px;
+      background: linear-gradient(90deg, #c4b5fd, #93c5fd, #f9a8d4);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: .5px;
+      padding: 0; border-radius: 0; background-color: transparent;
+      line-height: 1.2;
+    }
+
+    .breadcrumb { font-size: .72rem; color: rgba(255,255,255,0.55); }
+    .breadcrumb a { color: rgba(196,181,253,.85); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* ─ Tabs ─ */
+    .top-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .top-buttons button {
+      flex: 1;
+      max-width: 180px;
+      padding: 11px 8px;
+      font-size: clamp(0.8rem, 2.5vw, 0.93rem);
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      border: 2px solid rgba(196,181,253,.5);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.1);
+      color: #c4b5fd;
+      cursor: pointer;
+      transition: all .25s;
+      margin-top: 0;
+      min-height: 44px;
+    }
+
+    .top-buttons button.active {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-color: transparent;
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(124,58,237,.45);
+    }
+
+    .top-buttons button:hover:not(.active) {
+      background: rgba(196,181,253,.15);
+      border-color: #c4b5fd;
+    }
+
+    /* ─ Card / fieldset ─ */
+    fieldset {
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px 16px 18px;
+      background: var(--card-bg);
+      box-shadow: 0 8px 32px rgba(0,0,0,.18);
+      margin-bottom: 16px;
+    }
+
+    legend {
+      font-size: .85rem;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border: none;
+      border-radius: 8px;
+      padding: 5px 14px;
+      box-shadow: 0 2px 8px rgba(124,58,237,.35);
+      letter-spacing: .4px;
+      white-space: nowrap;
+    }
+
+    /* ─ Subject rows ─ */
+    .form-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 10px;
+      padding: 7px 10px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      transition: all .2s;
+    }
+
+    .form-item:hover {
+      background: rgba(124,58,237,.05);
+      border-color: rgba(124,58,237,.1);
+    }
+
+    label {
+      font-weight: 600;
+      color: var(--text);
+      font-size: clamp(0.78rem, 2.2vw, 0.88rem);
+      flex: 1;
+      text-align: left;
+      margin-bottom: 0;
+      min-width: 0;
+    }
+
+    select {
+      flex-shrink: 0;
+      width: 110px;
+      padding: 9px 8px;
+      font-size: .87rem;
+      border-radius: 9px;
+      border: 2px solid var(--input-border);
+      background: var(--input-bg);
+      color: var(--text);
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      transition: all .2s;
+      outline: none;
+      min-height: 40px;
+    }
+
+    select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(124,58,237,.15);
+    }
+
+    /* ─ Calculate button ─ */
+    .calc-btn {
+      display: block;
+      width: 100%;
+      margin-top: 16px;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      background-size: 200% 200%;
+      animation: btnShift 4s ease infinite;
+      color: #fff;
+      font-size: clamp(0.88rem, 2.5vw, 1rem);
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 6px 20px rgba(124,58,237,.35);
+      min-height: 48px;
+    }
+
+    @keyframes btnShift {
+      0%,100% { background-position: 0% 50%; }
+      50%      { background-position: 100% 50%; }
+    }
+
+    .calc-btn:hover  { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(124,58,237,.45); }
+    .calc-btn:active { transform: translateY(0); opacity: .92; }
+
+    /* ─ Result box ─ */
+    .result-box {
+      display: none;
+      margin-top: 16px;
+      padding: 24px 18px;
+      border-radius: 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 8px 32px rgba(124,58,237,.15);
+      text-align: center;
+    }
+
+    .result-box.show { display: block; animation: fadeUp .35s ease; }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform: translateY(10px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+
+    .sgpa-label {
+      font-size: .72rem;
+      color: var(--dim);
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-weight: 600;
+    }
+
+    .sgpa-score {
+      font-size: clamp(2.2rem, 8vw, 3rem);
+      font-weight: 800;
+      display: block;
+      margin: 6px 0 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .division-msg {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: clamp(0.78rem, 2.5vw, 0.88rem);
+      font-weight: 600;
+      padding: 7px 18px;
+      border-radius: 30px;
+    }
+
+    .distinction  { color: #059669; background: rgba(5,150,105,.1);  border: 1px solid rgba(5,150,105,.3); }
+    .first-class  { color: #1d4ed8; background: rgba(29,78,216,.1);  border: 1px solid rgba(29,78,216,.3); }
+    .second-class { color: #d97706; background: rgba(217,119,6,.1);  border: 1px solid rgba(217,119,6,.3); }
+    .failed       { color: #dc2626; background: rgba(220,38,38,.1);  border: 1px solid rgba(220,38,38,.3); }
+
+    /* ─ Download row ─ */
+    .download-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .dl-btn {
+      padding: 9px 20px;
+      font-size: clamp(0.75rem, 2.2vw, 0.82rem);
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      border: 2px solid rgba(124,58,237,.35);
+      border-radius: 20px;
+      background: rgba(124,58,237,.06);
+      color: var(--accent);
+      cursor: pointer;
+      transition: all .2s;
+      margin-top: 0;
+      min-height: 40px;
+    }
+
+    .dl-btn:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(124,58,237,.35);
+    }
+
+    /* ─ Chart ─ */
+    .chart-wrap {
+      margin-top: 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    /* ─ CGPA inputs ─ */
+    .form-item1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+      padding: 7px 10px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      transition: all .2s;
+    }
+
+    .form-item1:hover {
+      background: rgba(124,58,237,.05);
+      border-color: rgba(124,58,237,.1);
+    }
+
+    input[type="number"] {
+      width: 130px;
+      flex-shrink: 0;
+      padding: 9px 10px;
+      border: 2px solid var(--input-border);
+      border-radius: 9px;
+      font-size: .87rem;
+      color: var(--text);
+      background: var(--input-bg);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      outline: none;
+      transition: all .2s;
+      min-height: 40px;
+    }
+
+    input[type="number"]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(124,58,237,.15);
+    }
+
+    input[type="number"]::placeholder { color: #aaa; }
+
+    /* ─ Scrollbar ─ */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,.05); }
+    ::-webkit-scrollbar-thumb { background: rgba(124,58,237,.4); border-radius: 3px; }
+
+    /* ═══════════════════════════════════
+       RESPONSIVE BREAKPOINTS
+    ═══════════════════════════════════ */
+
+    /* Tablet: 481px – 768px */
+    @media (max-width: 768px) {
+      .container { padding: 14px 12px 48px; }
+      fieldset { padding: 18px 14px 16px; }
+      .top-buttons button { max-width: none; }
+    }
+
+    /* Mobile L: 361px – 480px */
+    @media (max-width: 480px) {
+      .container { padding: 10px 10px 40px; }
+
+      .page-header { padding: 16px 14px 12px; border-radius: 13px; }
+
+      .top-buttons { gap: 8px; }
+      .top-buttons button {
+        padding: 10px 6px;
+        border-radius: 10px;
+        font-size: .8rem;
+        min-height: 42px;
+      }
+
+      fieldset { padding: 16px 12px 14px; border-radius: 14px; }
+      legend { font-size: .8rem; padding: 4px 12px; }
+
+      /* Stack subject rows vertically */
+      .form-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding: 8px 8px;
+      }
+
+      label { font-size: .84rem; }
+
+      select {
+        width: 100%;
+        font-size: .88rem;
+        min-height: 44px;
+      }
+
+      .calc-btn {
+        padding: 13px;
+        font-size: .9rem;
+        border-radius: 11px;
+        min-height: 48px;
+      }
+
+      /* Stack CGPA rows too */
+      .form-item1 {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+      }
+
+      input[type="number"] {
+        width: 100%;
+        font-size: .88rem;
+        min-height: 44px;
+      }
+
+      .sgpa-score { font-size: 2.4rem; }
+
+      .division-msg { font-size: .8rem; padding: 6px 14px; }
+
+      .download-row { flex-direction: column; }
+      .dl-btn { width: 100%; text-align: center; justify-content: center; min-height: 44px; }
+
+      .result-box { padding: 20px 14px; }
+    }
+
+    /* Mobile S: ≤ 360px */
+    @media (max-width: 360px) {
+      .container { padding: 8px 8px 36px; }
+      .page-header h1 { font-size: 1.1rem; }
+      .sgpa-score { font-size: 2rem; }
+      .top-buttons { flex-direction: column; }
+      .top-buttons button { max-width: 100%; }
+    }
+
+    /* Touch: bigger tap targets on touch devices */
+    @media (hover: none) and (pointer: coarse) {
+      select, input[type="number"] { min-height: 48px; font-size: 1rem; }
+      .calc-btn { min-height: 52px; }
+      .dl-btn { min-height: 48px; }
+    }
+
+    /* ── AdSense Wrappers ── */
+    .ad-wrap {
+      width: 100%;
+      margin: 16px 0;
+      min-height: 90px;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .ad-wrap ins { border-radius: 10px; }
+
+    /* ── Related Calculators ── */
+    .related-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 18px 16px;
+      margin-top: 18px;
+      box-shadow: 0 4px 16px rgba(124,58,237,.1);
+    }
+    .related-box h3 {
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .rel-link {
+      display: inline-block;
+      padding: 7px 14px;
+      background: rgba(124,58,237,.08);
+      border: 1px solid rgba(124,58,237,.25);
+      border-radius: 20px;
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      transition: all .2s;
+      white-space: nowrap;
+    }
+    .rel-link:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+
+<body id="captureArea">
+  <div class="container">
+
+    <!-- Back navigation -->
+    <a id="back-link" href="department.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> <span id="back-text">Back</span>
+    </a>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1 id="page-title">Calculator</h1>
+      <div class="breadcrumb" id="breadcrumb"></div>
+    </div>
+
+    <!-- SGPA / CGPA Toggle -->
+    <div class="top-buttons">
+      <button id="sgpa-btn" class="active" onclick="showSGPA()"><i class="fas fa-calculator"></i> SGPA</button>
+      <button id="cgpa-btn" onclick="showCGPA()"><i class="fas fa-chart-line"></i> CGPA</button>
+    </div>
+
+    <!-- SGPA Section -->
+    <div id="sgpa-content">
+      <fieldset>
+        <legend>SGPA Calculator</legend>
+        <div id="subject-rows"></div>
+        <button class="calc-btn" onclick="calculateSGPA()"><i class="fas fa-calculator"></i> Calculate SGPA</button>
+      </fieldset>
+
+  <!-- AdSense — rgukt calculator -->
+  <div class="ad-wrap">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7812693991042173"
+         data-ad-slot="3619938546"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+      <div class="result-box" id="sgpa-result-box">
+        <div class="sgpa-label">Your SGPA</div>
+        <span class="sgpa-score" id="sgpa-value">—</span>
+        <div class="sgpa-label">out of 10.000</div>
+        <div class="division-msg" id="division-msg"></div>
+        <div class="download-row">
+          <button class="dl-btn" onclick="downloadPDF()"><i class="fas fa-file-pdf"></i> Download PDF</button>
+          <button class="dl-btn" onclick="downloadImage()"><i class="fas fa-image"></i> Download Image</button>
+        </div>
+      </div>
+
+      <div class="chart-wrap" id="chart-wrap" style="display:none;">
+        <canvas id="gradeChart"></canvas>
+      </div>
+
+  <!-- AdSense — rgukt calculator -->
+  <div class="ad-wrap">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7812693991042173"
+         data-ad-slot="3619938546"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+      <!-- Related Calculators — filled by JS -->
+      <div id="related-calcs"></div>
+    </div>
+
+    <!-- CGPA Section -->
+    <div id="cgpa-content" style="display:none;">
+      <fieldset>
+        <legend>CGPA Calculator</legend>
+        <div id="cgpa-sem-rows"></div>
+        <button class="calc-btn" onclick="calculateCGPA()"><i class="fas fa-chart-line"></i> Calculate CGPA</button>
+      </fieldset>
+      <div class="result-box" id="cgpa-result-box">
+        <div class="sgpa-label">Your CGPA</div>
+        <span class="sgpa-score" id="cgpa-value">—</span>
+        <div class="sgpa-label">out of 10.000</div>
+        <div class="division-msg" id="cgpa-division-msg"></div>
+      </div>
+
+  <!-- AdSense — rgukt calculator -->
+  <div class="ad-wrap">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7812693991042173"
+         data-ad-slot="3619938546"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+    </div>
+
+  </div><!-- /container -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.21/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <script>
+    // ── Utility ──────────────────────────────────────────────────────────────
+    const params = new URLSearchParams(location.search);
+    const KEY    = params.get('key') || '';   // e.g. "cse_e1s1"
+
+    let DATA = null;   // subject config for this semester
+    let gradeChart = null;
+
+    function getGradeLetter(value, credits) {
+      if (value === 0) return 'EX';
+      if (credits === 0) return 'EX';
+      const rank = Math.round(value / credits);
+      return ['EX', 'A', 'B', 'C', 'D', 'E'][rank] ?? 'EX';
+    }
+
+    function getDivisionClass(score) {
+      if (score >= 8.0)  return ['Congratulations! Passed with Distinction 🏆', 'distinction'];
+      if (score >= 7.0)  return ['Congratulations! Passed with First Class 🎉',  'first-class'];
+      if (score >= 6.0)  return ['Passed with Second Class.',                     'second-class'];
+      return ['Sorry, result is below passing threshold.', 'failed'];
+    }
+
+    // ── Load data from subjects.json ─────────────────────────────────────────
+    fetch('subjects.json')
+      .then(r => r.json())
+      .then(json => {
+        DATA = json[KEY];
+        if (!DATA) {
+          document.getElementById('page-title').textContent = 'Unknown Semester';
+          return;
+        }
+        init();
+      })
+      .catch(() => {
+        document.getElementById('page-title').textContent = 'Error loading data';
+      });
+
+    function init() {
+      // Set title & breadcrumb
+      document.title = DATA.title + ' — RGUKT Calculator';
+      document.getElementById('page-title').textContent = DATA.title;
+
+      const semLink = DATA.branch.toLowerCase() + '_semester.html';
+      document.getElementById('breadcrumb').innerHTML =
+        `<a href="department.html">Home</a> › <a href="${semLink}">${DATA.branch}</a> › ${DATA.title}`;
+      document.getElementById('back-link').href = semLink;
+      document.getElementById('back-text').textContent = DATA.branch + ' Semesters';
+
+      // Build subject rows
+      const container = document.getElementById('subject-rows');
+      DATA.subjects.forEach(sub => {
+        const safeId = CSS.escape(sub.id);
+        const div = document.createElement('div');
+        div.className = 'form-item';
+
+        const maxPenalty = sub.credits * 5;
+        const options = [
+          { grade: 'EX', value: 0 },
+          { grade: 'A',  value: sub.credits * 1 },
+          { grade: 'B',  value: sub.credits * 2 },
+          { grade: 'C',  value: sub.credits * 3 },
+          { grade: 'D',  value: sub.credits * 4 },
+          { grade: 'E',  value: sub.credits * 5 },
+          { grade: 'REM',value: 0, cls: 'rem' }
+        ];
+
+        div.innerHTML = `
+          <label for="sub_${safeId}">${sub.name}</label>
+          <select id="sub_${safeId}" data-credits="${sub.credits}" onchange="liveUpdate()">
+            ${options.map(o =>
+              `<option value="${o.value}"${o.cls ? ` class="${o.cls}"` : ''}>${o.grade}</option>`
+            ).join('')}
+          </select>`;
+        container.appendChild(div);
+      });
+
+      // Build chart
+      const ctx = document.getElementById('gradeChart').getContext('2d');
+      gradeChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['EX', 'A', 'B', 'C', 'D', 'E'],
+          datasets: [{
+            label: 'Grade Distribution',
+            data: [0, 0, 0, 0, 0, 0],
+            backgroundColor: [
+              'rgba(124, 58, 237, 0.85)',   /* EX — purple */
+              'rgba(16, 185, 129, 0.85)',   /* A  — emerald */
+              'rgba(59, 130, 246, 0.85)',   /* B  — blue */
+              'rgba(245, 158, 11, 0.85)',   /* C  — amber */
+              'rgba(249, 115, 22, 0.85)',   /* D  — orange */
+              'rgba(239, 68, 68, 0.85)'    /* E  — red */
+            ],
+            borderColor: [
+              'rgba(124, 58, 237, 1)',
+              'rgba(16, 185, 129, 1)',
+              'rgba(59, 130, 246, 1)',
+              'rgba(245, 158, 11, 1)',
+              'rgba(249, 115, 22, 1)',
+              'rgba(239, 68, 68, 1)'
+            ],
+            borderWidth: 2,
+            borderRadius: 6,
+            borderSkipped: false
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              labels: {
+                color: '#1e1b4b',
+                font: { family: 'Poppins', weight: '600', size: 13 },
+                boxWidth: 14,
+                padding: 16
+              }
+            },
+            tooltip: {
+              backgroundColor: 'rgba(15,12,41,0.9)',
+              titleColor: '#c4b5fd',
+              bodyColor: '#fff',
+              borderColor: 'rgba(124,58,237,0.4)',
+              borderWidth: 1,
+              padding: 10,
+              cornerRadius: 8,
+              titleFont: { family: 'Poppins', weight: '700' },
+              bodyFont: { family: 'Poppins' }
+            }
+          },
+          scales: {
+            x: {
+              ticks: { color: '#374151', font: { family: 'Poppins', weight: '600', size: 12 } },
+              grid: { color: 'rgba(0,0,0,0.06)' },
+              border: { color: 'rgba(0,0,0,0.12)' }
+            },
+            y: {
+              beginAtZero: true,
+              ticks: {
+                color: '#374151',
+                stepSize: 1,
+                font: { family: 'Poppins', weight: '600', size: 12 }
+              },
+              grid: { color: 'rgba(0,0,0,0.07)' },
+              border: { color: 'rgba(0,0,0,0.12)' }
+            }
+          },
+          animation: {
+            duration: 600,
+            easing: 'easeOutQuart'
+          }
+        }
+      });
+
+      // Build CGPA rows
+      buildCGPARows();
+      buildRelated();
+    }
+
+    function buildCGPARows() {
+      const numSems = DATA.cgpaSemesters || (DATA.year * 2);
+      const semLabels = generateSemLabels(numSems);
+      const container = document.getElementById('cgpa-sem-rows');
+      container.innerHTML = '';
+      semLabels.forEach((label, i) => {
+        const div = document.createElement('div');
+        div.className = 'form-item1';
+        div.innerHTML = `
+          <label for="cg_sem${i+1}">${label}</label>
+          <input type="number" id="cg_sem${i+1}" min="0" max="10" step="0.001" placeholder="0.000">`;
+        container.appendChild(div);
+      });
+    }
+
+    function generateSemLabels(n) {
+      const labels = [];
+      for (let i = 1; i <= n; i++) {
+        const yr = Math.ceil(i / 2);
+        const sem = i % 2 === 1 ? 1 : 2;
+        labels.push(`E-0${yr} S-0${sem} SGPA`);
+      }
+      return labels;
+    }
+
+    // ── Live auto-update on dropdown change ───────────────────────────────────
+    function liveUpdate() {
+      if (!DATA) return;
+      const { sum, dist } = collectSGPA();
+      const sgpa = (DATA.maxPoints - sum) / DATA.divisor;
+      updateSGPADisplay(sgpa, dist);
+    }
+
+    function collectSGPA() {
+      let sum = 0;
+      const dist = { EX: 0, A: 0, B: 0, C: 0, D: 0, E: 0 };
+      DATA.subjects.forEach(sub => {
+        const el = document.getElementById('sub_' + sub.id);
+        if (!el) return;
+        const val = parseFloat(el.value) || 0;
+        sum += val;
+        const letter = getGradeLetter(val, sub.credits);
+        if (dist[letter] !== undefined) dist[letter]++;
+      });
+      return { sum, dist };
+    }
+
+    function updateSGPADisplay(sgpa, dist) {
+      document.getElementById('sgpa-value').textContent = sgpa.toFixed(3);
+      const [msg, cls] = getDivisionClass(sgpa);
+      const div = document.getElementById('division-msg');
+      div.textContent = msg;
+      div.className = 'division-msg ' + cls;
+      document.getElementById('sgpa-result-box').classList.add('show');
+
+      // Update chart
+      gradeChart.data.datasets[0].data = [dist.EX, dist.A, dist.B, dist.C, dist.D, dist.E];
+      gradeChart.update();
+      document.getElementById('chart-wrap').style.display = 'block';
+    }
+
+    // ── Calculate button handlers ─────────────────────────────────────────────
+    function calculateSGPA() {
+      if (!DATA) return;
+      liveUpdate();
+      document.getElementById('sgpa-result-box').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function calculateCGPA() {
+      const numSems = DATA ? (DATA.cgpaSemesters || DATA.year * 2) : 8;
+      let total = 0, count = 0;
+      for (let i = 1; i <= numSems; i++) {
+        const el = document.getElementById(`cg_sem${i}`);
+        if (!el) continue;
+        const val = parseFloat(el.value);
+        if (!isNaN(val) && el.value.trim() !== '') {
+          total += val; count++;
+        }
+      }
+      if (count === 0) {
+        alert('Please enter at least one semester SGPA.');
+        return;
+      }
+      const cgpa = total / count;
+      document.getElementById('cgpa-value').textContent = cgpa.toFixed(3);
+      const [msg, cls] = getDivisionClass(cgpa);
+      const div = document.getElementById('cgpa-division-msg');
+      div.textContent = msg;
+      div.className = 'division-msg ' + cls;
+      document.getElementById('cgpa-result-box').classList.add('show');
+    }
+
+    // ── Tab visibility ────────────────────────────────────────────────────────
+    function showSGPA() {
+      document.getElementById('sgpa-content').style.display = 'block';
+      document.getElementById('cgpa-content').style.display = 'none';
+      document.getElementById('sgpa-btn').classList.add('active');
+      document.getElementById('cgpa-btn').classList.remove('active');
+    }
+
+    function showCGPA() {
+      document.getElementById('sgpa-content').style.display = 'none';
+      document.getElementById('cgpa-content').style.display = 'block';
+      document.getElementById('cgpa-btn').classList.add('active');
+      document.getElementById('sgpa-btn').classList.remove('active');
+    }
+
+    // ── PDF Download ─────────────────────────────────────────────────────────
+    function downloadPDF() {
+      if (!DATA) return;
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const sgpa = parseFloat(document.getElementById('sgpa-value').textContent) || 0;
+      const { sum, dist } = collectSGPA();
+
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(18);
+      doc.setTextColor(10, 24, 40);
+      doc.text('SGPA Report — ' + DATA.title, 14, 20);
+      doc.setLineWidth(0.5);
+      doc.line(14, 24, 196, 24);
+
+      const rows = DATA.subjects.map(sub => {
+        const el = document.getElementById('sub_' + sub.id);
+        const val = el ? (parseFloat(el.value) || 0) : 0;
+        const letter = getGradeLetter(val, sub.credits);
+        return [sub.name, letter, sub.credits, (10 - val / sub.credits).toFixed(2)];
+      });
+
+      doc.autoTable({
+        head: [['Subject', 'Grade', 'Credits', 'Grade Points']],
+        body: rows,
+        startY: 30,
+        headStyles: { fillColor: [10, 24, 40], textColor: 255, fontStyle: 'bold' },
+        bodyStyles: { fontSize: 10 }
+      });
+
+      const y = doc.lastAutoTable.finalY + 14;
+      doc.setFontSize(14);
+      doc.setTextColor(0, 102, 204);
+      doc.text(`SGPA: ${sgpa.toFixed(3)} / 10`, 14, y);
+
+      doc.setFontSize(10);
+      doc.setTextColor(100, 100, 100);
+      doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 14, doc.internal.pageSize.height - 10);
+      doc.save(`SGPA_${KEY}.pdf`);
+    }
+
+    // ── Image Download ────────────────────────────────────────────────────────
+    function downloadImage() {
+      html2canvas(document.getElementById('captureArea')).then(canvas => {
+        const a = document.createElement('a');
+        a.download = `SGPA_${KEY}.png`;
+        a.href = canvas.toDataURL('image/png');
+        a.click();
+      });
+    }
+
+    // ── Related Calculators ──────────────────────────────────────────────────
+    function buildRelated() {
+      if (!DATA) return;
+      const br = DATA.branch.toLowerCase();
+      const yr = DATA.year;
+      const sm = DATA.sem;
+      const allSems = [1,2,3,4,5,6,7,8];
+
+      // Other semesters of same branch
+      const links = allSems
+        .filter(s => {
+          const y = Math.ceil(s/2), sem = s%2===1?1:2;
+          return !(y === yr && sem === sm);
+        })
+        .map(s => {
+          const y = Math.ceil(s/2), sem = s%2===1?1:2;
+          const key = `${br}_e${y}s${sem}`;
+          const label = `E-0${y} S-0${sem}`;
+          return `<a href="calculator.html?key=${key}" class="rel-link">${label}</a>`;
+        })
+        .join('');
+
+      const box = document.getElementById('related-calcs');
+      if (box && links) {
+        box.innerHTML = `
+          <div class="related-box">
+            <h3>📚 More ${DATA.branch} Calculators</h3>
+            <div class="related-links">${links}</div>
+          </div>`;
+      }
+    }
+  </script>
+</body>
+</html>

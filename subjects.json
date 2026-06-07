@@ -1,0 +1,2684 @@
+{
+  "cse_e1s1": {
+    "branch": "CSE",
+    "year": 1,
+    "sem": 1,
+    "title": "CSE E-01 SEM-01",
+    "subjects": [
+      {
+        "id": "PSPC",
+        "name": "PSPC",
+        "credits": 4.0
+      },
+      {
+        "id": "BEEE",
+        "name": "BEEE",
+        "credits": 4.0
+      },
+      {
+        "id": "C&LA",
+        "name": "C&LA",
+        "credits": 4.0
+      },
+      {
+        "id": "PSPCLAB",
+        "name": "PSPC LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "BEEELAB",
+        "name": "BEEE LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "ENGLISH",
+        "name": "ENGLISH",
+        "credits": 2.5
+      },
+      {
+        "id": "EGCD",
+        "name": "EGCD",
+        "credits": 2.5
+      }
+    ],
+    "maxPoints": 200.0,
+    "divisor": 20.0,
+    "cgpaSemesters": 0
+  },
+  "cse_e1s2": {
+    "branch": "CSE",
+    "year": 1,
+    "sem": 2,
+    "title": "CSE E-01 SEM-02",
+    "subjects": [
+      {
+        "id": "DM",
+        "name": "DM",
+        "credits": 4.0
+      },
+      {
+        "id": "EP",
+        "name": "EP",
+        "credits": 4.0
+      },
+      {
+        "id": "OOPS",
+        "name": "OOP'S Java",
+        "credits": 4.0
+      },
+      {
+        "id": "OOPS LAB",
+        "name": "OOP'S Java LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "DS",
+        "name": "DS",
+        "credits": 3.0
+      },
+      {
+        "id": "DS LAB",
+        "name": "DS LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "EP LAB",
+        "name": "EP LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "MEFA",
+        "name": "MEFA",
+        "credits": 3.0
+      }
+    ],
+    "maxPoints": 225.0,
+    "divisor": 22.5,
+    "cgpaSemesters": 2
+  },
+  "cse_e2s1": {
+    "branch": "CSE",
+    "year": 2,
+    "sem": 1,
+    "title": "CSE E-02 SEM-01",
+    "subjects": [
+      {
+        "id": "PS",
+        "name": "PS",
+        "credits": 4.0
+      },
+      {
+        "id": "DAA",
+        "name": "DAA",
+        "credits": 4.0
+      },
+      {
+        "id": "DAALAB",
+        "name": "DAA LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "DLD",
+        "name": "DLD",
+        "credits": 3.0
+      },
+      {
+        "id": "DLD LAB",
+        "name": "DLD LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "DMS",
+        "name": "DBMS",
+        "credits": 3.0
+      },
+      {
+        "id": "DMS LAB",
+        "name": "DBMS LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "EL AT",
+        "name": "FLAT",
+        "credits": 3.0
+      }
+    ],
+    "maxPoints": 215.0,
+    "divisor": 21.5,
+    "cgpaSemesters": 3
+  },
+  "cse_e2s2": {
+    "branch": "CSE",
+    "year": 2,
+    "sem": 2,
+    "title": "CSE E-02 SEM-02",
+    "subjects": [
+      {
+        "id": "IOR",
+        "name": "IOR",
+        "credits": 3.0
+      },
+      {
+        "id": "COA",
+        "name": "COA",
+        "credits": 3.0
+      },
+      {
+        "id": "DSWP",
+        "name": "DSWP",
+        "credits": 3.0
+      },
+      {
+        "id": "WT",
+        "name": "WT",
+        "credits": 3.0
+      },
+      {
+        "id": "CD",
+        "name": "CD",
+        "credits": 3.0
+      },
+      {
+        "id": "COA_LAB",
+        "name": "COA LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "DSWP_LAB",
+        "name": "DSWP LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "WT_LAB",
+        "name": "WT LAB",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 195.0,
+    "divisor": 19.5,
+    "cgpaSemesters": 4
+  },
+  "cse_e3s1": {
+    "branch": "CSE",
+    "year": 3,
+    "sem": 1,
+    "title": "CSE E-03 SEM-01",
+    "subjects": [
+      {
+        "id": "OS",
+        "name": "OS",
+        "credits": 3.0
+      },
+      {
+        "id": "CN",
+        "name": "CN",
+        "credits": 3.0
+      },
+      {
+        "id": "SE",
+        "name": "SE",
+        "credits": 3.0
+      },
+      {
+        "id": "MFDS",
+        "name": "MFDS",
+        "credits": 3.0
+      },
+      {
+        "id": "E-I",
+        "name": "E-I",
+        "credits": 3.0
+      },
+      {
+        "id": "OS_LAB",
+        "name": "OS LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "CN_LAB",
+        "name": "CN LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "SE_LAB",
+        "name": "SE LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "ELC",
+        "name": "ELC",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 210.0,
+    "divisor": 21.0,
+    "cgpaSemesters": 5
+  },
+  "cse_e3s2": {
+    "branch": "CSE",
+    "year": 3,
+    "sem": 2,
+    "title": "CSE E-03 SEM-02",
+    "subjects": [
+      {
+        "id": "CN",
+        "name": "CN",
+        "credits": 4.0
+      },
+      {
+        "id": "AI",
+        "name": "AI",
+        "credits": 4.0
+      },
+      {
+        "id": "E-II",
+        "name": "E-II",
+        "credits": 3.0
+      },
+      {
+        "id": "E-III",
+        "name": "E-III",
+        "credits": 3.0
+      },
+      {
+        "id": "OE-I",
+        "name": "OE-I",
+        "credits": 3.0
+      },
+      {
+        "id": "ELC",
+        "name": "ELC",
+        "credits": 1.5
+      },
+      {
+        "id": "MP",
+        "name": "MP",
+        "credits": 3.0
+      },
+      {
+        "id": "SI",
+        "name": "SI",
+        "credits": 3.0
+      }
+    ],
+    "maxPoints": 200.0,
+    "divisor": 20.0,
+    "cgpaSemesters": 6
+  },
+  "cse_e4s1": {
+    "branch": "CSE",
+    "year": 4,
+    "sem": 1,
+    "title": "CSE E-04 SEM-01",
+    "subjects": [
+      {
+        "id": "ML",
+        "name": "Machine Learning",
+        "credits": 4.0
+      },
+      {
+        "id": "E-IV",
+        "name": "Elective-IV",
+        "credits": 3.0
+      },
+      {
+        "id": "OE-II",
+        "name": "Open Elective-II",
+        "credits": 3.0
+      },
+      {
+        "id": "P-I",
+        "name": "Project-I",
+        "credits": 6.0
+      }
+    ],
+    "maxPoints": 170.0,
+    "divisor": 17.0,
+    "cgpaSemesters": 7
+  },
+  "cse_e4s2": {
+    "branch": "CSE",
+    "year": 4,
+    "sem": 2,
+    "title": "CSE E-04 SEM-02",
+    "subjects": [
+      {
+        "id": "Elective-V",
+        "name": "Elective-V",
+        "credits": 3.0
+      },
+      {
+        "id": "OE-III",
+        "name": "Open Elective-III",
+        "credits": 3.0
+      },
+      {
+        "id": "OE-IV",
+        "name": "Open Elective-IV",
+        "credits": 3.0
+      },
+      {
+        "id": "P-II",
+        "name": "Project-II",
+        "credits": 6.0
+      },
+      {
+        "id": "Community-Service",
+        "name": "Community Service",
+        "credits": 2.0
+      }
+    ],
+    "maxPoints": 200.0,
+    "divisor": 20.0,
+    "cgpaSemesters": 8
+  },
+  "ece_e1s1": {
+    "branch": "ECE",
+    "year": 1,
+    "sem": 1,
+    "title": "ECE E-01 SEM-01",
+    "subjects": [
+      {
+        "id": "EP",
+        "name": "EP",
+        "credits": 4.0
+      },
+      {
+        "id": "EP LAB",
+        "name": "EP LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "ET",
+        "name": "ET",
+        "credits": 4.0
+      },
+      {
+        "id": "ET LAB",
+        "name": "ET LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "PDS",
+        "name": "PDS",
+        "credits": 3.0
+      },
+      {
+        "id": "PDSLAB",
+        "name": "PDS LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "DEMC",
+        "name": "DEMC",
+        "credits": 4.0
+      },
+      {
+        "id": "EGCD",
+        "name": "EGCD",
+        "credits": 2.5
+      },
+      {
+        "id": "ILTA",
+        "name": "ILTA",
+        "credits": 1.0
+      }
+    ],
+    "maxPoints": 230.0,
+    "divisor": 23.0,
+    "cgpaSemesters": 0
+  },
+  "ece_e1s2": {
+    "branch": "ECE",
+    "year": 1,
+    "sem": 2,
+    "title": "ECE E-01 SEM-02",
+    "subjects": [
+      {
+        "id": "EDC",
+        "name": "EDC",
+        "credits": 4.0
+      },
+      {
+        "id": "EDC LAB",
+        "name": "EDC LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "MM",
+        "name": "MM",
+        "credits": 4.0
+      },
+      {
+        "id": "NT",
+        "name": "NT",
+        "credits": 4.0
+      },
+      {
+        "id": "C LAB",
+        "name": "C LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "SS",
+        "name": "SS",
+        "credits": 4.0
+      },
+      {
+        "id": "ENG(ELCS) LAB",
+        "name": "ENG(ELCS) LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "OOPS",
+        "name": "OOPS",
+        "credits": 2.0
+      },
+      {
+        "id": "OOPS LAB",
+        "name": "OOPS LAB",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 250.0,
+    "divisor": 25.0,
+    "cgpaSemesters": 2
+  },
+  "ece_e2s1": {
+    "branch": "ECE",
+    "year": 2,
+    "sem": 1,
+    "title": "ECE E-02 SEM-01",
+    "subjects": [
+      {
+        "id": "AEC",
+        "name": "AEC",
+        "credits": 4.0
+      },
+      {
+        "id": "AEC LAB",
+        "name": "AEC LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "DSP",
+        "name": "DSP",
+        "credits": 4.0
+      },
+      {
+        "id": "DSP LAB",
+        "name": "DSP LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "DLD",
+        "name": "DLD",
+        "credits": 3.0
+      },
+      {
+        "id": "DLD LAB",
+        "name": "DLD LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "PRV",
+        "name": "PRV",
+        "credits": 3.0
+      },
+      {
+        "id": "CS",
+        "name": "CS",
+        "credits": 3.0
+      },
+      {
+        "id": "IOT LAB",
+        "name": "IOT LAB",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 240.0,
+    "divisor": 24.0,
+    "cgpaSemesters": 3
+  },
+  "ece_e2s2": {
+    "branch": "ECE",
+    "year": 2,
+    "sem": 2,
+    "title": "ECE E-02 SEM-02",
+    "subjects": [
+      {
+        "id": "RL",
+        "name": "RL",
+        "credits": 2.5
+      },
+      {
+        "id": "CS1",
+        "name": "CS1",
+        "credits": 4.0
+      },
+      {
+        "id": "CS1_Lab",
+        "name": "CS1 Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "DSD",
+        "name": "DSD",
+        "credits": 4.0
+      },
+      {
+        "id": "DSD_Lab",
+        "name": "DSD Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "LIC",
+        "name": "LIC",
+        "credits": 4.0
+      },
+      {
+        "id": "LIC_Lab",
+        "name": "LIC Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "EWGM",
+        "name": "EWGM",
+        "credits": 4.0
+      }
+    ],
+    "maxPoints": 230.0,
+    "divisor": 23.0,
+    "cgpaSemesters": 4
+  },
+  "ece_e3s1": {
+    "branch": "ECE",
+    "year": 3,
+    "sem": 1,
+    "title": "ECE E-03 SEM-01",
+    "subjects": [
+      {
+        "id": "CN",
+        "name": "CN",
+        "credits": 3.0
+      },
+      {
+        "id": "COA",
+        "name": "COA",
+        "credits": 4.0
+      },
+      {
+        "id": "ELCS_Lab2",
+        "name": "ELCS Lab-2",
+        "credits": 1.5
+      },
+      {
+        "id": "CS2",
+        "name": "CS2",
+        "credits": 4.0
+      },
+      {
+        "id": "CS2_Lab",
+        "name": "CS2 Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "MMCN_Lab",
+        "name": "MMCN Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "RFME_Lab",
+        "name": "RFME Lab",
+        "credits": 2.5
+      },
+      {
+        "id": "MP1",
+        "name": "MP-I",
+        "credits": 1.0
+      }
+    ],
+    "maxPoints": 190.0,
+    "divisor": 19.0,
+    "cgpaSemesters": 5
+  },
+  "ece_e3s2": {
+    "branch": "ECE",
+    "year": 3,
+    "sem": 2,
+    "title": "ECE E-03 SEM-02",
+    "subjects": [
+      {
+        "id": "ELCS_Lab3",
+        "name": "ELCS Lab-3",
+        "credits": 1.5
+      },
+      {
+        "id": "PDI",
+        "name": "PDI",
+        "credits": 1.0
+      },
+      {
+        "id": "E1",
+        "name": "E1",
+        "credits": 3.0
+      },
+      {
+        "id": "E2",
+        "name": "E2",
+        "credits": 3.0
+      },
+      {
+        "id": "OE1",
+        "name": "OE1",
+        "credits": 3.0
+      },
+      {
+        "id": "OE2",
+        "name": "OE2",
+        "credits": 3.0
+      },
+      {
+        "id": "MP2",
+        "name": "MP-II",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 160.0,
+    "divisor": 16.0,
+    "cgpaSemesters": 6
+  },
+  "ece_e4s1": {
+    "branch": "ECE",
+    "year": 4,
+    "sem": 1,
+    "title": "ECE E-04 SEM-01",
+    "subjects": [
+      {
+        "id": "E3",
+        "name": "E3",
+        "credits": 3.0
+      },
+      {
+        "id": "E4",
+        "name": "E4",
+        "credits": 3.0
+      },
+      {
+        "id": "OE3",
+        "name": "OE3",
+        "credits": 3.0
+      },
+      {
+        "id": "SIP",
+        "name": "SIP",
+        "credits": 3.0
+      },
+      {
+        "id": "P1",
+        "name": "P1",
+        "credits": 4.0
+      }
+    ],
+    "maxPoints": 160.0,
+    "divisor": 16.0,
+    "cgpaSemesters": 7
+  },
+  "ece_e4s2": {
+    "branch": "ECE",
+    "year": 4,
+    "sem": 2,
+    "title": "ECE E-04 SEM-02",
+    "subjects": [
+      {
+        "id": "CS",
+        "name": "CS",
+        "credits": 2.0
+      },
+      {
+        "id": "E5",
+        "name": "E5",
+        "credits": 3.0
+      },
+      {
+        "id": "OE4",
+        "name": "OE4",
+        "credits": 3.0
+      },
+      {
+        "id": "P2D",
+        "name": "P2D",
+        "credits": 6.0
+      }
+    ],
+    "maxPoints": 140.0,
+    "divisor": 14.0,
+    "cgpaSemesters": 8
+  },
+  "eee_e1s1": {
+    "branch": "EEE",
+    "year": 1,
+    "sem": 1,
+    "title": "EEE E-01 SEM-01",
+    "subjects": [
+      {
+        "id": "EP",
+        "name": "EP",
+        "credits": 4.0
+      },
+      {
+        "id": "EP LAB",
+        "name": "EP LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "ET",
+        "name": "ET",
+        "credits": 4.0
+      },
+      {
+        "id": "ET LAB",
+        "name": "ET LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "PDS",
+        "name": "PDS",
+        "credits": 3.0
+      },
+      {
+        "id": "PDSLAB",
+        "name": "PDS LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "DEMC",
+        "name": "DEMC",
+        "credits": 4.0
+      },
+      {
+        "id": "EGCD",
+        "name": "EGCD",
+        "credits": 4.0
+      },
+      {
+        "id": "ILTA",
+        "name": "ILTA",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 250.0,
+    "divisor": 25.0,
+    "cgpaSemesters": 0
+  },
+  "eee_e1s2": {
+    "branch": "EEE",
+    "year": 1,
+    "sem": 2,
+    "title": "EEE E-01 SEM-02",
+    "subjects": [
+      {
+        "id": "EDC",
+        "name": "EDC",
+        "credits": 4.0
+      },
+      {
+        "id": "EDC LAB",
+        "name": "EDC LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "DLD",
+        "name": "DLD",
+        "credits": 4.0
+      },
+      {
+        "id": "DLD LAB",
+        "name": "DLD LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "LA NM",
+        "name": "LA&NM",
+        "credits": 4.0
+      },
+      {
+        "id": "C LAB",
+        "name": "C LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "NT",
+        "name": "NT",
+        "credits": 4.0
+      },
+      {
+        "id": "ENG(ELCS)",
+        "name": "ENG(ELCS)",
+        "credits": 2.5
+      },
+      {
+        "id": "INTRO TO AI",
+        "name": "INTRO TO AI",
+        "credits": 1.0
+      }
+    ],
+    "maxPoints": 240.0,
+    "divisor": 24.0,
+    "cgpaSemesters": 2
+  },
+  "eee_e2s1": {
+    "branch": "EEE",
+    "year": 2,
+    "sem": 1,
+    "title": "EEE E-02 SEM-01",
+    "subjects": [
+      {
+        "id": "AEC",
+        "name": "AEC",
+        "credits": 4.0
+      },
+      {
+        "id": "AEC LAB",
+        "name": "AEC LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "SS",
+        "name": "SS",
+        "credits": 4.0
+      },
+      {
+        "id": "EM",
+        "name": "EM",
+        "credits": 4.0
+      },
+      {
+        "id": "EM LAB",
+        "name": "EM LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "OOP",
+        "name": "OOP",
+        "credits": 3.0
+      },
+      {
+        "id": "OOPLAB",
+        "name": "OOP LAB",
+        "credits": 1.0
+      },
+      {
+        "id": "IOTLAB",
+        "name": "IOT LAB",
+        "credits": 1.0
+      },
+      {
+        "id": "PRV",
+        "name": "PRV",
+        "credits": 3.0
+      }
+    ],
+    "maxPoints": 230.0,
+    "divisor": 23.0,
+    "cgpaSemesters": 3
+  },
+  "eee_e2s2": {
+    "branch": "EEE",
+    "year": 2,
+    "sem": 2,
+    "title": "EEE E-02 SEM-02",
+    "subjects": [
+      {
+        "id": "RL",
+        "name": "RL",
+        "credits": 1.0
+      },
+      {
+        "id": "PSI",
+        "name": "PS-I",
+        "credits": 4.0
+      },
+      {
+        "id": "ML",
+        "name": "ML",
+        "credits": 3.0
+      },
+      {
+        "id": "CS",
+        "name": "CS",
+        "credits": 4.0
+      },
+      {
+        "id": "CSLab",
+        "name": "CS Lab",
+        "credits": 1.4
+      },
+      {
+        "id": "LIC",
+        "name": "LIC",
+        "credits": 4.0
+      },
+      {
+        "id": "LICLab",
+        "name": "LIC Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "PE",
+        "name": "PE",
+        "credits": 4.0
+      },
+      {
+        "id": "PELab",
+        "name": "PE Lab",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 245.0,
+    "divisor": 24.5,
+    "cgpaSemesters": 4
+  },
+  "eee_e3s1": {
+    "branch": "EEE",
+    "year": 3,
+    "sem": 1,
+    "title": "EEE E-03 SEM-01",
+    "subjects": [
+      {
+        "id": "DSP",
+        "name": "DSP",
+        "credits": 3.0
+      },
+      {
+        "id": "PSII",
+        "name": "PS-II",
+        "credits": 4.0
+      },
+      {
+        "id": "PSLab",
+        "name": "PS Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "ELCSLab2",
+        "name": "ELCS Lab-2",
+        "credits": 1.5
+      },
+      {
+        "id": "EV",
+        "name": "EV",
+        "credits": 3.0
+      },
+      {
+        "id": "EVLab",
+        "name": "EV Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "ES",
+        "name": "ES",
+        "credits": 3.0
+      },
+      {
+        "id": "ESLab",
+        "name": "ES Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "MiniProjectI",
+        "name": "Mini-Project-I",
+        "credits": 1.0
+      },
+      {
+        "id": "PDI",
+        "name": "PD & I Lab",
+        "credits": 1.0
+      }
+    ],
+    "maxPoints": 210.0,
+    "divisor": 21.0,
+    "cgpaSemesters": 5
+  },
+  "eee_e3s2": {
+    "branch": "EEE",
+    "year": 3,
+    "sem": 2,
+    "title": "EEE E-03 SEM-02",
+    "subjects": [
+      {
+        "id": "EL",
+        "name": "EL",
+        "credits": 1.5
+      },
+      {
+        "id": "CSL3",
+        "name": "CSL-3",
+        "credits": 3.0
+      },
+      {
+        "id": "E1",
+        "name": "E1",
+        "credits": 3.0
+      },
+      {
+        "id": "E2",
+        "name": "E2",
+        "credits": 3.0
+      },
+      {
+        "id": "OE1",
+        "name": "OE1",
+        "credits": 3.0
+      },
+      {
+        "id": "OE2",
+        "name": "OE2",
+        "credits": 1.0
+      },
+      {
+        "id": "MiniProjectII",
+        "name": "Mini Project-II",
+        "credits": 1.0
+      }
+    ],
+    "maxPoints": 145.0,
+    "divisor": 14.5,
+    "cgpaSemesters": 6
+  },
+  "eee_e4s1": {
+    "branch": "EEE",
+    "year": 4,
+    "sem": 1,
+    "title": "EEE E-04 SEM-01",
+    "subjects": [
+      {
+        "id": "E3",
+        "name": "E3",
+        "credits": 3.0
+      },
+      {
+        "id": "E4",
+        "name": "E4",
+        "credits": 3.0
+      },
+      {
+        "id": "OE3",
+        "name": "OE3",
+        "credits": 3.0
+      },
+      {
+        "id": "SIP",
+        "name": "SIP",
+        "credits": 3.0
+      },
+      {
+        "id": "ProjectI",
+        "name": "Project-I",
+        "credits": 4.0
+      }
+    ],
+    "maxPoints": 160.0,
+    "divisor": 16.0,
+    "cgpaSemesters": 7
+  },
+  "eee_e4s2": {
+    "branch": "EEE",
+    "year": 4,
+    "sem": 2,
+    "title": "EEE E-04 SEM-02",
+    "subjects": [
+      {
+        "id": "CS",
+        "name": "CS",
+        "credits": 2.0
+      },
+      {
+        "id": "E5",
+        "name": "E5",
+        "credits": 3.0
+      },
+      {
+        "id": "OE4",
+        "name": "OE4",
+        "credits": 3.0
+      },
+      {
+        "id": "P-II& Dt",
+        "name": "P-II& Dt",
+        "credits": 6.0
+      }
+    ],
+    "maxPoints": 140.0,
+    "divisor": 14.0,
+    "cgpaSemesters": 8
+  },
+  "civil_e1s1": {
+    "branch": "CIVIL",
+    "year": 1,
+    "sem": 1,
+    "title": "CIVIL E-01 SEM-01",
+    "subjects": [
+      {
+        "id": "DEMC",
+        "name": "DEMC",
+        "credits": 4.0
+      },
+      {
+        "id": "EC",
+        "name": "EC",
+        "credits": 3.0
+      },
+      {
+        "id": "PDS",
+        "name": "PDS",
+        "credits": 3.0
+      },
+      {
+        "id": "PDSLAB",
+        "name": "PDS LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "CAD",
+        "name": "CAD",
+        "credits": 3.0
+      },
+      {
+        "id": "EGCD",
+        "name": "EGCD",
+        "credits": 2.5
+      },
+      {
+        "id": "ENG",
+        "name": "ENG",
+        "credits": 2.5
+      }
+    ],
+    "maxPoints": 180.0,
+    "divisor": 18.0,
+    "cgpaSemesters": 0
+  },
+  "civil_e1s2": {
+    "branch": "CIVIL",
+    "year": 1,
+    "sem": 2,
+    "title": "CIVIL E-01 SEM-02",
+    "subjects": [
+      {
+        "id": "MM",
+        "name": "MM",
+        "credits": 4.0
+      },
+      {
+        "id": "EM",
+        "name": "EM",
+        "credits": 4.0
+      },
+      {
+        "id": "EP",
+        "name": "EP",
+        "credits": 3.0
+      },
+      {
+        "id": "EP LAB",
+        "name": "EP LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "WORKSHOP",
+        "name": "WORKSHOP",
+        "credits": 1.5
+      },
+      {
+        "id": "EG",
+        "name": "EG",
+        "credits": 3.0
+      },
+      {
+        "id": "BEEE",
+        "name": "BEEE",
+        "credits": 3.0
+      }
+    ],
+    "maxPoints": 200.0,
+    "divisor": 20.0,
+    "cgpaSemesters": 2
+  },
+  "civil_e2s1": {
+    "branch": "CIVIL",
+    "year": 2,
+    "sem": 1,
+    "title": "CIVIL E-02 SEM-01",
+    "subjects": [
+      {
+        "id": "BPL",
+        "name": "BPL",
+        "credits": 4.0
+      },
+      {
+        "id": "DEMC",
+        "name": "DEMC",
+        "credits": 4.0
+      },
+      {
+        "id": "EC",
+        "name": "EC",
+        "credits": 3.0
+      },
+      {
+        "id": "C-LANGLAB",
+        "name": "C-LANG LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "CAD LAB",
+        "name": "CAD LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "EGCD",
+        "name": "EGCD",
+        "credits": 2.5
+      },
+      {
+        "id": "ENG",
+        "name": "ENG",
+        "credits": 2.5
+      }
+    ],
+    "maxPoints": 190.0,
+    "divisor": 19.0,
+    "cgpaSemesters": 3
+  },
+  "civil_e2s2": {
+    "branch": "CIVIL",
+    "year": 2,
+    "sem": 2,
+    "title": "CIVIL E-02 SEM-02",
+    "subjects": [
+      {
+        "id": "HE",
+        "name": "HE",
+        "credits": 3.0
+      },
+      {
+        "id": "MM",
+        "name": "MM",
+        "credits": 3.0
+      },
+      {
+        "id": "SM",
+        "name": "SM",
+        "credits": 4.0
+      },
+      {
+        "id": "SA",
+        "name": "SA",
+        "credits": 4.0
+      },
+      {
+        "id": "SV",
+        "name": "SV",
+        "credits": 3.0
+      },
+      {
+        "id": "WR",
+        "name": "WR",
+        "credits": 3.0
+      },
+      {
+        "id": "CT",
+        "name": "CT",
+        "credits": 1.5
+      },
+      {
+        "id": "HE_LAB",
+        "name": "HE LAB",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 215.0,
+    "divisor": 21.5,
+    "cgpaSemesters": 4
+  },
+  "civil_e3s1": {
+    "branch": "CIVIL",
+    "year": 3,
+    "sem": 1,
+    "title": "CIVIL E-03 SEM-01",
+    "subjects": [
+      {
+        "id": "ASA",
+        "name": "ASA",
+        "credits": 4.0
+      },
+      {
+        "id": "DRCS",
+        "name": "DRCS",
+        "credits": 4.0
+      },
+      {
+        "id": "EE",
+        "name": "EE",
+        "credits": 3.0
+      },
+      {
+        "id": "EC",
+        "name": "EC",
+        "credits": 3.0
+      },
+      {
+        "id": "TE",
+        "name": "TE",
+        "credits": 3.0
+      },
+      {
+        "id": "ELC",
+        "name": "ELC",
+        "credits": 1.5
+      },
+      {
+        "id": "SML",
+        "name": "SML",
+        "credits": 1.5
+      },
+      {
+        "id": "TEL",
+        "name": "TEL",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 215.0,
+    "divisor": 21.5,
+    "cgpaSemesters": 5
+  },
+  "civil_e3s2": {
+    "branch": "CIVIL",
+    "year": 3,
+    "sem": 2,
+    "title": "CIVIL E-03 SEM-02",
+    "subjects": [
+      {
+        "id": "BPCAD",
+        "name": "BP CAD LAB",
+        "credits": 2.5
+      },
+      {
+        "id": "DSS",
+        "name": "DSS",
+        "credits": 4.0
+      },
+      {
+        "id": "EE2",
+        "name": "EE-2",
+        "credits": 3.0
+      },
+      {
+        "id": "FE",
+        "name": "FE",
+        "credits": 3.0
+      },
+      {
+        "id": "TE2",
+        "name": "TE2",
+        "credits": 3.0
+      },
+      {
+        "id": "PE1",
+        "name": "PE1",
+        "credits": 3.0
+      },
+      {
+        "id": "ELCS",
+        "name": "ELCS",
+        "credits": 1.5
+      },
+      {
+        "id": "ENVL",
+        "name": "ENVL",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 215.0,
+    "divisor": 21.5,
+    "cgpaSemesters": 6
+  },
+  "civil_e4s1": {
+    "branch": "CIVIL",
+    "year": 4,
+    "sem": 1,
+    "title": "CIVIL E-04 SEM-01",
+    "subjects": [
+      {
+        "id": "PEC2",
+        "name": "PEC2",
+        "credits": 3.0
+      },
+      {
+        "id": "PEC3",
+        "name": "PEC3",
+        "credits": 3.0
+      },
+      {
+        "id": "PEC4",
+        "name": "PEC4",
+        "credits": 3.0
+      },
+      {
+        "id": "OEC1",
+        "name": "OEC1",
+        "credits": 3.0
+      },
+      {
+        "id": "Project1",
+        "name": "Project-1",
+        "credits": 4.0
+      }
+    ],
+    "maxPoints": 160.0,
+    "divisor": 16.0,
+    "cgpaSemesters": 7
+  },
+  "civil_e4s2": {
+    "branch": "CIVIL",
+    "year": 4,
+    "sem": 2,
+    "title": "CIVIL E-04 SEM-02",
+    "subjects": [
+      {
+        "id": "PEC5",
+        "name": "PEC5",
+        "credits": 3.0
+      },
+      {
+        "id": "OEC2",
+        "name": "OEC2",
+        "credits": 3.0
+      },
+      {
+        "id": "OEC3",
+        "name": "OEC3",
+        "credits": 3.0
+      },
+      {
+        "id": "Project2",
+        "name": "Project-2",
+        "credits": 5.0
+      },
+      {
+        "id": "ICS",
+        "name": "Indian Community Services",
+        "credits": 2.0
+      }
+    ],
+    "maxPoints": 170.0,
+    "divisor": 17.0,
+    "cgpaSemesters": 8
+  },
+  "mech_e1s1": {
+    "branch": "MECH",
+    "year": 1,
+    "sem": 1,
+    "title": "MECH E-01 SEM-01",
+    "subjects": [
+      {
+        "id": "BEEE",
+        "name": "BEEE",
+        "credits": 4.0
+      },
+      {
+        "id": "EP",
+        "name": "EP",
+        "credits": 4.0
+      },
+      {
+        "id": "DEMC",
+        "name": "DEMC",
+        "credits": 4.0
+      },
+      {
+        "id": "WP",
+        "name": "WP",
+        "credits": 1.5
+      },
+      {
+        "id": "EC",
+        "name": "EC",
+        "credits": 3.0
+      },
+      {
+        "id": "BEEELAB",
+        "name": "BEEE LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "EPEC-LAB",
+        "name": "EPEC-LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "ENG",
+        "name": "ENG",
+        "credits": 2.5
+      }
+    ],
+    "maxPoints": 220.0,
+    "divisor": 22.0,
+    "cgpaSemesters": 0
+  },
+  "mech_e1s2": {
+    "branch": "MECH",
+    "year": 1,
+    "sem": 2,
+    "title": "MECH E-01 SEM-02",
+    "subjects": [
+      {
+        "id": "MM",
+        "name": "MM",
+        "credits": 4.0
+      },
+      {
+        "id": "EM",
+        "name": "EM",
+        "credits": 4.0
+      },
+      {
+        "id": "PDS",
+        "name": "PDS",
+        "credits": 3.0
+      },
+      {
+        "id": "PDS LAB",
+        "name": "PDS LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "MSM",
+        "name": "MS&M",
+        "credits": 3.0
+      },
+      {
+        "id": "MSM LAB",
+        "name": "MS&M LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "EGCD",
+        "name": "EGCD",
+        "credits": 2.5
+      }
+    ],
+    "maxPoints": 220.0,
+    "divisor": 22.0,
+    "cgpaSemesters": 2
+  },
+  "mech_e2s1": {
+    "branch": "MECH",
+    "year": 2,
+    "sem": 1,
+    "title": "MECH E-02 SEM-01",
+    "subjects": [
+      {
+        "id": "MS",
+        "name": "MS",
+        "credits": 4.0
+      },
+      {
+        "id": "TC",
+        "name": "TC",
+        "credits": 4.0
+      },
+      {
+        "id": "TD",
+        "name": "TD",
+        "credits": 4.0
+      },
+      {
+        "id": "KM",
+        "name": "KM",
+        "credits": 4.0
+      },
+      {
+        "id": "CAMD",
+        "name": "CAMD",
+        "credits": 1.5
+      },
+      {
+        "id": "MP",
+        "name": "MP",
+        "credits": 3.0
+      },
+      {
+        "id": "MSLAB",
+        "name": "MS LAB",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 240.0,
+    "divisor": 24.0,
+    "cgpaSemesters": 3
+  },
+  "mech_e2s2": {
+    "branch": "MECH",
+    "year": 2,
+    "sem": 2,
+    "title": "MECH E-02 SEM-02",
+    "subjects": [
+      {
+        "id": "DME",
+        "name": "DME",
+        "credits": 4.0
+      },
+      {
+        "id": "DOM",
+        "name": "DOM",
+        "credits": 4.0
+      },
+      {
+        "id": "FMHM",
+        "name": "FMHM",
+        "credits": 4.0
+      },
+      {
+        "id": "MCM",
+        "name": "MCM",
+        "credits": 4.0
+      },
+      {
+        "id": "PS",
+        "name": "PS",
+        "credits": 3.0
+      },
+      {
+        "id": "MCM LAB",
+        "name": "MCM LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "FMHM LAB",
+        "name": "FMHM LAB",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 220.0,
+    "divisor": 22.0,
+    "cgpaSemesters": 4
+  },
+  "mech_e3s1": {
+    "branch": "MECH",
+    "year": 3,
+    "sem": 1,
+    "title": "MECH E-03 SEM-01",
+    "subjects": [
+      {
+        "id": "HT",
+        "name": "HT",
+        "credits": 4.0
+      },
+      {
+        "id": "DTE",
+        "name": "DTE",
+        "credits": 4.0
+      },
+      {
+        "id": "AT",
+        "name": "AT",
+        "credits": 4.0
+      },
+      {
+        "id": "MM",
+        "name": "MM",
+        "credits": 3.0
+      },
+      {
+        "id": "MM LAB",
+        "name": "MM LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "HT LAB",
+        "name": "HT LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "AT LAB",
+        "name": "AT LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "ELCS LAB",
+        "name": "ELCS LAB",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 210.0,
+    "divisor": 21.0,
+    "cgpaSemesters": 5
+  },
+  "mech_e3s2": {
+    "branch": "MECH",
+    "year": 3,
+    "sem": 2,
+    "title": "MECH E-03 SEM-02",
+    "subjects": [
+      {
+        "id": "OR",
+        "name": "OR",
+        "credits": 4.0
+      },
+      {
+        "id": "FEM",
+        "name": "FEM",
+        "credits": 4.0
+      },
+      {
+        "id": "MEFA",
+        "name": "MEFA",
+        "credits": 3.0
+      },
+      {
+        "id": "PEC1",
+        "name": "PEC1",
+        "credits": 3.0
+      },
+      {
+        "id": "PEC2",
+        "name": "PEC2",
+        "credits": 3.0
+      },
+      {
+        "id": "CAM LAB",
+        "name": "CAM LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "ELCS LAB III",
+        "name": "ELCS LAB III",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 230.0,
+    "divisor": 23.0,
+    "cgpaSemesters": 6
+  },
+  "mech_e4s1": {
+    "branch": "MECH",
+    "year": 4,
+    "sem": 1,
+    "title": "MECH E-04 SEM-01",
+    "subjects": [
+      {
+        "id": "PEC3",
+        "name": "PEC3",
+        "credits": 3.0
+      },
+      {
+        "id": "OEC1",
+        "name": "OEC1",
+        "credits": 3.0
+      },
+      {
+        "id": "OEC2",
+        "name": "OEC2",
+        "credits": 3.0
+      },
+      {
+        "id": "PROJECT",
+        "name": "PROJECT",
+        "credits": 4.5
+      }
+    ],
+    "maxPoints": 135.0,
+    "divisor": 13.5,
+    "cgpaSemesters": 7
+  },
+  "mech_e4s2": {
+    "branch": "MECH",
+    "year": 4,
+    "sem": 2,
+    "title": "MECH E-04 SEM-02",
+    "subjects": [
+      {
+        "id": "PEC4",
+        "name": "PEC4",
+        "credits": 3.0
+      },
+      {
+        "id": "OEC3",
+        "name": "OEC3",
+        "credits": 3.0
+      },
+      {
+        "id": "OEC4",
+        "name": "OEC4",
+        "credits": 3.0
+      },
+      {
+        "id": "CS",
+        "name": "CS",
+        "credits": 2.0
+      },
+      {
+        "id": "PROJECT",
+        "name": "PROJECT",
+        "credits": 4.5
+      }
+    ],
+    "maxPoints": 170.0,
+    "divisor": 17.0,
+    "cgpaSemesters": 8
+  },
+  "mme_e1s1": {
+    "branch": "MME",
+    "year": 1,
+    "sem": 1,
+    "title": "MME E-01 SEM-01",
+    "subjects": [
+      {
+        "id": "EP",
+        "name": "EP",
+        "credits": 3.0
+      },
+      {
+        "id": "EPLAB",
+        "name": "EP LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "EM",
+        "name": "EM",
+        "credits": 3.0
+      },
+      {
+        "id": "WMP",
+        "name": "WMP",
+        "credits": 1.5
+      },
+      {
+        "id": "PDS",
+        "name": "PDS",
+        "credits": 3.0
+      },
+      {
+        "id": "PDSLAB",
+        "name": "PDS LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "DEMC",
+        "name": "DEMC",
+        "credits": 3.0
+      },
+      {
+        "id": "EGCD",
+        "name": "EGCD",
+        "credits": 2.5
+      },
+      {
+        "id": "ENG",
+        "name": "ENG",
+        "credits": 2.5
+      }
+    ],
+    "maxPoints": 215.0,
+    "divisor": 21.5,
+    "cgpaSemesters": 0
+  },
+  "mme_e1s2": {
+    "branch": "MME",
+    "year": 1,
+    "sem": 2,
+    "title": "MME E-01 SEM-02",
+    "subjects": [
+      {
+        "id": "MM",
+        "name": "MM-II",
+        "credits": 4.0
+      },
+      {
+        "id": "MT",
+        "name": "MT",
+        "credits": 4.0
+      },
+      {
+        "id": "PM",
+        "name": "PM",
+        "credits": 4.0
+      },
+      {
+        "id": "EC",
+        "name": "EC",
+        "credits": 3.0
+      },
+      {
+        "id": "ECLAB",
+        "name": "EC LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "BEEE",
+        "name": "BEEE",
+        "credits": 3.0
+      },
+      {
+        "id": "BEEELAB",
+        "name": "BEEE LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "PMML LAB",
+        "name": "PM&ML LAB",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 225.0,
+    "divisor": 22.5,
+    "cgpaSemesters": 2
+  },
+  "mme_e2s1": {
+    "branch": "MME",
+    "year": 2,
+    "sem": 1,
+    "title": "MME E-02 SEM-01",
+    "subjects": [
+      {
+        "id": "MP EM",
+        "name": "MP EM",
+        "credits": 4.0
+      },
+      {
+        "id": "PT HT",
+        "name": "PT HT",
+        "credits": 4.0
+      },
+      {
+        "id": "MB TM",
+        "name": "MB TM",
+        "credits": 4.0
+      },
+      {
+        "id": "MB TM LAB",
+        "name": "MB TB LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "EP",
+        "name": "EP",
+        "credits": 3.0
+      },
+      {
+        "id": "MP EM LAB",
+        "name": "MP EM LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "TC",
+        "name": "TC",
+        "credits": 3.0
+      },
+      {
+        "id": "PT HT LAB",
+        "name": "PT HT LAB",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 225.0,
+    "divisor": 22.5,
+    "cgpaSemesters": 3
+  },
+  "mme_e2s2": {
+    "branch": "MME",
+    "year": 2,
+    "sem": 2,
+    "title": "MME E-02 SEM-02",
+    "subjects": [
+      {
+        "id": "TPMM",
+        "name": "TPMM",
+        "credits": 3.0
+      },
+      {
+        "id": "IMT",
+        "name": "IMT",
+        "credits": 3.0
+      },
+      {
+        "id": "MF",
+        "name": "MF",
+        "credits": 3.0
+      },
+      {
+        "id": "CE",
+        "name": "CE",
+        "credits": 3.0
+      },
+      {
+        "id": "STC",
+        "name": "STC",
+        "credits": 3.0
+      },
+      {
+        "id": "OEC1",
+        "name": "OEC1",
+        "credits": 3.0
+      },
+      {
+        "id": "MF Lab",
+        "name": "MF Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "CE Lab",
+        "name": "CE Lab",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 210.0,
+    "divisor": 21.0,
+    "cgpaSemesters": 4
+  },
+  "mme_e3s1": {
+    "branch": "MME",
+    "year": 3,
+    "sem": 1,
+    "title": "MME E-03 SEM-01",
+    "subjects": [
+      {
+        "id": "SP C",
+        "name": "SP&C",
+        "credits": 4.0
+      },
+      {
+        "id": "MC",
+        "name": "MC",
+        "credits": 4.0
+      },
+      {
+        "id": "SMT",
+        "name": "SMT",
+        "credits": 3.0
+      },
+      {
+        "id": "SCT",
+        "name": "ScT",
+        "credits": 3.0
+      },
+      {
+        "id": "MC Lab",
+        "name": "MC Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "SPC Lab",
+        "name": "SPC Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "ELCS Lab-2",
+        "name": "ELCS Lab-2",
+        "credits": 1.5
+      },
+      {
+        "id": "GS",
+        "name": "NFEM",
+        "credits": 3.0
+      }
+    ],
+    "maxPoints": 215.0,
+    "divisor": 21.5,
+    "cgpaSemesters": 5
+  },
+  "mme_e3s2": {
+    "branch": "MME",
+    "year": 3,
+    "sem": 2,
+    "title": "MME E-03 SEM-02",
+    "subjects": [
+      {
+        "id": "MJNDT",
+        "name": "MJ NDT",
+        "credits": 4.0
+      },
+      {
+        "id": "CME",
+        "name": "CME",
+        "credits": 3.0
+      },
+      {
+        "id": "PE",
+        "name": "PEC-I",
+        "credits": 3.0
+      },
+      {
+        "id": "MJNDT Lab",
+        "name": "MJ&NDT Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "CME Lab",
+        "name": "CME Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "MP",
+        "name": "MP",
+        "credits": 2.0
+      },
+      {
+        "id": "ELCS Lab-3",
+        "name": "ELCS Lab-3",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 165.0,
+    "divisor": 16.5,
+    "cgpaSemesters": 6
+  },
+  "mme_e4s1": {
+    "branch": "MME",
+    "year": 4,
+    "sem": 1,
+    "title": "MME E-04 SEM-01",
+    "subjects": [
+      {
+        "id": "MEFA",
+        "name": "MEFA",
+        "credits": 3.0
+      },
+      {
+        "id": "MP1",
+        "name": "Major Project-1",
+        "credits": 4.0
+      },
+      {
+        "id": "PEC2",
+        "name": "Professional Elective Course-2",
+        "credits": 3.0
+      },
+      {
+        "id": "PEC3",
+        "name": "Professional Elective Course-3",
+        "credits": 3.0
+      },
+      {
+        "id": "OEC2",
+        "name": "Open Elective Course-2",
+        "credits": 3.0
+      }
+    ],
+    "maxPoints": 160.0,
+    "divisor": 16.0,
+    "cgpaSemesters": 7
+  },
+  "mme_e4s2": {
+    "branch": "MME",
+    "year": 4,
+    "sem": 2,
+    "title": "MME E-04 SEM-02",
+    "subjects": [
+      {
+        "id": "MP2",
+        "name": "Major Project-2",
+        "credits": 4.0
+      },
+      {
+        "id": "PEC",
+        "name": "Professional Elective Course",
+        "credits": 3.0
+      },
+      {
+        "id": "OEC3",
+        "name": "Open Elective Course-3",
+        "credits": 3.0
+      },
+      {
+        "id": "OEC4",
+        "name": "Open Elective Course-4",
+        "credits": 3.0
+      }
+    ],
+    "maxPoints": 150.0,
+    "divisor": 15.0,
+    "cgpaSemesters": 8
+  },
+  "chemical_e1s1": {
+    "branch": "CHEMICAL",
+    "year": 1,
+    "sem": 1,
+    "title": "CHEMICAL E-01 SEM-01",
+    "subjects": [
+      {
+        "id": "BC",
+        "name": "BE",
+        "credits": 3.0
+      },
+      {
+        "id": "POC",
+        "name": "POC",
+        "credits": 3.0
+      },
+      {
+        "id": "DEMC",
+        "name": "DEMC",
+        "credits": 4.0
+      },
+      {
+        "id": "WORKSHOP",
+        "name": "WORKSHOP",
+        "credits": 1.5
+      },
+      {
+        "id": "SM",
+        "name": "ESM",
+        "credits": 3.0
+      },
+      {
+        "id": "POC LAB",
+        "name": "POC LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "CE",
+        "name": "ICE",
+        "credits": 2.0
+      },
+      {
+        "id": "ENG",
+        "name": "ENG",
+        "credits": 2.5
+      }
+    ],
+    "maxPoints": 205.0,
+    "divisor": 20.5,
+    "cgpaSemesters": 0
+  },
+  "chemical_e1s2": {
+    "branch": "CHEMICAL",
+    "year": 1,
+    "sem": 2,
+    "title": "CHEMICAL E-01 SEM-02",
+    "subjects": [
+      {
+        "id": "MM",
+        "name": "MM",
+        "credits": 4.0
+      },
+      {
+        "id": "FM",
+        "name": "FM",
+        "credits": 4.0
+      },
+      {
+        "id": "EP",
+        "name": "EP",
+        "credits": 3.0
+      },
+      {
+        "id": "PDS",
+        "name": "PDS",
+        "credits": 3.0
+      },
+      {
+        "id": "PDS LAB",
+        "name": "PDS LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "EGCD",
+        "name": "EGCD",
+        "credits": 2.5
+      },
+      {
+        "id": "CPC",
+        "name": "CPC",
+        "credits": 3.0
+      }
+    ],
+    "maxPoints": 210.0,
+    "divisor": 21.0,
+    "cgpaSemesters": 2
+  },
+  "chemical_e2s1": {
+    "branch": "CHEMICAL",
+    "year": 2,
+    "sem": 1,
+    "title": "CHEMICAL E-02 SEM-01",
+    "subjects": [
+      {
+        "id": "BC",
+        "name": "BE",
+        "credits": 3.0
+      },
+      {
+        "id": "POC",
+        "name": "POC",
+        "credits": 3.0
+      },
+      {
+        "id": "DEMC",
+        "name": "DEMC",
+        "credits": 4.0
+      },
+      {
+        "id": "WORKSHOP",
+        "name": "WORKSHOP",
+        "credits": 1.5
+      },
+      {
+        "id": "SM",
+        "name": "ESM",
+        "credits": 3.0
+      },
+      {
+        "id": "POC LAB",
+        "name": "POC LAB",
+        "credits": 1.5
+      },
+      {
+        "id": "CE",
+        "name": "ICE",
+        "credits": 2.0
+      },
+      {
+        "id": "ENG",
+        "name": "ENG",
+        "credits": 2.5
+      }
+    ],
+    "maxPoints": 205.0,
+    "divisor": 20.5,
+    "cgpaSemesters": 3
+  },
+  "chemical_e2s2": {
+    "branch": "CHEMICAL",
+    "year": 2,
+    "sem": 2,
+    "title": "CHEMICAL E-02 SEM-02",
+    "subjects": [
+      {
+        "id": "BEEE",
+        "name": "BEEE",
+        "credits": 3.0
+      },
+      {
+        "id": "OOP",
+        "name": "OOP through JAVA",
+        "credits": 3.0
+      },
+      {
+        "id": "CRE1",
+        "name": "CRE-I",
+        "credits": 4.0
+      },
+      {
+        "id": "MTO1",
+        "name": "MTO-I",
+        "credits": 3.0
+      },
+      {
+        "id": "TD2",
+        "name": "TD-II",
+        "credits": 3.0
+      },
+      {
+        "id": "JAVA_Lab",
+        "name": "OOP through JAVA Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "HT_Lab",
+        "name": "HT Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "MUO_Lab",
+        "name": "MUO Lab",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 205.0,
+    "divisor": 20.5,
+    "cgpaSemesters": 4
+  },
+  "chemical_e3s1": {
+    "branch": "CHEMICAL",
+    "year": 3,
+    "sem": 1,
+    "title": "CHEMICAL E-03 SEM-01",
+    "subjects": [
+      {
+        "id": "CPDC",
+        "name": "CPDC",
+        "credits": 4.0
+      },
+      {
+        "id": "CT",
+        "name": "CT",
+        "credits": 3.0
+      },
+      {
+        "id": "CRE2",
+        "name": "CRE-II",
+        "credits": 3.0
+      },
+      {
+        "id": "MTO2",
+        "name": "MTO-II",
+        "credits": 3.0
+      },
+      {
+        "id": "NMCE",
+        "name": "NMCE",
+        "credits": 3.0
+      },
+      {
+        "id": "CRE_Lab",
+        "name": "CRE Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "NMCE_Lab",
+        "name": "NMCE Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "ELCS_Lab2",
+        "name": "ELCS Lab-II",
+        "credits": 1.5
+      }
+    ],
+    "maxPoints": 205.0,
+    "divisor": 20.5,
+    "cgpaSemesters": 5
+  },
+  "chemical_e3s2": {
+    "branch": "CHEMICAL",
+    "year": 3,
+    "sem": 2,
+    "title": "CHEMICAL E-03 SEM-02",
+    "subjects": [
+      {
+        "id": "PED",
+        "name": "PED",
+        "credits": 3.5
+      },
+      {
+        "id": "PDE",
+        "name": "PDE",
+        "credits": 3.0
+      },
+      {
+        "id": "TP",
+        "name": "TP",
+        "credits": 4.0
+      },
+      {
+        "id": "PEC1",
+        "name": "PEC-1",
+        "credits": 3.0
+      },
+      {
+        "id": "OEC1",
+        "name": "OEC-1",
+        "credits": 3.0
+      },
+      {
+        "id": "CPDC_Lab",
+        "name": "CPDC Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "MTO_Lab",
+        "name": "MTO Lab",
+        "credits": 1.5
+      },
+      {
+        "id": "ELCS_Lab3",
+        "name": "ELCS Lab-III",
+        "credits": 1.5
+      },
+      {
+        "id": "Internship",
+        "name": "Summer Internship",
+        "credits": 3.0
+      }
+    ],
+    "maxPoints": 210.0,
+    "divisor": 21.0,
+    "cgpaSemesters": 6
+  },
+  "chemical_e4s1": {
+    "branch": "CHEMICAL",
+    "year": 4,
+    "sem": 1,
+    "title": "CHEMICAL E-04 SEM-01",
+    "subjects": [
+      {
+        "id": "PEC2",
+        "name": "PEC-2",
+        "credits": 3.0
+      },
+      {
+        "id": "PEC3",
+        "name": "PEC-3",
+        "credits": 3.0
+      },
+      {
+        "id": "OEC2",
+        "name": "OEC-2",
+        "credits": 3.0
+      },
+      {
+        "id": "Project1",
+        "name": "Project-I",
+        "credits": 4.0
+      }
+    ],
+    "maxPoints": 150.0,
+    "divisor": 15.0,
+    "cgpaSemesters": 7
+  },
+  "chemical_e4s2": {
+    "branch": "CHEMICAL",
+    "year": 4,
+    "sem": 2,
+    "title": "CHEMICAL E-04 SEM-02",
+    "subjects": [
+      {
+        "id": "PEC4",
+        "name": "PEC-4",
+        "credits": 3.0
+      },
+      {
+        "id": "PEC5",
+        "name": "PEC-5",
+        "credits": 3.0
+      },
+      {
+        "id": "OEC3",
+        "name": "OEC-3",
+        "credits": 3.0
+      },
+      {
+        "id": "ICS",
+        "name": "ICS",
+        "credits": 2.0
+      },
+      {
+        "id": "Project2",
+        "name": "Project-II & Dissertation",
+        "credits": 6.0
+      }
+    ],
+    "maxPoints": 170.0,
+    "divisor": 17.0,
+    "cgpaSemesters": 8
+  },
+  "puc_mbipc": {
+    "branch": "PUC",
+    "year": 1,
+    "sem": 1,
+    "title": "PUC MBIPC (P-01 & P-02)",
+    "subjects": [
+      {
+        "id": "PHYSICS",
+        "name": "PHYSICS",
+        "credits": 4
+      },
+      {
+        "id": "CHEMISTRY",
+        "name": "CHEMISTRY",
+        "credits": 4
+      },
+      {
+        "id": "MATHEMATICS",
+        "name": "MATHEMATICS",
+        "credits": 5
+      },
+      {
+        "id": "BIOLOGY",
+        "name": "BIOLOGY",
+        "credits": 5
+      },
+      {
+        "id": "IT",
+        "name": "IT",
+        "credits": 1
+      },
+      {
+        "id": "ENGLISH",
+        "name": "ENGLISH",
+        "credits": 3
+      },
+      {
+        "id": "TELUGU",
+        "name": "TELUGU",
+        "credits": 3
+      },
+      {
+        "id": "PHYSICS-LAB",
+        "name": "PHYSICS LAB",
+        "credits": 1
+      },
+      {
+        "id": "CHEMISTRY-LAB",
+        "name": "CHEMISTRY LAB",
+        "credits": 1
+      },
+      {
+        "id": "BIOLOGY-LAB",
+        "name": "BIOLOGY LAB",
+        "credits": 1
+      },
+      {
+        "id": "IT-LAB",
+        "name": "IT LAB",
+        "credits": 1
+      }
+    ],
+    "maxPoints": 290,
+    "divisor": 29,
+    "cgpaSemesters": 4
+  }
+}

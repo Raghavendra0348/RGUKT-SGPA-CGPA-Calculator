@@ -2,13 +2,20 @@
 <html lang="en">
 
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T486B8C5X0"></script>
+    <!-- Google Analytics (deferred) -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-T486B8C5X0');
+        window.addEventListener('load', function() {
+            var s = document.createElement('script');
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-T486B8C5X0';
+            s.async = true;
+            document.head.appendChild(s);
+            s.onload = function() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-T486B8C5X0');
+            };
+        });
     </script>
 
     <meta charset="UTF-8">
@@ -137,59 +144,7 @@
 
 
 
-        @media (max-width: 480px) {
-            .search-container {
-                margin: 15px auto 10px;
-                max-width: 100%;
-                display: flex;
-                padding: 0 10px;
-            }
 
-            #searchBar {
-                width: 100%;
-                max-width: 95%;
-                font-size: 13px;
-                padding: 10px 35px 10px 12px;
-                border-radius: 25px;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .search-icon {
-                right: 15px;
-                top: 50%;
-                transform: translateY(-50%);
-                font-size: 14px;
-            }
-        }
-
-
-        h1 {
-            font-size: 18px;
-            text-align: center;
-            margin-top: 10px;
-            margin-bottom: 1px;
-        }
-
-        .branch-box {
-            width: 110px;
-            padding: 14px;
-        }
-
-        .branches {
-            gap: 6px;
-        }
-
-        ::placeholder {
-            font-size: 14px;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #searchBar:focus {
-            border-color: #09b4f8;
-            box-shadow: 0 6px 20px rgba(9, 180, 248, 0.2);
-        }
 
         /* Suggestions Dropdown Box */
         .suggestions-box {
@@ -417,6 +372,47 @@
             visibility: visible;
             opacity: 1;
         }
+
+        /* ══ RESPONSIVE ══ */
+        @media (max-width: 768px) {
+            .branches { gap: 10px; padding: 0 10px; }
+            .branch-box { width: 110px; padding: 14px 10px; font-size: 14px; }
+            h1 { font-size: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .search-container { max-width: 100%; padding: 0 12px; margin: 12px auto 10px; }
+            #searchBar { font-size: 13px; padding: 10px 38px 10px 14px; border-radius: 24px; }
+            .search-icon { right: 20px; }
+            h1 { font-size: 17px; margin: 8px 0 4px; }
+            .branches {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+                padding: 0 10px;
+                justify-items: center;
+            }
+            .branch-box {
+                width: 100%;
+                max-width: 110px;
+                padding: 12px 6px;
+                font-size: 12px;
+                border-radius: 12px;
+            }
+            .branch-box h2 { font-size: 13px; margin: 4px 0 0; }
+            .branch-box img, .branch-box .icon { width: 36px; height: 36px; }
+        }
+
+        @media (max-width: 360px) {
+            .branches { grid-template-columns: repeat(2, 1fr); }
+            #searchBar { font-size: 12px; }
+        }
+
+        /* Touch-friendly tap targets */
+        @media (hover: none) and (pointer: coarse) {
+            .branch-box { min-height: 80px; }
+        }
+        /* ══ END RESPONSIVE ══ */
     </style>
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7812693991042173"
@@ -443,7 +439,7 @@
             <div class="branch-box" onclick="redirectTo('puc.html')">
                 <h2>MPC</h2>
             </div>
-            <div class="branch-box" onclick="redirectTo('PUC(MBIPC).html')">
+            <div class="branch-box" onclick="redirectTo('calculator.html?key=puc_mbipc')">
                 <h2>MBIPC</h2>
             </div>
         </div>
@@ -513,81 +509,81 @@
             "contact": "contact.html",
             "privacy policy": "privacy_policy.html",
             "terms": "terms.html",
-            "home": "main.html",
+            "home": "index.html",
             "cgpa": "department.html",
             "sgpa": "department.html",
             "puc": "puc.html",
-            "puc mpipc": "puc(mbipc).html",
+            "puc mbipc": "calculator.html?key=puc_mbipc",
 
             // CSE Semesters
-            "cse e1s1": "cse_e1s1.html",
-            "cse e1s2": "cse(e1s2).html",
-            "cse e2s1": "cse(e2s1).html",
-            "cse e2s2": "cse(e2s2).html",
-            "cse e3s1": "cse(e3s1).html",
-            "cse e3s2": "cse(e3s2).html",
-            "cse e4s1": "cse(e4s1).html",
-            "cse e4s2": "cse(e4s2).html",
+            "cse e1s1": "calculator.html?key=cse_e1s1",
+            "cse e1s2": "calculator.html?key=cse_e1s2",
+            "cse e2s1": "calculator.html?key=cse_e2s1",
+            "cse e2s2": "calculator.html?key=cse_e2s2",
+            "cse e3s1": "calculator.html?key=cse_e3s1",
+            "cse e3s2": "calculator.html?key=cse_e3s2",
+            "cse e4s1": "calculator.html?key=cse_e4s1",
+            "cse e4s2": "calculator.html?key=cse_e4s2",
 
             // ECE Semesters
-            "ece e1s1": "ece(e1s1).html",
-            "ece e1s2": "ece(e1s2).html",
-            "ece e2s1": "ece(e2s1).html",
-            "ece e2s2": "ece(e2s2).html",
-            "ece e3s1": "ece(e3s1).html",
-            "ece e3s2": "ece(e3s2).html",
-            "ece e4s1": "ece(e4s1).html",
-            "ece e4s2": "ece(e4s2).html",
+            "ece e1s1": "calculator.html?key=ece_e1s1",
+            "ece e1s2": "calculator.html?key=ece_e1s2",
+            "ece e2s1": "calculator.html?key=ece_e2s1",
+            "ece e2s2": "calculator.html?key=ece_e2s2",
+            "ece e3s1": "calculator.html?key=ece_e3s1",
+            "ece e3s2": "calculator.html?key=ece_e3s2",
+            "ece e4s1": "calculator.html?key=ece_e4s1",
+            "ece e4s2": "calculator.html?key=ece_e4s2",
 
             // CIVIL Semesters
-            "civil e1s1": "civil(e1s1).html",
-            "civil e1s2": "civil(e1s2).html",
-            "civil e2s1": "civil(e2s1).html",
-            "civil e2s2": "civil(e2s2).html",
-            "civil e3s1": "civil(e3s1).html",
-            "civil e3s2": "civil(e3s2).html",
-            "civil e4s1": "civil(e4s1).html",
-            "civil e4s2": "civil(e4s2).html",
+            "civil e1s1": "calculator.html?key=civil_e1s1",
+            "civil e1s2": "calculator.html?key=civil_e1s2",
+            "civil e2s1": "calculator.html?key=civil_e2s1",
+            "civil e2s2": "calculator.html?key=civil_e2s2",
+            "civil e3s1": "calculator.html?key=civil_e3s1",
+            "civil e3s2": "calculator.html?key=civil_e3s2",
+            "civil e4s1": "calculator.html?key=civil_e4s1",
+            "civil e4s2": "calculator.html?key=civil_e4s2",
 
             // MECH Semesters
-            "mech e1s1": "mech(e1s1).html",
-            "mech e1s2": "mech(e1s2).html",
-            "mech e2s1": "mech(e2s1).html",
-            "mech e2s2": "mech(e2s2).html",
-            "mech e3s1": "mech(e3s1).html",
-            "mech e3s2": "mech(e3s2).html",
-            "mech e4s1": "mech(e4s1).html",
-            "mech e4s2": "mech(e4s2).html",
+            "mech e1s1": "calculator.html?key=mech_e1s1",
+            "mech e1s2": "calculator.html?key=mech_e1s2",
+            "mech e2s1": "calculator.html?key=mech_e2s1",
+            "mech e2s2": "calculator.html?key=mech_e2s2",
+            "mech e3s1": "calculator.html?key=mech_e3s1",
+            "mech e3s2": "calculator.html?key=mech_e3s2",
+            "mech e4s1": "calculator.html?key=mech_e4s1",
+            "mech e4s2": "calculator.html?key=mech_e4s2",
 
             // MME Semesters
-            "mme e1s1": "mme(e1s1).html",
-            "mme e1s2": "mme(e1s2).html",
-            "mme e2s1": "mme(e2s1).html",
-            "mme e2s2": "mme(e2s2).html",
-            "mme e3s1": "mme(e3s1).html",
-            "mme e3s2": "mme(e3s2).html",
-            "mme e4s1": "mme(e4s1).html",
-            "mme e4s2": "mme(e4s2).html",
+            "mme e1s1": "calculator.html?key=mme_e1s1",
+            "mme e1s2": "calculator.html?key=mme_e1s2",
+            "mme e2s1": "calculator.html?key=mme_e2s1",
+            "mme e2s2": "calculator.html?key=mme_e2s2",
+            "mme e3s1": "calculator.html?key=mme_e3s1",
+            "mme e3s2": "calculator.html?key=mme_e3s2",
+            "mme e4s1": "calculator.html?key=mme_e4s1",
+            "mme e4s2": "calculator.html?key=mme_e4s2",
 
             // CHEMICAL Semesters
-            "chemical e1s1": "chemical(e1s1).html",
-            "chemical e1s2": "chemical(e1s2).html",
-            "chemical e2s1": "chemical(e2s1).html",
-            "chemical e2s2": "chemical(e2s2).html",
-            "chemical e3s1": "chemical(e3s1).html",
-            "chemical e3s2": "chemical(e3s2).html",
-            "chemical e4s1": "chemical(e4s1).html",
-            "chemical e4s2": "chemical(e4s2).html",
+            "chemical e1s1": "calculator.html?key=chemical_e1s1",
+            "chemical e1s2": "calculator.html?key=chemical_e1s2",
+            "chemical e2s1": "calculator.html?key=chemical_e2s1",
+            "chemical e2s2": "calculator.html?key=chemical_e2s2",
+            "chemical e3s1": "calculator.html?key=chemical_e3s1",
+            "chemical e3s2": "calculator.html?key=chemical_e3s2",
+            "chemical e4s1": "calculator.html?key=chemical_e4s1",
+            "chemical e4s2": "calculator.html?key=chemical_e4s2",
 
             // EEE Semesters
-            "eee e1s1": "eee(e1s1).html",
-            "eee e1s2": "eee(e1s2).html",
-            "eee e2s1": "eee(e2s1).html",
-            "eee e2s2": "eee(e2s2).html",
-            "eee e3s1": "eee(e3s1).html",
-            "eee e3s2": "eee(e3s2).html",
-            "eee e4s1": "eee(e4s1).html",
-            "eee e4s2": "eee(e4s2).html"
+            "eee e1s1": "calculator.html?key=eee_e1s1",
+            "eee e1s2": "calculator.html?key=eee_e1s2",
+            "eee e2s1": "calculator.html?key=eee_e2s1",
+            "eee e2s2": "calculator.html?key=eee_e2s2",
+            "eee e3s1": "calculator.html?key=eee_e3s1",
+            "eee e3s2": "calculator.html?key=eee_e3s2",
+            "eee e4s1": "calculator.html?key=eee_e4s1",
+            "eee e4s2": "calculator.html?key=eee_e4s2"
         };
 
         function showPreviousSearches() {
