@@ -21,7 +21,7 @@ const articles = Object.fromEntries(contentFiles.map(name => {
   const html = readFileSync(resolve(root, name), 'utf8');
   let body = articleBody(html).replace(/<\/?main\b[^>]*>/gi, '');
   if (!/<h1\b/i.test(body)) body = (html.match(/<h1\b[^>]*>[\s\S]*?<\/h1>/i)?.[0] || '<h1>Resources</h1>') + body;
-  return [name, { title: titleOf(html), html: body }];
+  return [name, { title: titleOf(html), description: html.match(/<meta\s+name="description"[^>]*content="([^"]*)"/i)?.[1] || '', html: body }];
 }));
 function pageShell(template, file) {
   const original = readFileSync(resolve(root, file), 'utf8');
@@ -44,8 +44,11 @@ function pageShell(template, file) {
 export default defineConfig({
   plugins: [react(), {
     name: 'preserve-static-urls',
-    resolveId(id) { if (id === 'virtual:articles') return '\0virtual:articles'; },
-    load(id) { if (id === '\0virtual:articles') return `export default ${JSON.stringify(articles)}`; },
+    resolveId(id) { if (['virtual:articles', 'virtual:routes'].includes(id)) return '\0' + id; },
+    load(id) {
+      if (id === '\0virtual:articles') return `export default ${JSON.stringify(articles)}`;
+      if (id === '\0virtual:routes') return `export default ${JSON.stringify(['/', '/index.html', ...aliases.map(file => '/' + file)])}`;
+    },
     configureServer(server) {
       server.middlewares.use(async (req, res, next) => {
         const file = decodeURIComponent((req.url || '').split('?')[0]).slice(1);

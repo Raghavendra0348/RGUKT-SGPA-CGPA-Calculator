@@ -4,6 +4,8 @@ import { configs, departments, readRoute } from './data.js';
 import { GRADES, calculateSGPA, calculateCGPA, division, withCredits } from './calculations.js';
 import { exportPDF, exportImage } from './exports.js';
 import articles from 'virtual:articles';
+import routes from 'virtual:routes';
+import { navigate, useBrowserNavigation } from './navigation.js';
 
 function Icon({ name = 'book', size = 24, ...props }) {
   const paths = {
@@ -88,7 +90,7 @@ function Semesters({ branch }) {
 }
 function Calculator({ route }) {
   const config = configs[route.key];
-  const [mode, setMode] = useState(route.mode);
+  const mode = route.mode;
   const [credits, setCredits] = useState(config?.subjects.map(subject => String(subject.credits)) || []);
   const [grades, setGrades] = useState(config?.subjects.map(() => 'EX') || []);
   const [semesters, setSemesters] = useState(Array(config?.cgpaSemesters || (config?.year || 4) * 2).fill(''));
@@ -96,6 +98,7 @@ function Calculator({ route }) {
   const [error, setError] = useState('');
   const [exporting, setExporting] = useState(false);
   const resultRef = useRef(null);
+  useEffect(() => { setScore(null); setError(''); }, [route.mode]);
   if (!config) return <NotFound message="Choose a department and semester to open your calculator." />;
   let totalCredits = null;
   try { totalCredits = withCredits(config, credits).divisor; } catch { /* Incomplete credit input is validated below. */ }
@@ -103,7 +106,7 @@ function Calculator({ route }) {
     try { setScore(calculateSGPA(withCredits(config, nextCredits), nextGrades)); setError(''); }
     catch (err) { setScore(null); setError(err.message); }
   };
-  const changeMode = value => { setMode(value); setScore(null); setError(''); const url = new URL(location.href); url.searchParams.set('mode', value); history.replaceState(null, '', url); };
+  const changeMode = value => { setScore(null); setError(''); const url = new URL(location.href); url.searchParams.set('mode', value); navigate(url.href, { replace: true, scroll: false }); };
   const submit = event => { event.preventDefault(); try { setScore(mode === 'sgpa' ? calculateSGPA(withCredits(config, credits), grades) : calculateCGPA(semesters)); setError(''); } catch (err) { setError(err.message); } };
   const download = async type => { setExporting(true); setError(''); try { await (type === 'pdf' ? exportPDF : exportImage)(mode === 'sgpa' ? withCredits(config, credits) : config, mode === 'sgpa' ? grades : semesters, score, mode); } catch { setError('The report could not be downloaded. Please try again.'); } finally { setExporting(false); } };
   return <section className="wrap page-section"><a className="back-link" href={route.key.startsWith('puc') ? 'index.html#departments' : `${config.branch.toLowerCase()}_semester.html`}>← Change semester</a><div className="calculator-heading"><div><p className="section-kicker">Your academic workspace</p><h1>{config.title}</h1><p className="page-description">A little input. A lot more clarity.</p></div><span className="local-badge"><Icon name="shield" size={17} /> Stays on your device</span></div>
@@ -130,15 +133,30 @@ function Contact() {
 }
 function NotFound({ message = 'This calculator could not be found.' }) { return <section className="wrap page-section"><h1>Let’s find your calculator.</h1><p className="page-description">{message}</p><a className="primary-button" href="index.html#departments">Browse departments <Icon name="arrow" size={18} /></a></section>; }
 export default function App() {
-  const route = readRoute();
+  const href = useBrowserNavigation(routes);
+  const route = readRoute(href);
   const article = articles[route.file];
   useEffect(() => { document.title = configs[route.key] ? `${configs[route.key].title} — RGUKT Gradebook` : article?.title || (route.file.includes('_semester') ? `${route.branch.toUpperCase()} Semesters — RGUKT Gradebook` : 'RGUKT SGPA & CGPA Calculator | Gradebook'); }, [route.file, route.key, route.branch, article]);
+  useEffect(() => {
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.href = 'https://www.rgukt-sgpa-cgpa-calculator.tech/' + (route.file === 'index.html' ? '' : route.file);
+    const description = article?.description || (configs[route.key] ? `Calculate SGPA and CGPA for ${configs[route.key].title} using editable subject credits.` : 'Free SGPA and CGPA calculators for RGUKT students, with subjects and credits for PUC and every engineering department.');
+    for (const [selector, content] of [
+      ['meta[name="description"]', description],
+      ['meta[property="og:title"]', document.title],
+      ['meta[property="og:description"]', description],
+      ['meta[property="og:url"]', canonical?.href || href],
+      ['meta[name="twitter:title"]', document.title],
+      ['meta[name="twitter:description"]', description],
+    ]) document.querySelector(selector)?.setAttribute('content', content);
+    window.gtag?.('event', 'page_view', { page_path: new URL(href).pathname + new URL(href).search });
+  }, [href, route.file]);
   let page;
   if (route.file === 'contact.html') page = <Contact />;
-  else if (article) page = <Article article={article} />;
-  else if (route.key || route.file === 'calculator.html') page = <Calculator route={route} />;
+  else if (article) page = <Article key={route.file} article={article} />;
+  else if (route.key || route.file === 'calculator.html') page = <Calculator key={route.key} route={route} />;
   else if (route.file.endsWith('_semester.html')) page = <Semesters branch={route.branch} />;
   else if (['index.html', 'department.html', ''].includes(route.file)) page = <Home />;
   else page = <NotFound />;
-  return <><a className="skip-link" href="#main">Skip to content</a><Header file={route.file} /><main id="main" tabIndex="-1">{page}</main><Footer /></>;
+  return <><a className="skip-link" href="#main">Skip to content</a><Header key={href} file={route.file} /><main id="main" tabIndex="-1">{page}</main><Footer /></>;
 }

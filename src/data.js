@@ -17,11 +17,4 @@ export const configs = { ...subjects, puc_mpc: {
   subjects: [['PHYSICS', 4], ['CHEMISTRY', 4], ['MATHS', 5], ['IT', 1], ['ENG', 3], ['TELUGU', 3], ['PHYSICS LAB', 1], ['CHEMISTRY LAB', 1], ['IT LAB', 1]].map(([name, credits]) => ({ id: name, name, credits })),
 } };
 
-export function readRoute() {
-  const params = new URLSearchParams(location.search);
-  const file = decodeURIComponent(location.pathname.split('/').pop() || 'index.html');
-  const legacy = file.match(/^([a-z]+)[(_](e\ds\d)\)?\.html$/);
-  let key = params.get('key') || (file === 'puc.html' ? 'puc_mpc' : legacy ? `${legacy[1]}_${legacy[2]}` : '');
-  const branch = params.get('branch') || (key ? key.split('_')[0] : file.replace('_semester.html', ''));
-  return { file, key, branch, mode: params.get('mode') === 'cgpa' ? 'cgpa' : 'sgpa' };
-}
+export { readRoute } from './navigation.js';

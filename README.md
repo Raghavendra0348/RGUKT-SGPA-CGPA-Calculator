@@ -56,4 +56,4 @@ npm run dev
 
 Run `npm test` for calculator tests and `npm run build` for production output in `dist/`. Deploy `dist/` as a static site. Use `npm run preview` to check the production build locally.
 
-The React app uses `subjects.json` and preserves existing HTML URLs. Original guide/legal files supply the article content and metadata at build time. Calculations run in the browser; feedback drafts are copied locally rather than emailed.
+The React single-page app uses `subjects.json` and preserves existing HTML URLs. Internal links use browser-history routing without page reloads; Back/Forward and direct URL loads remain supported. Original guide/legal files supply the article content and metadata at build time. Calculations run in the browser; feedback drafts are copied locally rather than emailed.
