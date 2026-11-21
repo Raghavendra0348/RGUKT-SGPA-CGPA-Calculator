@@ -1,3 +1,5 @@
+import PrivacyChoices, { startAnalytics } from './PrivacyChoices.jsx';
+import { canonicalUrl } from './site.js';
 import collegeLogo from '../rgukt.webp';
 import React, { useEffect, useRef, useState } from 'react';
 import { configs, departments, readRoute } from './data.js';
@@ -81,7 +83,7 @@ function Home() {
       <div className="department-grid">{shown.map((d, i) => <a className="department-card" href={d.id.startsWith('puc') ? `calculator.html?key=${d.id}` : `${d.id}_semester.html`} key={d.id}><span className={`department-icon tint-${i % 4}`}><Icon name={d.id === 'cse' ? 'code' : d.id === 'ece' ? 'chip' : d.icon} /></span><div><h3>{d.code}</h3><p>{d.name}</p><span className="department-level">{d.detail}</span></div><Icon name="arrow" className="card-arrow" size={19} /></a>)}</div>
       {!shown.length && !semesterMatches.length && <div className="empty-state"><h3>No departments found</h3><p>Try a branch name such as CSE, Civil, or MPC.</p><button className="secondary-button" onClick={() => { setQuery(''); setFilter('all'); }}>Show all departments</button></div>}
       <div className="department-help"><Icon name="book" size={23} /><p>New to grade points? <a href="how-to-calculate-sgpa.html">Our GPA guide is a good place to start.</a></p></div>
-    </section><Resources /><div className="academic-note wrap"><Icon name="shield" size={20} /><p>An independent student tool. Always verify results with your official RGUKT academic regulations.</p></div></>;
+    </section><section className="wrap calculation-guide"><h2>Check the calculation, not just the result.</h2><p>SGPA is the sum of each subject’s credits multiplied by its grade points, divided by the total subject credits. Review the listed credits against your course registration before you calculate.</p><div className="worked-example"><h3>A worked example</h3><p>A 4-credit subject with EX contributes 40 points; a 3-credit subject with A contributes 27; a 1-credit subject with B contributes 8. Together, that is 75 weighted points across 8 credits: <strong>75 ÷ 8 = 9.375 SGPA</strong>.</p></div><details><summary>What happens when I edit credits?</summary><p>The total credits and each subject’s contribution update together. Reports include the edited values. Reset restores the defaults for this semester.</p></details><details><summary>How does the CGPA calculator combine semesters?</summary><p>It averages the semester SGPAs you enter and skips empty semesters. If your academic regulations require weighting semesters by their credits, check the result using that prescribed method instead.</p></details><p>Subject lists are provided as a starting point. Credit values, grade rules, and academic division labels should be checked against your official regulations. This tool does not issue an official transcript.</p></section><Resources /><div className="academic-note wrap"><Icon name="shield" size={20} /><p>An independent student tool. Always verify results with your official RGUKT academic regulations.</p></div></>;
 }
 function Semesters({ branch }) {
   const department = departments.find(d => d.id === branch);
@@ -139,7 +141,7 @@ export default function App() {
   useEffect(() => { document.title = configs[route.key] ? `${configs[route.key].title} — RGUKT Gradebook` : article?.title || (route.file.includes('_semester') ? `${route.branch.toUpperCase()} Semesters — RGUKT Gradebook` : 'RGUKT SGPA & CGPA Calculator | Gradebook'); }, [route.file, route.key, route.branch, article]);
   useEffect(() => {
     const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) canonical.href = 'https://www.rgukt-sgpa-cgpa-calculator.tech/' + (route.file === 'index.html' ? '' : route.file);
+    if (canonical) canonical.href = canonicalUrl(href);
     const description = article?.description || (configs[route.key] ? `Calculate SGPA and CGPA for ${configs[route.key].title} using editable subject credits.` : 'Free SGPA and CGPA calculators for RGUKT students, with subjects and credits for PUC and every engineering department.');
     for (const [selector, content] of [
       ['meta[name="description"]', description],
@@ -149,7 +151,8 @@ export default function App() {
       ['meta[name="twitter:title"]', document.title],
       ['meta[name="twitter:description"]', description],
     ]) document.querySelector(selector)?.setAttribute('content', content);
-    window.gtag?.('event', 'page_view', { page_path: new URL(href).pathname + new URL(href).search });
+    const analyticsStarted = startAnalytics();
+    if (!analyticsStarted && !window['ga-disable-G-T486B8C5X0']) window.gtag?.('event', 'page_view', { page_path: new URL(href).pathname + new URL(href).search });
   }, [href, route.file]);
   let page;
   if (route.file === 'contact.html') page = <Contact />;
@@ -158,5 +161,5 @@ export default function App() {
   else if (route.file.endsWith('_semester.html')) page = <Semesters branch={route.branch} />;
   else if (['index.html', 'department.html', ''].includes(route.file)) page = <Home />;
   else page = <NotFound />;
-  return <><a className="skip-link" href="#main">Skip to content</a><Header key={href} file={route.file} /><main id="main" tabIndex="-1">{page}</main><Footer /></>;
+  return <><a className="skip-link" href="#main">Skip to content</a><Header key={href} file={route.file} /><main id="main" tabIndex="-1">{page}</main><PrivacyChoices /><Footer /></>;
 }

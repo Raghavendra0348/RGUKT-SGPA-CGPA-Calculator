@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.rgukt-sgpa-cgpa-calculator.tech/sitemap.xml
+Sitemap: https://rgukt-sgpa-cgpa-calculator.vercel.app/sitemap.xml

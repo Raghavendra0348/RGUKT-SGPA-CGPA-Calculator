@@ -5,7 +5,7 @@ A free, responsive web-based tool designed for **RGUKT students** to calculate t
 ---
 
 ## 🌐 Live Website
-👉 **[https://www.rgukt-sgpa-cgpa-calculator.tech](https://www.rgukt-sgpa-cgpa-calculator.tech)**
+👉 **[https://rgukt-sgpa-cgpa-calculator.vercel.app](https://rgukt-sgpa-cgpa-calculator.vercel.app)**
 
 ---
 

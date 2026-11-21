@@ -1,3 +1,4 @@
+import { canonicalUrl } from './src/site.js';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { readFileSync, readdirSync, writeFileSync, copyFileSync } from 'node:fs';
@@ -37,7 +38,7 @@ function pageShell(template, file) {
   }
   const schema = original.match(/<script[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/gi) || [];
   html = html.replace(/<script[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/gi, '') .replace('</head>', schema.join('\n') + '\n</head>');
-  html = html.replace(/<link rel="canonical"[^>]*>/i, `<link rel="canonical" href="https://www.rgukt-sgpa-cgpa-calculator.tech/${file}">`);
+  html = html.replace(/<link rel="canonical"[^>]*>/i, `<link rel="canonical" href="${canonicalUrl(file)}">`);
   if (articles[file]) html = html.replace(/<div id="root">[\s\S]*?<\/div>/, () => `<div id="root"><article>${articles[file].html}</article></div>`);
   return html;
 }

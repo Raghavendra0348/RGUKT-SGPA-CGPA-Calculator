@@ -301,8 +301,8 @@
         "credits": 3.0
       }
     ],
-    "maxPoints": 200.0,
-    "divisor": 20.0,
+    "maxPoints": 245.0,
+    "divisor": 24.5,
     "cgpaSemesters": 6
   },
   "cse_e4s1": {
@@ -332,8 +332,8 @@
         "credits": 6.0
       }
     ],
-    "maxPoints": 170.0,
-    "divisor": 17.0,
+    "maxPoints": 160.0,
+    "divisor": 16.0,
     "cgpaSemesters": 7
   },
   "cse_e4s2": {
@@ -368,8 +368,8 @@
         "credits": 2.0
       }
     ],
-    "maxPoints": 200.0,
-    "divisor": 20.0,
+    "maxPoints": 170.0,
+    "divisor": 17.0,
     "cgpaSemesters": 8
   },
   "ece_e1s1": {
@@ -480,8 +480,8 @@
         "credits": 1.5
       }
     ],
-    "maxPoints": 250.0,
-    "divisor": 25.0,
+    "maxPoints": 240.0,
+    "divisor": 24.0,
     "cgpaSemesters": 2
   },
   "ece_e2s1": {
@@ -536,8 +536,8 @@
         "credits": 1.5
       }
     ],
-    "maxPoints": 240.0,
-    "divisor": 24.0,
+    "maxPoints": 230.0,
+    "divisor": 23.0,
     "cgpaSemesters": 3
   },
   "ece_e2s2": {
@@ -975,8 +975,8 @@
         "credits": 1.5
       }
     ],
-    "maxPoints": 245.0,
-    "divisor": 24.5,
+    "maxPoints": 244.0,
+    "divisor": 24.4,
     "cgpaSemesters": 4
   },
   "eee_e3s1": {
@@ -1082,8 +1082,8 @@
         "credits": 1.0
       }
     ],
-    "maxPoints": 145.0,
-    "divisor": 14.5,
+    "maxPoints": 155.0,
+    "divisor": 15.5,
     "cgpaSemesters": 6
   },
   "eee_e4s1": {
@@ -1195,8 +1195,8 @@
         "credits": 2.5
       }
     ],
-    "maxPoints": 180.0,
-    "divisor": 18.0,
+    "maxPoints": 195.0,
+    "divisor": 19.5,
     "cgpaSemesters": 0
   },
   "civil_e1s2": {
@@ -1338,8 +1338,8 @@
         "credits": 1.5
       }
     ],
-    "maxPoints": 215.0,
-    "divisor": 21.5,
+    "maxPoints": 230.0,
+    "divisor": 23.0,
     "cgpaSemesters": 4
   },
   "civil_e3s1": {
@@ -1512,8 +1512,8 @@
         "credits": 2.0
       }
     ],
-    "maxPoints": 170.0,
-    "divisor": 17.0,
+    "maxPoints": 160.0,
+    "divisor": 16.0,
     "cgpaSemesters": 8
   },
   "mech_e1s1": {
@@ -1609,8 +1609,8 @@
         "credits": 2.5
       }
     ],
-    "maxPoints": 220.0,
-    "divisor": 22.0,
+    "maxPoints": 195.0,
+    "divisor": 19.5,
     "cgpaSemesters": 2
   },
   "mech_e2s1": {
@@ -1655,8 +1655,8 @@
         "credits": 1.5
       }
     ],
-    "maxPoints": 240.0,
-    "divisor": 24.0,
+    "maxPoints": 220.0,
+    "divisor": 22.0,
     "cgpaSemesters": 3
   },
   "mech_e2s2": {
@@ -1798,8 +1798,8 @@
         "credits": 1.5
       }
     ],
-    "maxPoints": 230.0,
-    "divisor": 23.0,
+    "maxPoints": 200.0,
+    "divisor": 20.0,
     "cgpaSemesters": 6
   },
   "mech_e4s1": {
@@ -1865,8 +1865,8 @@
         "credits": 4.5
       }
     ],
-    "maxPoints": 170.0,
-    "divisor": 17.0,
+    "maxPoints": 155.0,
+    "divisor": 15.5,
     "cgpaSemesters": 8
   },
   "mme_e1s1": {
@@ -2238,8 +2238,8 @@
         "credits": 3.0
       }
     ],
-    "maxPoints": 150.0,
-    "divisor": 15.0,
+    "maxPoints": 130.0,
+    "divisor": 13.0,
     "cgpaSemesters": 8
   },
   "chemical_e1s1": {
@@ -2544,8 +2544,8 @@
         "credits": 3.0
       }
     ],
-    "maxPoints": 210.0,
-    "divisor": 21.0,
+    "maxPoints": 240.0,
+    "divisor": 24.0,
     "cgpaSemesters": 6
   },
   "chemical_e4s1": {
@@ -2575,8 +2575,8 @@
         "credits": 4.0
       }
     ],
-    "maxPoints": 150.0,
-    "divisor": 15.0,
+    "maxPoints": 130.0,
+    "divisor": 13.0,
     "cgpaSemesters": 7
   },
   "chemical_e4s2": {
