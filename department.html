@@ -20,7 +20,6 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <title>Department Selector</title>
 
@@ -414,17 +413,18 @@
         }
         /* ══ END RESPONSIVE ══ */
     </style>
+    <link rel="stylesheet" href="index.css">
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7812693991042173"
         crossorigin="anonymous"></script>
 
 </head>
 
-<body>
+<body class="department-page">
 
     <div class="search-container">
         <div style="position: relative; width: 100%; max-width: 450px; display: flex; justify-content: center;">
-            <input type="text" id="searchBar" placeholder="Search like cse(eXsX)..." oninput="handleSearch()"
+            <input type="search" id="searchBar" name="department-search" aria-label="Search departments and semesters" placeholder="Search like cse(eXsX)..." oninput="handleSearch()"
                 onkeypress="checkEnter(event)" onfocus="showPreviousSearches()" autocomplete="off" autocorrect="off"
                 autocapitalize="off" spellcheck="false" />
             <i class="fas fa-search search-icon"></i>
@@ -433,46 +433,28 @@
     </div>
 
     <div class="content-wrapper">
-        <h1 id="department-title"></h1>
+        <h1 id="department-title">Select department</h1>
 
         <div class="branches">
-            <div class="branch-box" onclick="redirectTo('puc.html')">
-                <h2>MPC</h2>
-            </div>
-            <div class="branch-box" onclick="redirectTo('calculator.html?key=puc_mbipc')">
-                <h2>MBIPC</h2>
-            </div>
+            <a class="branch-box" href="puc.html"><h2>MPC</h2></a>
+            <a class="branch-box" href="calculator.html?key=puc_mbipc"><h2>MBIPC</h2></a>
         </div>
         <div class="branches">
-            <div class="branch-box" onclick="redirectTo('cse_semester.html')">
-                <h2>CSE</h2>
-            </div>
+            <a class="branch-box" href="cse_semester.html"><h2>CSE</h2></a>
 
 
         </div>
         <div class="branches">
-            <div class="branch-box" onclick="redirectTo('ece_semester.html')">
-                <h2>ECE</h2>
-            </div>
-            <div class="branch-box" onclick="redirectTo('civil_semester.html')">
-                <h2>CIVIL</h2>
-            </div>
+            <a class="branch-box" href="ece_semester.html"><h2>ECE</h2></a>
+            <a class="branch-box" href="civil_semester.html"><h2>CIVIL</h2></a>
         </div>
         <div class="branches">
-            <div class="branch-box" onclick="redirectTo('mech_semester.html')">
-                <h2>MECH</h2>
-            </div>
-            <div class="branch-box" onclick="redirectTo('mme_semester.html')">
-                <h2>MME</h2>
-            </div>
+            <a class="branch-box" href="mech_semester.html"><h2>MECH</h2></a>
+            <a class="branch-box" href="mme_semester.html"><h2>MME</h2></a>
         </div>
         <div class="branches">
-            <div class="branch-box" onclick="redirectTo('chemical_semester.html')">
-                <h2>CHEMICAL</h2>
-            </div>
-            <div class="branch-box" onclick="redirectTo('eee_semester.html')">
-                <h2>EEE</h2>
-            </div>
+            <a class="branch-box" href="chemical_semester.html"><h2>CHEMICAL</h2></a>
+            <a class="branch-box" href="eee_semester.html"><h2>EEE</h2></a>
         </div>
     </div>
 
@@ -502,7 +484,7 @@
             });
         }
 
-        animateTitle();
+        // Keep the heading immediately readable.
 
         const pageLinks = {
             "about": "about.html",

@@ -15,7 +15,7 @@ A free, responsive web-based tool designed for **RGUKT students** to calculate t
 - 🧮 Calculate **SGPA & CGPA** for all branches — *CSE, ECE, EEE, CIVIL, MECH, PUC, etc.*
 - 📱 Fully **responsive** for mobile, tablet, and desktop users
 - 🎓 Supports **PUC & Engineering semesters**
-- 🌙 Modern **UI/UX** with gradient design and smooth animations
+- 🎨 Consistent **UI/UX** with responsive navigation and accessible controls
 - 📰 **Blog & Info Section** for GPA tips, FAQs, and guides
 - ⚡ **Fast-loading**, SEO optimized, and performance tested
 
@@ -25,7 +25,7 @@ A free, responsive web-based tool designed for **RGUKT students** to calculate t
 
 | Frontend | Backend | Hosting | Database |
 |-----------|----------|----------|-----------|
-| HTML5, CSS3, Vanilla JS | — | Vercel | subjects.json
+| React, Vite, CSS | — | Vercel | subjects.json
 
 ---
 
@@ -45,14 +45,15 @@ A free, responsive web-based tool designed for **RGUKT students** to calculate t
 
 ---
 
-## 🧠 How to Run Locally
+## Development
 
-You must serve this project via a **local web server**  
-(because it uses ES Modules + Firebase).
+Requires Node.js 22.12+ (or 24+) and npm.
 
-### ▶️ Option 1 — Using Python
-```bash
-cd RGUKT-SGPA-CGPA-Calculator
-python3 -m http.server 8080
+```sh
+npm ci
+npm run dev
+```
 
+Run `npm test` for calculator tests and `npm run build` for production output in `dist/`. Deploy `dist/` as a static site. Use `npm run preview` to check the production build locally.
 
+The React app uses `subjects.json` and preserves existing HTML URLs. Original guide/legal files supply the article content and metadata at build time. Calculations run in the browser; feedback drafts are copied locally rather than emailed.
