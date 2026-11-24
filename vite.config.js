@@ -1,4 +1,5 @@
 import { canonicalUrl } from './src/site.js';
+import { configs, departments } from './src/data.js';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { readFileSync, readdirSync, writeFileSync, copyFileSync } from 'node:fs';
@@ -8,6 +9,19 @@ const contentFiles = ['about.html', 'blog.html', 'how-to-calculate-sgpa.html', '
 const root = process.cwd();
 const aliases = readdirSync(root).filter(name => name.endsWith('.html') && name !== 'index.html');
 const titleOf = html => html.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || 'RGUKT Gradebook';
+const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+const trustLinks = '<nav aria-label="Site information"><a href="index.html">Calculators</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a> | <a href="privacy_policy.html">Privacy policy</a> | <a href="terms.html">Terms</a> | <a href="disclaimer.html">Disclaimer</a></nav>';
+function routeContent(file) {
+  if (articles[file]) return `<article>${articles[file].html}</article>`;
+  if (file === 'contact.html') return '<h1>Contact Raghavendra Arella</h1><p>For private questions or corrections, email <a href="mailto:learnwithhraghava@gmail.com">learnwithhraghava@gmail.com</a>.</p><p>You can also <a href="https://github.com/Raghavendra0348/RGUKT-SGPA-CGPA-Calculator/issues">open a public GitHub issue</a>. Do not include private grades or personal information.</p>';
+  const branch = departments.find(department => file === `${department.id}_semester.html`);
+  const legacy = file.match(/^([a-z]+)[(_](e\ds\d)\)?\.html$/);
+  const key = file === 'puc.html' ? 'puc_mpc' : legacy ? `${legacy[1]}_${legacy[2]}` : '';
+  const config = configs[key];
+  if (config) return `<h1>${escapeHtml(config.title)} SGPA calculator</h1><p>Multiply credits by grade points, sum the weighted points, and divide by total credits. Check these default subjects against your campus and batch regulations.</p><table><caption>Default subjects and credits</caption><thead><tr><th>Subject</th><th>Credits</th></tr></thead><tbody>${config.subjects.map(subject => `<tr><td>${escapeHtml(subject.name)}</td><td>${subject.credits}</td></tr>`).join('')}</tbody></table><p>Enable JavaScript to enter grades, edit credits, and download a report. REM has no verified grade-point mapping and cannot be calculated.</p><a href="how-to-calculate-sgpa.html">Calculation guide</a>`;
+  if (branch || file === 'calculator.html') return `<h1>${branch ? escapeHtml(branch.name) : 'SGPA and CGPA'} calculators</h1><p>Choose a semester to view its subject list. Enable JavaScript to calculate with editable credits. CGPA uses the arithmetic mean of entered semester SGPAs; check your regulations for credit weighting.</p><ul>${Object.entries(configs).filter(([key]) => !branch || key.startsWith(branch.id + '_')).map(([key, config]) => `<li><a href="calculator.html?key=${key}">${escapeHtml(config.title)}</a></li>`).join('')}</ul><a href="how-to-calculate-sgpa.html">How to calculate SGPA</a>`;
+  return null;
+}
 function articleBody(html) {
   return (html.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1] || '')
     .replace(/<!--[\s\S]*?-->/g, '')
@@ -39,7 +53,8 @@ function pageShell(template, file) {
   const schema = original.match(/<script[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/gi) || [];
   html = html.replace(/<script[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/gi, '') .replace('</head>', schema.join('\n') + '\n</head>');
   html = html.replace(/<link rel="canonical"[^>]*>/i, `<link rel="canonical" href="${canonicalUrl(file)}">`);
-  if (articles[file]) html = html.replace(/<div id="root">[\s\S]*?<\/div>/, () => `<div id="root"><article>${articles[file].html}</article></div>`);
+  const content = routeContent(file);
+  if (content) html = html.replace(/<div id="root">[\s\S]*?<\/div>/, () => `<div id="root">${content}${trustLinks}</div>`);
   return html;
 }
 export default defineConfig({

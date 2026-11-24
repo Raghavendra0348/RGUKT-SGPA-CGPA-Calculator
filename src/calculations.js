@@ -3,7 +3,8 @@ export function calculateSGPA(config, grades) {
   const penalty = config.subjects.reduce((sum, subject, index) => {
     const grade = grades[index] ?? 'EX';
     if (!GRADES.includes(grade)) throw new Error('Choose a valid grade.');
-    return sum + (grade === 'REM' ? 0 : GRADES.indexOf(grade) * subject.credits);
+    if (grade === 'REM') throw new Error('REM has no verified grade-point mapping. Check your academic regulations before calculating this result.');
+    return sum + GRADES.indexOf(grade) * subject.credits;
   }, 0);
   return (config.maxPoints - penalty) / config.divisor;
 }

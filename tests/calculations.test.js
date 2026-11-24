@@ -3,9 +3,10 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { calculateSGPA, calculateCGPA, division, withCredits } from '../src/calculations.js';
 const configs = JSON.parse(readFileSync(new URL('../subjects.json', import.meta.url)));
-test('all existing semester formulas preserve EX, A, E and REM results', () => {
+test('all semester formulas preserve supported grades and reject unverified REM results', () => {
   for (const config of Object.values(configs)) {
-    for (const [grade, rank] of [['EX', 0], ['A', 1], ['E', 5], ['REM', 0]]) {
+    assert.throws(() => calculateSGPA(config, config.subjects.map(() => 'REM')), /no verified grade-point mapping/);
+    for (const [grade, rank] of [['EX', 0], ['A', 1], ['E', 5]]) {
       const grades = config.subjects.map(() => grade);
       const expected = (config.maxPoints - config.subjects.reduce((sum, s) => sum + s.credits * rank, 0)) / config.divisor;
       assert.equal(calculateSGPA(config, grades), expected);

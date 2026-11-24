@@ -1,4 +1,4 @@
-import subjects from '../subjects.json';
+import subjects from '../subjects.json' with { type: 'json' };
 
 export const departments = [
   { id: 'cse', code: 'CSE', name: 'Computer Science', detail: 'Engineering', icon: 'code' },
