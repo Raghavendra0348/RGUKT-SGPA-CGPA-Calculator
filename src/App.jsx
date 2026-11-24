@@ -1,4 +1,4 @@
-import PrivacyChoices, { startAnalytics } from './PrivacyChoices.jsx';
+import { trackPageView } from './analytics.js';
 import { canonicalUrl } from './site.js';
 import collegeLogo from '../rgukt.webp';
 import React, { useEffect, useRef, useState } from 'react';
@@ -90,6 +90,25 @@ function Semesters({ branch }) {
   if (!department) return <NotFound />;
   return <section className="wrap page-section"><a className="back-link" href="index.html#departments">← All departments</a><p className="section-kicker">{department.name}</p><h1>One semester at a time.</h1><p className="page-description">Choose your semester to load its subjects and credits.</p><div className="semester-grid">{[1, 2, 3, 4].map(year => <section className="year-group" key={year}><h2>Engineering year {year}</h2>{[1, 2].map(sem => <a key={sem} href={`calculator.html?key=${branch}_e${year}s${sem}`}><span>Semester {sem}<small>{configs[`${branch}_e${year}s${sem}`].subjects.length} subjects</small></span><Icon name="arrow" size={20} /></a>)}</section>)}</div></section>;
 }
+function CreditReminder() {
+  const dialogRef = useRef(null);
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    const previousOverflow = document.body.style.overflow;
+    dialog.showModal();
+    document.body.style.overflow = 'hidden';
+    const unlock = () => { document.body.style.overflow = previousOverflow; };
+    dialog.addEventListener('close', unlock);
+    return () => { dialog.removeEventListener('close', unlock); dialog.close(); unlock(); };
+  }, []);
+  return <dialog ref={dialogRef} className="credit-reminder" aria-labelledby="credit-reminder-title" aria-describedby="credit-reminder-description" onClose={() => dialogRef.current?.closest('section')?.querySelector('.credit-input')?.focus()}>
+    <div className="credit-reminder-icon"><Icon name="book" size={28} /></div>
+    <h2 id="credit-reminder-title">Check your subject credits</h2>
+    <p id="credit-reminder-description">Before calculating your SGPA, check each subject’s credits once against your course registration or official grade card.</p>
+    <p className="credit-reminder-note">Credits can vary by campus and batch. You can edit each value in the Credits column.</p>
+    <form method="dialog"><button className="primary-button" autoFocus>Review subject credits <Icon name="arrow" size={18} /></button></form>
+  </dialog>;
+}
 function Calculator({ route }) {
   const config = configs[route.key];
   const mode = route.mode;
@@ -111,7 +130,7 @@ function Calculator({ route }) {
   const changeMode = value => { setScore(null); setError(''); const url = new URL(location.href); url.searchParams.set('mode', value); navigate(url.href, { replace: true, scroll: false }); };
   const submit = event => { event.preventDefault(); try { setScore(mode === 'sgpa' ? calculateSGPA(withCredits(config, credits), grades) : calculateCGPA(semesters)); setError(''); } catch (err) { setScore(null); setError(err.message); } };
   const download = async type => { setExporting(true); setError(''); try { await (type === 'pdf' ? exportPDF : exportImage)(mode === 'sgpa' ? withCredits(config, credits) : config, mode === 'sgpa' ? grades : semesters, score, mode); } catch { setError('The report could not be downloaded. Please try again.'); } finally { setExporting(false); } };
-  return <section className="wrap page-section"><a className="back-link" href={route.key.startsWith('puc') ? 'index.html#departments' : `${config.branch.toLowerCase()}_semester.html`}>← Change semester</a><div className="calculator-heading"><div><p className="section-kicker">Your academic workspace</p><h1>{config.title}</h1><p className="page-description">A little input. A lot more clarity.</p></div><span className="local-badge"><Icon name="shield" size={17} /> Stays on your device</span></div>
+  return <section className="wrap page-section">{mode === 'sgpa' && <CreditReminder />}<a className="back-link" href={route.key.startsWith('puc') ? 'index.html#departments' : `${config.branch.toLowerCase()}_semester.html`}>← Change semester</a><div className="calculator-heading"><div><p className="section-kicker">Your academic workspace</p><h1>{config.title}</h1><p className="page-description">A little input. A lot more clarity.</p></div><span className="local-badge"><Icon name="shield" size={17} /> Stays on your device</span></div>
     <div className="calculator-layout"><div className="calculator-panel"><div className="calculator-tabs" role="group" aria-label="Calculator type">{['sgpa', 'cgpa'].map(value => <button key={value} aria-pressed={mode === value} className={mode === value ? 'active' : ''} onClick={() => changeMode(value)}>{value.toUpperCase()}<span>{value === 'sgpa' ? 'This semester' : 'Across semesters'}</span></button>)}</div><form onSubmit={submit}><div className="panel-heading"><h2>{mode === 'sgpa' ? 'Add your grades' : 'Add your semester results'}</h2><p>{mode === 'sgpa' ? `${config.subjects.length} subjects · ${totalCredits === null ? '—' : Number(totalCredits.toFixed(3))} total credits` : 'Leave semesters you have not completed empty.'}</p></div>
     {mode === 'sgpa' ? <><div className="grade-row grade-table-header"><span>Subject</span><span>Credits</span><span>Grade</span></div>{config.subjects.map((subject, i) => <div className="grade-row" key={`${subject.id}-${i}`}><label htmlFor={`grade-${i}`}>{subject.name}</label><input className="credit-input" type="number" id={`credit-${i}`} name={`credit-${i}`} aria-label={`${subject.name} credits`} inputMode="decimal" min="0" step="any" required value={credits[i]} onChange={event => { const next = credits.map((value, j) => j === i ? event.target.value : value); setCredits(next); updateSGPA(grades, next); }} /><select id={`grade-${i}`} value={grades[i]} onChange={event => { const next = grades.map((g, j) => j === i ? event.target.value : g); setGrades(next); updateSGPA(next, credits); }} aria-label={`${subject.name} grade`}>{GRADES.map(grade => <option key={grade}>{grade}</option>)}</select></div>)}<p className="grade-help">Edit credits as needed; Reset restores the original values. EX = 10, A = 9, B = 8, C = 7, D = 6, E = 5. REM is not calculated because its grade-point mapping has not been verified. Check your academic regulations.</p></> : <div className="semester-inputs">{semesters.map((value, i) => <label key={i}>Year {Math.floor(i / 2) + 1} · Semester {i % 2 + 1}<input type="number" inputMode="decimal" min="0" max="10" step="0.001" placeholder="e.g. 8.750" value={value} onChange={event => { setSemesters(semesters.map((v, j) => i === j ? event.target.value : v)); setScore(null); }} /></label>)}</div>}
     {error && <p className="form-error" role="alert">{error}</p>}<div className="form-actions"><button className="primary-button" type="submit">Calculate {mode.toUpperCase()} <Icon name="arrow" size={18} /></button><button type="button" className="reset-button" onClick={() => { setGrades(config.subjects.map(() => 'EX')); setCredits(config.subjects.map(subject => String(subject.credits))); setSemesters(semesters.map(() => '')); setScore(null); setError(''); }}>Reset</button></div></form></div>
@@ -151,8 +170,7 @@ export default function App() {
       ['meta[name="twitter:title"]', document.title],
       ['meta[name="twitter:description"]', description],
     ]) document.querySelector(selector)?.setAttribute('content', content);
-    const analyticsStarted = startAnalytics();
-    if (!analyticsStarted && !window['ga-disable-G-T486B8C5X0']) window.gtag?.('event', 'page_view', { page_path: new URL(href).pathname + new URL(href).search });
+    trackPageView(href);
   }, [href, route.file]);
   let page;
   if (route.file === 'contact.html') page = <Contact />;
@@ -161,5 +179,5 @@ export default function App() {
   else if (route.file.endsWith('_semester.html')) page = <Semesters branch={route.branch} />;
   else if (['index.html', 'department.html', ''].includes(route.file)) page = <Home />;
   else page = <NotFound />;
-  return <><a className="skip-link" href="#main">Skip to content</a><Header key={href} file={route.file} /><main id="main" tabIndex="-1">{page}</main><PrivacyChoices /><Footer /></>;
+  return <><a className="skip-link" href="#main">Skip to content</a><Header key={href} file={route.file} /><main id="main" tabIndex="-1">{page}</main><Footer /></>;
 }
